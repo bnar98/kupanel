@@ -25,7 +25,6 @@
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
@@ -47,7 +46,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
-    "root": true,
+    "root": false,
     "env": {
       "node": true
     },
@@ -63,8 +62,12 @@
     "overrides": [
       {
         "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+          "dist/*",
+          "src/*",
+          "public/*",
+          "*.json",
+          "*.js",
+          "*.ts"
         ],
         "env": {
           "jest": true
@@ -79,5 +82,22 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
-  }
+  },
+  "description": "## Project setup ``` yarn install ```",
+  "main": "./src/main.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.kubakgroup.com/namdari/kupanel.git"
+  },
+  "keywords": [
+    "kubak",
+    "vue",
+    "package",
+    "panel"
+  ],
+  "author": "kubak frontend team",
+  "license": "ISC"
 }

@@ -1,0 +1,162 @@
+.theme-dark {
+  // colors
+  --primary-color: #F07F18;
+  --primary-dark-color: #DE6B01;
+  --secondary-color: #67758D;
+  --secondary-dark-color: #909ca7;
+  --green-color: #1CBFAD;
+  --green-dark-color: #15AD9C;
+  --red-color: #FF645D;
+  --red-dark-color: #E65953;
+  --yellow-color: #ffba54;
+  --yellow-dark-color: #fdb74d;
+  --pruple-color: #8c77f1;
+  --pruple-dark-color: #826cf6;
+  --blue-color: #2DA2D6;
+  --blue-dark-color: #0489C4;
+  --black-color: #1b1c1f;
+  --white-color: #fff;
+  --gray-100-color: #101010;
+  --gray-200-color: #3E3E3E;
+  --gray-300-color: #686868;
+  --gray-400-color: #969696;
+  --gray-500-color: #BBBABA;
+  --gray-600-color: #E0E0E0;
+  --gray-700-color: #EFEFEF;
+  --gray-800-color: #FAFAFA;
+  --gray-900-color: #FDFDFD;
+
+  // backgrounds
+  --background-color: #2f3133;
+  --foreground-color: #cfced9;
+  --header-background-color: #37393d;
+  --overlay-background-color: #4f4f50;
+
+  // buttons
+  --btn-default-background-color: #676a6d;
+  --btn-default-background-hover-color: #606367;
+  --btn-default-forground-color: #fffaf3;
+
+  // side menu
+  --sidemenu-background-color: #37393d;
+  --sidemenu-expend-background-color: transparent;
+  --sidemenu-hover-background-color: #47494c;
+  --sidemenu-active-border-color: #F07F18;
+  --sidemenu-expend-seperator-color: transparent;
+  --sidemenu-expend-right-border-color: #BBBABA;
+  --sidemenu-icon-color: #a5abb5;
+  --sidemenu--active-icon-color: #eae2e2;
+
+  // inputs
+  --input-placeholder-color: #7f7e7e;
+  --input-border-color: transparent;
+  --input-label-color: #67758d;
+  --input-text-color: #67758d;
+  --input-background-color: #cfced912;
+
+  // seperators
+  --hr-color: #cbcbcb;
+  --vertical-seperator-color: #cbcbcb;
+  --horizontal-seperator-color: #484545;
+
+  // borders
+  --default-border-color: #37393d;
+  --border-color: #37393d;
+
+  // icons
+  --icon-color: #969696;
+  --icon-active-color: #3E3E3E;
+
+  // texts
+  --title-color: #d2cdcd;
+  --sub-title-color: #a0a0a0;
+  --description-color: #7b7979;
+
+  // data-holder
+  --table-header-background-color: #4f4f50a3;
+  --table-header-forground-color: #424242;
+  --table-row-background-color: #4f4f50;
+  --table-row-hover-background-color: #4f4f5045;
+  --table-row-forground-color: #cfcfd1;
+  --table-footer-background-color: transparent;
+  --table-odd-background-color: #4f4f5045;
+  --table-even-background-color: transparent;
+
+  // boxes
+  --box-background-color: #37393d;
+  --box-shadow-color: rgba(0, 0, 0, 0);
+  --box-border-radius-size: 7px;
+  --box-border-color: #484545;
+
+  // scrollbar
+  --scrollbar-track-color: #484545;
+  --scrollbar-thumb-color: #484545;
+
+  // select-box
+  --selectbox-background-color: #4f4f50;
+
+  // dropdown
+  --dropdown-background-color: #46494c;
+  --dropdown-border-color: transparent;
+  --dropdown-triangle-color: #46494c;
+
+  // datepicker
+  --datepicker-background-color: #272B33;
+
+  // shimmer
+  --shimmer-bg-color: #363a3d;
+
+  // loader components
+
+  $shimmer-color-1: #414445;
+  $shimmer-color-2: #363a3d;
+
+  .loader-box {
+    position: relative;
+    display: block;
+
+    .loader-img {
+
+    }
+
+    .loader-animation {
+      min-width: 100%;
+      height: 100%;
+      display: inline-block;
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      left: 0;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-name: placeholderShimmer;
+      animation-timing-function: linear;
+      background: var(--shimmer-bg-color);
+      background-image: -webkit-gradient(linear, 100% 0, 0 0, from(rgba($shimmer-color-2, .3)), color-stop(0.3, rgba($shimmer-color-1, .5)), to(rgba($shimmer-color-2, .3)));
+      //background-image: linear-gradient(65deg ,rgba($gray, .2) 0%, rgba($white, .4) 20%, rgba($gray, .2) 100%);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 4px;
+    }
+
+    @keyframes placeholderShimmer {
+      0% {
+        background-position: -2000px 0;
+      }
+      100% {
+        background-position: 2000px 0;
+      }
+    }
+
+  }
+
+  .empty-placeholder-image {
+  }
+  .empty-placeholder-title {
+  }
+  .empty-placeholder-description {
+    margin-top: -8px;
+  }
+
+}

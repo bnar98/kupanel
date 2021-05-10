@@ -116,7 +116,7 @@ export default {
     }
   }
 }
-//Button
+
 .btn {
   @apply inline-block bg-transparent text-gray-700 p-0 font-medium border border-solid border-transparent rounded-md relative shadow-none cursor-pointer outline-none;
   user-select: none;

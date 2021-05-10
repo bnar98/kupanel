@@ -1,0 +1,164 @@
+.theme-light {
+  --primary-color: #F07F18;
+  --primary-dark-color: #DE6B01;
+  --secondary-color: #244563;
+  --secondary-dark-color: #1E3A53;
+  --green-color: #1CBFAD;
+  --green-dark-color: #15AD9C;
+  --red-color: #FF645D;
+  --red-dark-color: #E65953;
+  --yellow-color: #ffba54;
+  --yellow-dark-color: #fdb74d;
+  --pruple-color: #8c77f1;
+  --pruple-dark-color: #826cf6;
+  --blue-color: #2DA2D6;
+  --blue-dark-color: #0489C4;
+  --black-color: #1b1c1f;
+  --white-color: #fff;
+  --gray-100-color: #FDFDFD;
+  --gray-200-color: #FAFAFA;
+  --gray-300-color: #EFEFEF;
+  --gray-400-color: #E0E0E0;
+  --gray-500-color: #BBBABA;
+  --gray-600-color: #969696;
+  --gray-700-color: #686868;
+  --gray-800-color: #3E3E3E;
+  --gray-900-color: #101010;
+
+  // backgrounds
+  --background-color: #f8f8f8;
+  --foreground-color: #4B4A53;
+  --header-background-color: #fff;
+  --overlay-background-color: #e5e6eb;
+
+  // buttons
+  --btn-default-background-color: #EFEFEF;
+  --btn-default-background-hover-color: #E0E0E0;
+  --btn-default-forground-color: #686868;
+
+  // side menu
+  --sidemenu-background-color: #fff;
+  --sidemenu-expend-background-color: #FDFDFD;
+  --sidemenu-hover-background-color: #EFEFEF;
+  --sidemenu-active-border-color: #F07F18;
+  --sidemenu-expend-seperator-color: #E0E0E0;
+  --sidemenu-expend-right-border-color: #BBBABA;
+  --sidemenu-icon-color: #244563;
+  --sidemenu--active-icon-color: #1E3A53;
+
+  // inputs
+  --input-placeholder-color: #999797;
+  --input-border-color: #bbbaba;
+  --input-focus-border-color: #959595;
+  --input-label-color: #67758d;
+  --input-sub-label-color: #67758d;
+  --input-text-color: #67758d;
+  --input-background-color: #FAFAFA;
+  --input-hover-background-color: #EFEFEF;
+
+  // seperators
+  --hr-color: #cbcbcb;
+  --vertical-seperator-color: #cbcbcb;
+  --horizontal-seperator-color: #cbcbcb;
+
+  // borders
+  --default-border-color: #eceff1;
+  --border-color: #eceff1;
+
+  // icons
+  --icon-color: #999797;
+  --icon-active-color: #3E3E3E;
+
+  // texts
+  --title-color: #3E3E3E;
+  --sub-title-color: #686868;
+  --description-color: #686868;
+
+  // boxes
+  --box-background-color: #fefefe;
+  --box-shadow-color: rgba(0, 0, 0, 0);
+  --box-border-radius-size: 7px;
+  --box-border-color: #ebeef0;
+
+  // data-holder
+  --table-header-background-color: #EFEFEF;
+  --table-header-forground-color: #424242;
+  --table-row-background-color: #fefefe;
+  --table-row-hover-background-color: #FAFAFA;
+  --table-row-forground-color: #424242;
+  --table-footer-background-color: transparent;
+  --table-odd-background-color: #FAFAFA;
+  --table-even-background-color: #FFF;
+
+  // scrollbar
+  --scrollbar-track-color: #C0C0C0;
+  --scrollbar-thumb-color: #7C7C7C;
+
+  // select-box
+  --selectbox-background-color: #ffffff;
+
+  // dropdown
+  --dropdown-background-color: #FFF;
+  --dropdown-border-color: #E0E0E0;
+  --dropdown-triangle-color: #FFF;
+
+  // datepicker
+  --datepicker-background-color: #FFF;
+
+  // shimmer
+  --shimmer-bg-color: #f2f2f2;
+  // loader components
+
+  $shimmer-color-1: #eee;
+  $shimmer-color-2: #ececec;
+
+  .loader-box {
+    position: relative;
+    display: block;
+
+    .loader-img {
+
+    }
+
+    .loader-animation {
+      min-width: 100%;
+      height: 100%;
+      display: inline-block;
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      left: 0;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-name: placeholderShimmer;
+      animation-timing-function: linear;
+      background: var(--shimmer-bg-color);
+      background-image: -webkit-gradient(linear, 100% 0, 0 0, from(rgba($shimmer-color-2, .3)), color-stop(0.3, rgba($shimmer-color-1, .5)), to(rgba($shimmer-color-2, .3)));
+      //background-image: linear-gradient(65deg ,rgba($gray, .2) 0%, rgba($white, .4) 20%, rgba($gray, .2) 100%);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 4px;
+    }
+
+    @keyframes placeholderShimmer {
+      0% {
+        background-position: -2000px 0;
+      }
+      100% {
+        background-position: 2000px 0;
+      }
+    }
+
+  }
+
+  .empty-placeholder-image {
+  }
+  .empty-placeholder-title {
+  }
+  .empty-placeholder-description {
+    margin-top: -8px;
+  }
+
+}
+

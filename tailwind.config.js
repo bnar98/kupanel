@@ -2,9 +2,12 @@ module.exports = {
   purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'dana': ['var(--font-family)']
+    },
     extend: {
       colors:{
-        white: '#fff',
+        'primary-color': 'var(--primary-color)'
       }
     }
   },

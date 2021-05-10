@@ -3,13 +3,13 @@
         <!-- header -->
         <slot name="header"></slot>
 
-        <div class="kbk-container row">
+        <div class="h-screen flex flex-row-reverse">
             <!-- sidebar  -->
             <slot name="sidebar"></slot>
             <!-- body -->
             <div id="mainContent" class="col-xs main-content narrow">
                 <div class="col-xs">
-                    <!-- <router-view></router-view> -->
+                    <slot name="content"></slot>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
             <!-- sidebar  -->
             <slot name="sidebar"></slot>
             <!-- body -->
-            <div id="mainContent" class="relative top-14" :class="state" >
+            <div id="main-content" class="relative top-16" :class="state" >
                 <div class="col-xs">
                     <slot name="content"></slot>
                 </div>
@@ -41,6 +41,16 @@ export default {
 </script>
 
 <style lang="scss">
+#main-content {
+    &.wide{
+        @apply pr-20;
+    }
+
+    &.narrow{
+        @apply pr-64;
+    }
+
+  }
     
 </style>
 

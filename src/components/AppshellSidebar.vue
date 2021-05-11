@@ -1,6 +1,6 @@
 <template>
-    <div class="side-menu p-0 absolute top-16 bottom-0 z-50 overflow-x-hidden overflow-y-auto h-sidebar bg-sidemenu-background" :class="state">
-        side Menu
+    <div class="side-menu p-0 absolute top-16 bottom-0 z-100 overflow-x-hidden overflow-y-auto h-sidebar bg-sidemenu-background" :class="state">
+        <slot></slot>
     </div>
 </template>
 <script>
@@ -53,87 +53,8 @@ export default {
         }
     }
 
-    .menu-item{
-        width: 100%;
-        //border-top: 1px solid var(--white-color);
-        //border-bottom: 1px solid var(--white-color);
-        a{
-        text-decoration: none;
-        }
-        &.expend{
-        background-color: var(--sidemenu-expend-background-color);
-        border-top: 1px solid var(--sidemenu-expend-seperator-color);
-        border-bottom: 1px solid var(--sidemenu-expend-seperator-color);
-        .parent-menu{
-            .icon{
-            color: var(--sidemenu--active-icon-color);
-            }
-        }
-        .sub-menu-box{
-            transition: all  var(--sidemenu-animation-duration);
-            max-height: 100000px;
-            padding: 8px 0;
-            .sub-menu-list{
-            display: block;
-            }
-        }
-        }
-        .parent-menu{
-        display: flex;
-        align-items: center;
-        color: var(--title-color);
-        cursor: pointer;
-        height: 52px;
-        .icon{
-            color: var(--sidemenu-icon-color);
-            position: absolute;
-        }
-        span{
-            white-space: nowrap;
-            width: 180px;
-        }
-        &:hover, &.active{
-            background-color: var(--sidemenu-hover-background-color);
-        }
-        }
-        .sub-menu-box{
-        overflow: hidden;
-        max-height: 0;
-        transition: all var(--sidemenu-animation-duration);
-        .sub-menu-list{
-            display: none;
-            .sub-menu-item{
-            position: relative;
-            cursor: pointer;
-
-            list-style: none;
-            a{
-                color: var(--sub-title-color);
-                width: 173px;
-                display: block;
-            }
-            &.active{
-                a{
-                color: var(--primary-color);
-                }
-                &:before{
-                width: 5px;
-                height: 5px;
-                border-radius: 9999px;
-                background-color: var(--sidemenu-expend-right-border-color);
-                position: absolute;
-                content: '';
-                bottom: 10px;
-                }
-            }
-            }
-            .sub-menu-item:not(:first-child){
-            padding-top: 22px;
-            }
-        }
-        }
-     }
-    }
+    
+}
 
 
     .localization-rtl{

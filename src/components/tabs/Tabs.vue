@@ -41,7 +41,10 @@
 
     created() {
       if (this.$slots.default){
-        this.tabs = this.$slots.default.filter(tab => tab.tag === 'vue-component-3-Tab');
+        this.tabs = this.$slots.default.filter((tab) => {
+          if (tab.tag)
+          return tab.tag.substr(tab.tag.length - 3) === 'Tab';
+        })
       }
     }
 
@@ -60,7 +63,7 @@
         li {
 
           &.is-active {
-             border-bottom: 2px solid var(--primary-color);
+            @apply border-b-2 border-solid border-primary
            }
 
         }
@@ -74,7 +77,7 @@
       .tab {
 
         .tab-content {
-          min-height: 445px;
+          @apply min-h-tab
         }
 
       }

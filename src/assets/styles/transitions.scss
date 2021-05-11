@@ -1,0 +1,10 @@
+
+.fade-tab-enter-active, .fade-tab-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-tab-enter, .fade-tab-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  max-height: 0 !important;
+  border: none !important;
+  overflow: hidden;
+}

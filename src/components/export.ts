@@ -5,6 +5,8 @@ import AppshellSidebar from './AppshellSidebar.vue'
 import SideMenuItem from './SideMenuItem.vue'
 import SideMenuSubItem from './SideMenuSubItem.vue'
 import Breadcrumb from './Breadcrumb.vue'
+import Tabs from "./tabs/Tabs.vue";
+import Tab from "./tabs/Tab.vue";
 
 
 export default {
@@ -15,5 +17,7 @@ export default {
     SideMenuItem: SideMenuItem,
     SideMenuSubItem: SideMenuSubItem,
     Breadcrumb: Breadcrumb
+    Tabs: Tabs,
+    Tab: Tab
 
 }

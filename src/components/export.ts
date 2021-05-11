@@ -4,6 +4,7 @@ import AppshellHeader from './AppshellHeader.vue'
 import AppshellSidebar from './AppshellSidebar.vue'
 import SideMenuItem from './SideMenuItem.vue'
 import SideMenuSubItem from './SideMenuSubItem.vue'
+import Breadcrumb from './Breadcrumb.vue'
 
 
 export default {
@@ -12,6 +13,7 @@ export default {
     AppshellHeader: AppshellHeader,
     AppshellSidebar: AppshellSidebar,
     SideMenuItem: SideMenuItem,
-    SideMenuSubItem: SideMenuSubItem
+    SideMenuSubItem: SideMenuSubItem,
+    Breadcrumb: Breadcrumb
 
 }

@@ -118,8 +118,7 @@ export default {
 }
 
 .btn {
-  @apply inline-block bg-transparent text-gray-700 p-0 font-medium border border-solid border-transparent rounded-md relative shadow-none cursor-pointer outline-none;
-  user-select: none;
+  @apply inline-block bg-transparent text-gray-700 p-0 font-medium border border-solid border-transparent rounded-md select-none relative shadow-none cursor-pointer outline-none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

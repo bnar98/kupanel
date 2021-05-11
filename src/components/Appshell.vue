@@ -3,11 +3,11 @@
         <!-- header -->
         <slot name="header"></slot>
 
-        <div class="h-screen flex flex-row-reverse">
+        <div class="flex flex-row-reverse">
             <!-- sidebar  -->
             <slot name="sidebar"></slot>
             <!-- body -->
-            <div id="mainContent" class="col-xs main-content narrow">
+            <div id="mainContent" class="relative top-14" :class="state" >
                 <div class="col-xs">
                     <slot name="content"></slot>
                 </div>
@@ -17,10 +17,30 @@
 
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-    
-})
+<script>
+import {EventBus} from '../event'
+export default {
+    data() {
+        return {
+            state: "narrow" //wide
+        }
+    },
+    created() {
+        EventBus.$on(
+            'sidebarToggle', () => {
+                if (this.state == "wide") {
+                    this.state = "narrow"
+                } else {
+                    this.state = "wide"
+                }
+                    
+            }
+        );
+    }
+}
 </script>
+
+<style lang="scss">
+    
+</style>
 

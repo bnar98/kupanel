@@ -34,13 +34,13 @@ input[type="checkbox"] {
   @apply hidden;
 
   + label {
-    @apply cursor-pointer font-extralight	text-base text-input-label select-none;
+    @apply cursor-pointer font-extralight	text-base text-input-label-color select-none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     span {
-      @apply inline-block cursor-pointer relative bg-transparent  border-2 border-input-border border-solid box-border align-middle;
+      @apply inline-block cursor-pointer relative bg-transparent  border-2 border-input-border-color border-solid box-border align-middle;
       width: 18px;
       height: 18px;
       border-radius: 3px;

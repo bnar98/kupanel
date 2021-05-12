@@ -18,7 +18,7 @@ export default {
     AppshellSidebar: AppshellSidebar,
     SideMenuItem: SideMenuItem,
     SideMenuSubItem: SideMenuSubItem,
-    Breadcrumb: Breadcrumb
+    Breadcrumb: Breadcrumb,
     Tabs: Tabs,
     Tab: Tab
 

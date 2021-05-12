@@ -8,7 +8,8 @@ import SideMenuSubItem from './SideMenuSubItem.vue'
 import Breadcrumb from './Breadcrumb.vue'
 import Tabs from "./tabs/Tabs.vue";
 import Tab from "./tabs/Tab.vue";
-
+import Table from "./table/Table.vue";
+import TableRow from "./table/TableRow.vue";
 
 export default {
     Button: Button,
@@ -20,6 +21,8 @@ export default {
     SideMenuSubItem: SideMenuSubItem,
     Breadcrumb: Breadcrumb,
     Tabs: Tabs,
-    Tab: Tab
+    Tab: Tab,
+    Table: Table,
+    TableRow: TableRow
 
 }

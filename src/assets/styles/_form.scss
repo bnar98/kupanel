@@ -1,0 +1,171 @@
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content
+  }
+  :-moz-placeholder {
+    @content
+  }
+  ::-moz-placeholder {
+    @content
+  }
+  :-ms-input-placeholder {
+    @content
+  }
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  @apply text-input-placeholder-color opacity-100;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  @apply text-input-placeholder-color;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  @apply text-input-placeholder-color;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="color"],
+input[type="range"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  @apply font-normal text-input-default py-2.5 px-3.5 rounded-lg bg-input-background-color outline-none transition-colors duration-100 ease-in-out
+   border border-solid border-input-border-color box-border w-full;
+   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.error {
+    @apply border-red-light;
+  }
+
+  &.success {
+    @apply border-green-light;
+  }
+
+  &:focus {
+    @apply border-input-focus-border-color;
+  }
+
+  &[class^="icon-"],
+  &[class*=" icon-"] {
+    @apply pr-8;
+  }
+
+  + .icon {
+    @apply text-icon-default absolute p-2.5 bottom-2.5 pl-2 text-gray-600;
+  }
+
+  &:after {
+    @apply absolute text-black;
+    content: '';
+  }
+
+}
+
+input:disabled, .disabled{
+  @apply cursor-not-allowed;
+}
+
+.input-container {
+  @apply w-full relative flex items-center;
+}
+
+.input-separator {
+  @apply absolute my-0 mx-9 bg-vertical-seperator-color h-4;
+  width: 1px;
+}
+
+.input-icon {
+  @apply absolute my-0 mx-3;
+}
+
+textarea {
+  @apply resize-y;
+}
+
+.label {
+  @apply text-input-label-color pb-0 text-input-label-color pb-2 block text-input-label;
+}
+
+.sub-label {
+  @apply text-input-sub-label-color text-input-sub-label pb-2 block;
+}
+
+.form-group {
+  @apply mt-8 relative;
+
+}
+
+.localization-rtl{
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="color"],
+  input[type="range"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  textarea {
+    @apply text-right;
+  }
+
+  .input-with-icon {
+    @apply pr-12;
+  }
+
+  .form-group {
+
+    + .btn {
+      @apply mr-2.5;
+    }
+
+  }
+
+}
+
+.localization-ltr{
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="color"],
+  input[type="range"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  textarea {
+    @apply text-left;
+  }
+
+  .input-with-icon {
+    @apply pl-12;
+  }
+
+  .form-group {
+
+    + .btn {
+      @apply ml-2.5;
+    }
+
+  }
+
+}

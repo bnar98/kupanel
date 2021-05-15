@@ -21,34 +21,71 @@
     </div>
 
 </template>
-<script lang="ts">
+<script lang="js">
 
-  import { Component, Prop, Vue } from 'vue-property-decorator'
+  export default {
 
-  @Component
-  export default class Tabs extends Vue {
+    data(){
 
-    private tabs: Array<object> = []
+      return {
+        tabs: []
+      }
 
-    @Prop({required: false, type: String, default: 'default'}) readonly height!: string;
+    },
 
-    public selectTab(selectedTab: any): void {
-        // this.$emit('getActiveId', selectedTab.id);
-        this.tabs.forEach((tab: any) => {
-            tab.componentInstance.isActive = (tab.componentInstance.name === selectedTab.componentInstance.name);
-        })
-    }
-
-    created() {
+    mounted() {
       if (this.$slots.default){
         this.tabs = this.$slots.default.filter((tab) => {
-          if (tab.tag)
-          return tab.tag.substr(tab.tag.length - 3) === 'Tab';
+          if (tab.tag){
+            const tag = tab.tag.substr(tab.tag.length - 3);
+            return (tag === 'tab' || tag === 'Tab');}
         })
       }
-    }
+    },
 
+    methods:{
+      selectTab(selectedTab) {
+        this.tabs.forEach((tab) => {
+            tab.componentInstance.isActive = (tab.componentInstance.name === selectedTab.componentInstance.name);
+        })
+
+      }
+    },
+
+    props: {
+      height: {
+        default: 'default',
+        type: String
+      }
+    }
   }
+
+  // import { Component, Prop, Vue } from 'vue-property-decorator'
+  //
+  // @Component
+  // export default class Tabs extends Vue {
+  //
+  //   private tabs: Array<object> = []
+  //
+  //   @Prop({required: false, type: String, default: 'default'}) readonly height!: string;
+  //
+  //   public selectTab(selectedTab: any): void {
+  //       // this.$emit('getActiveId', selectedTab.id);
+  //       this.tabs.forEach((tab: any) => {
+  //           tab.componentInstance.isActive = (tab.componentInstance.name === selectedTab.componentInstance.name);
+  //       })
+  //   }
+  //
+  //   created() {
+  //     if (this.$slots.default){
+  //       this.tabs = this.$slots.default.filter((tab) => {
+  //         if (tab.tag)
+  //         return tab.tag.substr(tab.tag.length - 3) === 'Tab';
+  //       })
+  //     }
+  //   }
+  //
+  // }
 
 </script>
 

@@ -10,6 +10,7 @@ import Tabs from "./tabs/Tabs.vue";
 import Tab from "./tabs/Tab.vue";
 import Table from "./table/Table.vue";
 import TableRow from "./table/TableRow.vue";
+import Modal from "./Modal.vue";
 
 export default {
     Button: Button,
@@ -23,6 +24,7 @@ export default {
     Tabs: Tabs,
     Tab: Tab,
     Table: Table,
-    TableRow: TableRow
+    TableRow: TableRow,
+    Modal: Modal
 
 }

@@ -5,3 +5,9 @@ body{
     @apply  font-dana;
     direction: var(--app-direction);
 }
+a,
+li,
+p,
+span {
+    @apply text-base text-gray-800;
+}

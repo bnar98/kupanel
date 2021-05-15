@@ -10,6 +10,7 @@ import Tabs from "./tabs/Tabs.vue";
 import Tab from "./tabs/Tab.vue";
 import Table from "./table/Table.vue";
 import TableRow from "./table/TableRow.vue";
+import HorizontalSelect from "./HorizontalSelect.vue";
 import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
@@ -27,6 +28,7 @@ export default {
     Tab: Tab,
     Table: Table,
     TableRow: TableRow,
+    HorizontalSelect: HorizontalSelect,
     RadioButton: RadioButton,
     Modal: Modal,
     InputTag:InputTag

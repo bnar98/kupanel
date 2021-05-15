@@ -1,4 +1,11 @@
-@import 'transitions';
-body{
-    @apply  font-dana
+@import "transitions";
+
+body {
+    @apply font-dana;
+}
+a,
+li,
+p,
+span {
+    @apply text-base text-gray-800;
 }

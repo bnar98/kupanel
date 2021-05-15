@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-item" :class="{'expend': expand}">
+    <div class="menu-item w-full" :class="{'expend': expand}">
         <router-link :to="route" class="parent-menu" @click.native="expandIfNeeded">
             <ion-icon v-if="currentRout" :name="icon" class="icon"></ion-icon>
             <ion-icon v-if="!currentRout" :name="icon + '-outline'" class="icon"></ion-icon>
@@ -61,84 +61,133 @@
 
 <style lang="scss">
     .menu-item{
-        width: 100%;
-        //border-top: 1px solid var(--white-color);
-        //border-bottom: 1px solid var(--white-color);
         a{
-        text-decoration: none;
+            @apply no-underline;
         }
         &.expend{
-        background-color: var(--sidemenu-expend-background-color);
-        border-top: 1px solid var(--sidemenu-expend-seperator-color);
-        border-bottom: 1px solid var(--sidemenu-expend-seperator-color);
+            @apply bg-sidemenu-expend-background-color border-t border-b border-solid border-sidemenu-expend-seperator-color ;
+            .parent-menu{
+                .icon{
+                    @apply text-sidemenu--active-icon-color;
+                }
+            }
+            .sub-menu-box{
+                transition: all  var(--sidemenu-animation-duration);
+                @apply max-h-full;
+                .sub-menu-list{
+                    @apply py-2 px-0 block;
+                }
+            }
+        }
         .parent-menu{
+            
+            @apply flex items-center text-title-color cursor-pointer h-14;
             .icon{
-            color: var(--sidemenu--active-icon-color);
+                @apply text-icon-default text-sidemenu-icon-color absolute;
             }
-        }
-        .sub-menu-box{
-            transition: all  var(--sidemenu-animation-duration);
-            max-height: 100000px;
-            padding: 8px 0;
-            .sub-menu-list{
-            display: block;
+            span{
+                @apply w-44 whitespace-nowrap;
             }
-        }
-        }
-        .parent-menu{
-        display: flex;
-        align-items: center;
-        color: var(--title-color);
-        cursor: pointer;
-        height: 52px;
-        .icon{
-            color: var(--sidemenu-icon-color);
-            font-size: var(--icon-default-font-size);
-            position: absolute;
-        }
-        span{
-            white-space: nowrap;
-            width: 180px;
-        }
-        &:hover, &.active{
-            background-color: var(--sidemenu-hover-background-color);
-        }
-        }
-        .sub-menu-box{
-        overflow: hidden;
-        max-height: 0;
-        transition: all var(--sidemenu-animation-duration);
-        .sub-menu-list{
-            display: none;
-            .sub-menu-item{
-            position: relative;
-            cursor: pointer;
 
-            list-style: none;
-            a{
-                color: var(--sub-title-color);
-                width: 173px;
-                display: block;
-            }
-            &.active{
-                a{
-                color: var(--primary-color);
-                }
-                &:before{
-                width: 5px;
-                height: 5px;
-                border-radius: 9999px;
-                background-color: var(--sidemenu-expend-right-border-color);
-                position: absolute;
-                content: '';
-                bottom: 10px;
-                }
-            }
-            }
-            .sub-menu-item:not(:first-child){
-            padding-top: 22px;
+            &:hover, &.active{
+                @apply bg-sidemenu-hover-background-color;
             }
         }
+        .sub-menu-box{
+        transition: all var(--sidemenu-animation-duration);
+            @apply overflow-hidden max-h-0;
+            .sub-menu-list{
+                @apply hidden;
+                .sub-menu-item{
+                    @apply relative cursor-pointer list-none;
+                    a{
+                        @apply w-44 block text-sub-title-color;
+                    }
+                    &.active{
+                        a{
+                            @apply text-primary;
+                        }
+                        &:before{
+                            content: '';
+                            @apply w-1 h-1 rounded-full bg-sidemenu-expend-right-border-color absolute bottom-3;
+                        }
+                    }
+                }
+                .sub-menu-item:not(:first-child){
+                    @apply pt-6;
+                }
+            }
         }
     }
+
+
+.localization-rtl {
+    .menu-item {
+        &.expend {
+            .sub-menu-box {
+                @apply border-r-4 border-solid border-sidemenu-active-border-color;
+            }
+        }
+        .parent-menu {
+            @apply border-r-4 border-solid border-default-border-color;
+            .icon {
+                @apply right-5;
+            }
+
+            &:hover, &.active {
+                @apply border-r-4 border-solid border-sidemenu-active-border-color;
+            }
+        }
+        .sub-menu-box {
+            @apply border-r-4 border-solid border-white;
+            .sub-menu-list {
+                @apply border-r-2 border-solid border-sidemenu-expend-right-border-color px-8 mr-7;
+                .sub-menu-item {
+                    &.active {
+                        &:before {
+                            @apply -right-10;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.localization-ltr {
+    .menu-item {
+        &.expend {
+            .sub-menu-box {
+                 @apply border-l-4 border-solid border-sidemenu-active-border-color border-r-0;
+            }
+        }
+        .parent-menu {
+            @apply border-l-4 border-solid border-default-border-color border-r-0;
+            .icon {
+                @apply left-5;
+            }
+
+            &:hover, &.active {
+                @apply border-l-4 border-solid border-sidemenu-active-border-color border-r-0;
+            }
+        }
+        .sub-menu-box {
+            @apply border-l-4 border-solid border-white border-r-0;
+            .sub-menu-list {
+                margin-left: 28px;
+                @apply border-l-2 border-solid border-sidemenu-expend-right-border-color border-r-0 px-9 ml-7;
+                .sub-menu-item {
+                    &.active {
+                        &:before {
+                            @apply -left-10;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+    
 </style>

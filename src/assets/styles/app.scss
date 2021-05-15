@@ -1,7 +1,9 @@
-@import "transitions";
+@import 'transitions';
+@import '_form';
 
-body {
-    @apply font-dana;
+body{
+    @apply  font-dana;
+    direction: var(--app-direction);
 }
 a,
 li,

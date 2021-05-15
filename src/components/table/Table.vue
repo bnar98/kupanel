@@ -15,19 +15,47 @@
     </div>
 </template>
 
-<script lang="ts">
-  import { Component, Prop, Vue } from 'vue-property-decorator'
+<script lang="js">
+  export default {
 
-  @Component
-  export default class Table extends Vue {
+    props:{
 
-    @Prop({required: false, type: Boolean, default: false}) collapsible!: boolean
-    @Prop({required: false, type: Array, default: function () {
-        return []
-      }}) headers!: any
-    @Prop({required: false, type: Boolean, default: false}) hasActions!: boolean
+      collapsible: {
+        type: Boolean,
+        default: false,
+        require: false
+      },
+
+      headers: {
+        type:Array,
+        default: function () {
+          return []
+        },
+        required: false
+      },
+
+      hasActions:{
+        type: Boolean,
+        default: false,
+        require: false
+      }
+
+    }
+
 
   }
+  // import { Component, Prop, Vue } from 'vue-property-decorator'
+  //
+  // @Component
+  // export default class Table extends Vue {
+  //
+  //   @Prop({required: false, type: Boolean, default: false}) collapsible!: boolean
+  //   @Prop({required: false, type: Array, default: function () {
+  //       return []
+  //     }}) headers!: any
+  //   @Prop({required: false, type: Boolean, default: false}) hasActions!: boolean
+  //
+  // }
 
 </script>
 

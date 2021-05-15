@@ -28,41 +28,96 @@
 
 </template>
 
-<script lang="ts">
-  import { Component, Prop, Emit, Vue } from 'vue-property-decorator'
+<script lang="js">
 
-  @Component
-  export default class TableRow extends Vue {
-    private showDetail: Boolean = false
-    private activeDropDown: Boolean = false
-    private actionsMouseIn: Boolean = false
+  export default {
 
-    @Prop({required: true, type: Object, default: function () {
-      return {}
-      }}) row!: object;
-    @Prop({required: false, type: Array, default: function () {
-        return []
-      }}) actions!: any;
+    data(){
 
-      // This function is for opening and closing boxes under each row
-      public toggleContent () :void {
-        this.showDetail = !this.showDetail
+      return {
+        showDetail: false,
+        activeDropDown: false,
+        actionsMouseIn:false
       }
+
+    },
+
+    props:{
+      row: {
+        type: Object,
+        default: function () {
+          return {}
+        },
+        required: true
+      },
+      actions:{
+        type:Array,
+        default: function () {
+          return []
+        },
+        required: false
+      }
+
+
+    },
+
+    methods: {
+      //This function is for opening and closing boxes under each row
+      toggleContent: function () {
+        this.showDetail = !this.showDetail;
+      },
       //This function is for opening and closing action boxes
-      public dropDown ():void {
-        this.activeDropDown = ! this.activeDropDown
-      }
+      dropDown: function () {
+        this.activeDropDown = ! this.activeDropDown;
+      },
       //This method is for closing action boxes, When one of the actions is selected
-      @Emit('bus')
-      public selectAction(actionName: any, row: Object) :void{
-        this.activeDropDown = false
-      }
-      public closeDropdown():void {
+      selectAction: function(actionName, row) {
+        this.activeDropDown = false;
+        this.$emit('bus', actionName ,row)
+      },
+      closeDropdown: function() {
         if (!this.actionsMouseIn){
-          this.activeDropDown = false;
+          this.activeDropDown = '';
         }
 
       }
+    }
+
   }
+  // import { Component, Prop, Emit, Vue } from 'vue-property-decorator'
+  //
+  // @Component
+  // export default class TableRow extends Vue {
+  //   private showDetail: Boolean = false
+  //   private activeDropDown: Boolean = false
+  //   private actionsMouseIn: Boolean = false
+  //
+  //   @Prop({required: true, type: Object, default: function () {
+  //     return {}
+  //     }}) row!: object;
+  //   @Prop({required: false, type: Array, default: function () {
+  //       return []
+  //     }}) actions!: any;
+  //
+  //     // This function is for opening and closing boxes under each row
+  //     public toggleContent () :void {
+  //       this.showDetail = !this.showDetail
+  //     }
+  //     //This function is for opening and closing action boxes
+  //     public dropDown ():void {
+  //       this.activeDropDown = ! this.activeDropDown
+  //     }
+  //     //This method is for closing action boxes, When one of the actions is selected
+  //     @Emit('bus')
+  //     public selectAction(actionName: any, row: Object) :void{
+  //       this.activeDropDown = false
+  //     }
+  //     public closeDropdown():void {
+  //       if (!this.actionsMouseIn){
+  //         this.activeDropDown = false;
+  //       }
+  //
+  //     }
+  // }
 
 </script>

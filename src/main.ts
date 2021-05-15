@@ -13,6 +13,7 @@ window.$ = window.jQuery = require('jquery');
 
 Vue.config.productionTip = false
 Vue.config.ignoredElements = [/^ion-/]
+
 export default {
   install (Vue: any, perfix:String) {
   if (!perfix) {
@@ -23,4 +24,3 @@ export default {
   })
   }
  }
- 

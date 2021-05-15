@@ -14,6 +14,7 @@ import HorizontalSelect from "./HorizontalSelect.vue";
 import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
+import InputCode from "./InputCode.vue"
 
 export default {
     Button: Button,
@@ -31,6 +32,7 @@ export default {
     HorizontalSelect: HorizontalSelect,
     RadioButton: RadioButton,
     Modal: Modal,
-    InputTag:InputTag
+    InputTag:InputTag,
+    InputCode:InputCode
 
 }

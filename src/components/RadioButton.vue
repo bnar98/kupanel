@@ -1,8 +1,8 @@
 <template>
-  <div class="flex align-start">
+  <div class="flex items-start">
     <template v-for="(item, index) in items">
       <div
-        :class="['radio-holder', { disabled: disabled }]"
+        :class="['py-0 px-1', { disabled: disabled }]"
         @click="toggle(item)"
         :key="index"
       >
@@ -10,7 +10,7 @@
         <label
           ><span></span
           >{{
-            translatePrefix ? $t(translatePrefix + item.title) : item.title
+            translatePrefix ? translatePrefix + item.title : item.title
           }}</label
         >
       </div>
@@ -50,40 +50,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-//radio
-
-.radio-holder {
-  padding: 0 4px;
-}
-
 input[type="radio"] {
-  display: none;
+  @apply hidden;
 }
 
 input[type="radio"] + label {
+  @apply select-none text-input-label text-input-label-color font-extralight;
   -ms-user-select: none;
-  user-select: none;
-  font-size: var(--input-label-size);
-  color: var(--input-label-color);
-  font-weight: 200;
 }
 
 input[type="radio"] + label span {
-  background-color: #fff;
-  display: inline-block;
+  @apply bg-white inline-block border-2 border-solid border-input-border-color cursor-pointer relative align-middle;
   width: 14px;
   height: 14px;
-  border: 2px solid var(--input-border-color);
   border-radius: 50%;
-  cursor: pointer;
-  position: relative;
   margin-top: -1px;
-  vertical-align: middle;
 }
 
 input[type="radio"] + label span:after {
+  @apply absolute;
   background-color: inherit;
-  position: absolute;
   border-radius: 50%;
   content: "";
   width: 107%;
@@ -95,14 +81,14 @@ input[type="radio"] + label span:after {
 }
 
 input[type="radio"]:checked + label {
-  pointer-events: none;
+  @apply pointer-events-none;
 }
 
 input[type="radio"]:checked + label span {
-  border: 2px solid var(--primary-color);
+  @apply border-2 border-solid border-primary;
 }
 
 input[type="radio"]:checked + label span:after {
-  background-color: var(--primary-color);
+  @apply bg-primary;
 }
 </style>

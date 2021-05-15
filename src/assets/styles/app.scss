@@ -1,4 +1,5 @@
 @import 'transitions';
 body{
-    @apply  font-dana
+    @apply  font-dana;
+    direction: var(--app-direction);
 }

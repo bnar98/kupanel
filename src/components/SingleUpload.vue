@@ -13,13 +13,16 @@
         <div class="upload-img dropzone-previews">
           <img
             class="upload-img-preview"
-            :src="
-              url
-                ? `${$store.state.static.fileBaseUrl}file/free/${url}`
-                : '/images/users/defaultUser.svg'
-            "
+            src="./../assets/images/users/defaultUser.svg"
             alt=""
-            v-if="uploaded.length === 0 && !uploading"
+            v-if="uploaded.length === 0 && !uploading && !url"
+          />
+          <img
+            class="upload-img-preview"
+            :src="`${baseUrl}/free/${url}`
+"
+            alt=""
+            v-if="uploaded.length === 0 && !uploading && url"
           />
           <span class="upload-img-btn"
             ><ion-icon name="camera-outline"></ion-icon
@@ -39,7 +42,7 @@ export default {
     return {
       url: null,
       dropzoneOptions: {
-        url: process.env.VUE_APP_FILE_SERVER_URL + "file",
+        url: this.baseUrl,
         paramName: "file",
         uploadMultiple: false,
         maxFiles: 1,
@@ -49,7 +52,6 @@ export default {
           auth: localStorage.getItem("credentials"),
         },
       },
-      baseUrl: "",
       uploaded: [],
       uploading: false,
     };
@@ -88,11 +90,19 @@ export default {
     this.url = this.value;
   },
 
-  mounted() {
-    this.baseUrl = process.env.VUE_APP_FILE_SERVER_URL;
-  },
+  props: {
+    value: {
+      default: '',
+      type: String,
+      required: true
+    },
+    baseUrl: {
+      default: '',
+      type: String,
+      required: true
+    }
+  }
 
-  props: ["value"],
 };
 </script>
 <style lang="scss" scoped>

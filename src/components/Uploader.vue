@@ -1,24 +1,16 @@
 <template>
-  <div class="grid grid-cols-1 grid-flow-col gap-1">
-    <div class="col-span-1 form-group">
-      <label for="dropzone" class="label">{{ title }}</label>
-      <label for="dropzone" class="sub-label">{{ description }}</label>
+  <div class="row">
+    <div class="col-xs-12 form-group">
+      <label for="dropzone" class="label">{{ $t('uploader.title') }}</label>
+      <label for="dropzone" class="sub-label">{{ $t('uploader.description') }}</label>
       <div class="dropzone-box">
-        <vue-dropzone
-          :key="multi + 'myVueDropzone'"
-          ref="myVueDropzone"
-          id="dropzone"
-          :options="dropzoneOptions"
-          :useCustomSlot="true"
-          v-on:vdropzone-success="uploadSuccess"
-          @vdropzone-max-files-exceeded="maxfilesexceeded"
-        >
+        <vue-dropzone :key="multi + 'myVueDropzone'" ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"
+                      :useCustomSlot="true" v-on:vdropzone-success="uploadSuccess" @vdropzone-max-files-exceeded="maxfilesexceeded">
           <div class="dropzone-custom-content">
             <ion-icon class="icon" name="image-outline"></ion-icon>
             <div>
-              <span class="title">{{ guide }}</span
-              ><br />
-              <span class="subtitle">{{ max }}</span>
+              <span class="title">{{ $t('uploader.guide') }}</span><br>
+              <span class="subtitle">{{ $t('uploader.max') }}</span>
             </div>
           </div>
         </vue-dropzone>
@@ -36,7 +28,7 @@ export default {
     return {
       multi: true,
       dropzoneOptions: {
-        url: process.env.VUE_APP_FILE_SERVER_URL + "file",
+        url: this.baseUrl,
         paramName: "file",
         uploadMultiple: false,
         maxFiles: 100,
@@ -53,6 +45,11 @@ export default {
     multiple: {
       default: true,
       type: Boolean,
+    },
+    baseUrl: {
+      default: '',
+      type: String,
+      required: true
     },
   },
 

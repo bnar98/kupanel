@@ -14,6 +14,8 @@ import HorizontalSelect from "./HorizontalSelect.vue";
 import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
+import Uploader from "./Uploader.vue";
+import SingleUpload from "./SingleUpload.vue";
 import InputCode from "./InputCode.vue"
 import SelectBox from "./SelectBox.vue"
 import ValidationViewer from "./ValidationViewer.vue"
@@ -35,6 +37,9 @@ export default {
     HorizontalSelect: HorizontalSelect,
     RadioButton: RadioButton,
     Modal: Modal,
+    InputTag: InputTag,
+    Uploader: Uploader,
+    SingleUpload: SingleUpload,
     InputTag:InputTag,
     InputCode:InputCode,
     SelectBox:SelectBox,

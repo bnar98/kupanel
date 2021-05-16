@@ -136,6 +136,7 @@
         ul {
 
           li{
+            @apply ml-2;
 
             .tag-content{
 
@@ -164,6 +165,7 @@
         ul {
 
           li{
+            @apply mr-2;
 
             .tag-content{
 

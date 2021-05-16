@@ -16,7 +16,14 @@ import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
 import HeaderAvatar from './HeaderAvatar.vue'
-
+import Uploader from "./Uploader.vue";
+import SingleUpload from "./SingleUpload.vue";
+import InputCode from "./InputCode.vue"
+import SelectBox from "./SelectBox.vue"
+import ValidationViewer from "./ValidationViewer.vue"
+import AddressSelector from "./AddressSelector.vue"
+import EmptyComponent from "./EmptyComponent.vue"
+import ConfirmDialog from "./ConfirmDialog.vue"
 export default {
     Button: Button,
     Checkbox: Checkbox,
@@ -35,6 +42,15 @@ export default {
     RadioButton: RadioButton,
     Modal: Modal,
     InputTag:InputTag,
-    HeaderAvatar: HeaderAvatar
+    HeaderAvatar: HeaderAvatar,
+    InputTag: InputTag,
+    Uploader: Uploader,
+    SingleUpload: SingleUpload,
+    InputCode:InputCode,
+    SelectBox:SelectBox,
+    ValidationViewer:ValidationViewer,
+    AddressSelector:AddressSelector,
+    EmptyComponent:EmptyComponent,
+    ConfirmDialog:ConfirmDialog
 
 }

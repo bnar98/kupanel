@@ -1,9 +1,20 @@
 @import 'transitions';
 @import '_form';
 
+@layer base {
+    h3 {
+        @apply block text-lg font-bold my-4;
+    }
+
+    p{
+        @apply block my-4 leading-relaxed;
+    }
+}
+
 body{
     @apply  font-dana;
     direction: var(--app-direction);
+    overflow: hidden;
 }
 a,
 li,

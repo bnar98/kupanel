@@ -15,6 +15,7 @@ import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
 import InputCode from "./InputCode.vue"
+import SelectBox from "./SelectBox.vue"
 
 export default {
     Button: Button,
@@ -33,6 +34,7 @@ export default {
     RadioButton: RadioButton,
     Modal: Modal,
     InputTag:InputTag,
-    InputCode:InputCode
+    InputCode:InputCode,
+    SelectBox:SelectBox
 
 }

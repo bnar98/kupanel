@@ -16,7 +16,7 @@
             :src="
               url
                 ? `${$store.state.static.fileBaseUrl}file/free/${url}`
-                : '../images/defaultUser.svg'
+                : '/images/users/defaultUser.svg'
             "
             alt=""
             v-if="uploaded.length === 0 && !uploading"

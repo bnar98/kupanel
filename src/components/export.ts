@@ -21,6 +21,7 @@ import SelectBox from "./SelectBox.vue"
 import ValidationViewer from "./ValidationViewer.vue"
 import AddressSelector from "./AddressSelector.vue"
 import EmptyComponent from "./EmptyComponent.vue"
+import ConfirmDialog from "./ConfirmDialog.vue"
 
 export default {
     Button: Button,
@@ -45,6 +46,7 @@ export default {
     SelectBox:SelectBox,
     ValidationViewer:ValidationViewer,
     AddressSelector:AddressSelector,
-    EmptyComponent:EmptyComponent
+    EmptyComponent:EmptyComponent,
+    ConfirmDialog:ConfirmDialog
 
 }

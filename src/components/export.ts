@@ -1,6 +1,7 @@
 import Appshell from './Appshell.vue'
 import AppshellHeader from './AppshellHeader.vue'
 import AppshellSidebar from './AppshellSidebar.vue'
+import pageContent from './pageContent.vue'
 import Button from './Button.vue'
 import Checkbox from './Checkbox.vue'
 import SideMenuItem from './SideMenuItem.vue'
@@ -14,6 +15,7 @@ import HorizontalSelect from "./HorizontalSelect.vue";
 import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
+import HeaderAvatar from './HeaderAvatar.vue'
 
 export default {
     Button: Button,
@@ -21,6 +23,7 @@ export default {
     Appshell: Appshell,
     AppshellHeader: AppshellHeader,
     AppshellSidebar: AppshellSidebar,
+    pageContent: pageContent,
     SideMenuItem: SideMenuItem,
     SideMenuSubItem: SideMenuSubItem,
     Breadcrumb: Breadcrumb,
@@ -31,6 +34,7 @@ export default {
     HorizontalSelect: HorizontalSelect,
     RadioButton: RadioButton,
     Modal: Modal,
-    InputTag:InputTag
+    InputTag:InputTag,
+    HeaderAvatar: HeaderAvatar
 
 }

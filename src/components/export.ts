@@ -20,6 +20,7 @@ import InputCode from "./InputCode.vue"
 import SelectBox from "./SelectBox.vue"
 import ValidationViewer from "./ValidationViewer.vue"
 import AddressSelector from "./AddressSelector.vue"
+import EmptyComponent from "./EmptyComponent.vue"
 
 export default {
     Button: Button,
@@ -40,10 +41,10 @@ export default {
     InputTag: InputTag,
     Uploader: Uploader,
     SingleUpload: SingleUpload,
-    InputTag:InputTag,
     InputCode:InputCode,
     SelectBox:SelectBox,
     ValidationViewer:ValidationViewer,
-    AddressSelector:AddressSelector
+    AddressSelector:AddressSelector,
+    EmptyComponent:EmptyComponent
 
 }

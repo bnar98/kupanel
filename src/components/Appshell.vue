@@ -1,16 +1,14 @@
 <template>
-    <div class="">
+    <div class="all">
         <!-- header -->
         <slot name="header"></slot>
 
-        <div class="flex flex-row-reverse">
+        <div class="flex h-screen">
             <!-- sidebar  -->
             <slot name="sidebar"></slot>
             <!-- body -->
-            <div id="main-content" class="relative top-16" :class="state" >
-                <div class="col-xs">
-                    <slot name="content"></slot>
-                </div>
+            <div id="main-content" class="bg-background-color w-full h-full mt-16 pb-16 overflow-y-auto overflow-x-hidden" :class="state" >
+                <slot name="content"></slot>
             </div>
         </div>
     </div>
@@ -41,16 +39,31 @@ export default {
 </script>
 
 <style lang="scss">
-#main-content {
-    &.wide{
-        @apply pr-20;
-    }
 
-    &.narrow{
-        @apply pr-64;
-    }
 
-  }
+
+.localization-rtl {
+    #main-content {
+        &.wide{
+            @apply pr-20;
+        }
+        &.narrow{
+            @apply pr-64;
+        }
+    }
+}
+
+.localization-ltr {
+    #main-content {
+        &.wide{
+            @apply pl-16;
+        }
+        &.narrow{
+            @apply pl-64;
+        }
+    }
+}
+
     
 </style>
 

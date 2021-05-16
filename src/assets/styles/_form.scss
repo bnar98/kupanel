@@ -106,6 +106,18 @@ textarea {
 
 }
 
+.help {
+  @apply w-full text-xs;
+
+  &.error{
+    @apply text-red-light;
+  }
+
+  &:not(.error) {
+    @apply text-gray-700;
+  }
+}
+
 .localization-rtl{
   input[type="text"],
   input[type="password"],

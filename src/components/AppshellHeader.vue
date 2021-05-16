@@ -5,11 +5,8 @@
       <ion-icon name="menu-outline" size="large" class="text-icon-color p-4 cursor-pointer" @click="toggle"></ion-icon>
       <slot name="right"></slot>
     </div>
-    
     <slot name="center"></slot>
     <slot name="left"></slot>
-    
-    
   </div>
 </template>
 <script>

@@ -14,6 +14,7 @@
 body{
     @apply  font-dana;
     direction: var(--app-direction);
+    overflow: hidden;
 }
 a,
 li,

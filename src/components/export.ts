@@ -15,6 +15,7 @@ import HorizontalSelect from "./HorizontalSelect.vue";
 import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
+import LabelIcon from "./LabelIcon.vue";
 import HeaderAvatar from './HeaderAvatar.vue'
 import Uploader from "./Uploader.vue";
 import SingleUpload from "./SingleUpload.vue";
@@ -41,6 +42,8 @@ export default {
     HorizontalSelect: HorizontalSelect,
     RadioButton: RadioButton,
     Modal: Modal,
+    InputTag: InputTag,
+    LabelIcon: LabelIcon,
     InputTag:InputTag,
     HeaderAvatar: HeaderAvatar,
     InputTag: InputTag,

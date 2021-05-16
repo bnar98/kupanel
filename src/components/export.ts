@@ -15,6 +15,7 @@ import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
 import Uploader from "./Uploader.vue";
+import SingleUpload from "./SingleUpload.vue";
 
 export default {
     Button: Button,
@@ -33,6 +34,7 @@ export default {
     RadioButton: RadioButton,
     Modal: Modal,
     InputTag: InputTag,
-    Uploader: Uploader
+    Uploader: Uploader,
+    SingleUpload: SingleUpload
 
 }

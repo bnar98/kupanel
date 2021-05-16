@@ -72,7 +72,7 @@
 
     .select-box {
       @apply flex items-center justify-between relative cursor-pointer bg-input-background-color
-      font-extralight text-sm py-2 px-1 rounded-lg outline-none box-border;
+      font-extralight text-sm py-2 px-1 rounded-lg outline-none box-border border border-solid border-input-border-color;
 
       &:focus {
         @apply border border-solid border-input-focus-border-color;

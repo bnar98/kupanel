@@ -9,6 +9,7 @@ import './assets/tailwind.css'
 import './assets/styles/app.scss'
 import kuComponents from './components/export'
 
+
 // @ts-ignore
  window.$ = window.jQuery = require('jquery');
 

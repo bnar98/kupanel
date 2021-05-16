@@ -16,6 +16,8 @@ import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
 import InputCode from "./InputCode.vue"
 import SelectBox from "./SelectBox.vue"
+import ValidationViewer from "./ValidationViewer.vue"
+import AddressSelector from "./AddressSelector.vue"
 
 export default {
     Button: Button,
@@ -35,6 +37,8 @@ export default {
     Modal: Modal,
     InputTag:InputTag,
     InputCode:InputCode,
-    SelectBox:SelectBox
+    SelectBox:SelectBox,
+    ValidationViewer:ValidationViewer,
+    AddressSelector:AddressSelector
 
 }

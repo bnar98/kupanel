@@ -1,8 +1,8 @@
 <template>
-    <div class="avatar relative" @click="toggle">
+    <div class="avatar relative" @click="toggle" v-click-outside="hideDropDown">
         <img :src="avatar" alt="avatar" class="w-10 cursor-pointer rounded-full">
         <transition name="fade">
-            <div v-show="showMenu" class="drodown absolute w-72 h-auto bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg mt-3">
+            <div v-show="showMenu" class="drodown absolute w-72 h-auto bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg mt-3" >
                 <div class="dropdown-items ">
                     <slot name="item"></slot>
                 </div>
@@ -24,6 +24,9 @@ export default {
     methods: {
         toggle(){
             this.showMenu = !this.showMenu;
+        },
+        hideDropDown(){
+            this.showMenu = false;
         }
     },
     props: {

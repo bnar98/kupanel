@@ -34,6 +34,7 @@ import Input from "./Input.vue"
 import Textarea from "./Textarea.vue"
 import MainLoading from "./MainLoading.vue"
 import Flash from "./Flash.vue"
+import Status from "./Status.vue"
 
 export default {
     Button: Button,
@@ -71,6 +72,7 @@ export default {
     Textarea:Textarea,
     InputTag:InputTag,
     MainLoading:MainLoading,
-    Flash:Flash
+    Flash:Flash,
+    Status:Status
 
 }

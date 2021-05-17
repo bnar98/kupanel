@@ -26,6 +26,7 @@ import AddressSelector from "./AddressSelector.vue"
 import EmptyComponent from "./EmptyComponent.vue"
 import ConfirmDialog from "./ConfirmDialog.vue"
 import Input from "./Input.vue"
+import Textarea from "./Textarea.vue"
 
 export default {
     Button: Button,
@@ -55,6 +56,7 @@ export default {
     AddressSelector:AddressSelector,
     EmptyComponent:EmptyComponent,
     ConfirmDialog:ConfirmDialog,
-    Input:Input
+    Input:Input,
+    Textarea:Textarea
 
 }

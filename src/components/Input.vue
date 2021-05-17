@@ -1,11 +1,14 @@
 <template>
-  <div class="input-container">
-    <ion-icon :name="icon" class="input-icon" v-if="icon !== ''"></ion-icon>
-    <span class="input-separator" v-if="separator"></span>
-    <span class="input-unit" v-if="unit">{{unit}}</span>
-    <input :type="type" :class="{'input-with-icon': icon !== '','error': !valid}" @input="handler" @blur="blurHandler"
-           @paste="handlePaste" @keypress='isNumberKey($event)' :placeholder="placeholder"
-           :min="minValue" :disabled="disabled" :value="value">
+  <div class="w-full">
+    <label :for="name" class="label" v-if="label">{{ label }}</label>
+    <div class="input-container">
+      <ion-icon :name="icon" class="input-icon" v-if="icon !== ''"></ion-icon>
+      <span class="input-separator" v-if="separator"></span>
+      <span class="input-unit" v-if="unit">{{unit}}</span>
+      <input :type="type" :class="{'input-with-icon': icon !== '','error': !valid}" @input="handler" @blur="blurHandler"
+             @paste="handlePaste" @keypress='isNumberKey($event)' :placeholder="placeholder"
+             :min="minValue" :disabled="disabled" :value="value" :name="name" :id="name">
+    </div>
   </div>
 </template>
 
@@ -53,7 +56,18 @@
       valid: {
         type: Boolean,
         default: true
+      },
+      name: {
+        type: String,
+        default: '',
+        required:true
+      },
+      label: {
+        type: String,
+        default: '',
+        required:true
       }
+
     },
 
     created() {

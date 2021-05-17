@@ -62,6 +62,7 @@ export default {
     NestedSelect: NestedSelect,
     NestedItem: NestedItem,
     Input:Input,
-    Textarea:Textarea
+    Textarea:Textarea,
+    InputTag:InputTag
 
 }

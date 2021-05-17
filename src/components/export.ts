@@ -33,6 +33,7 @@ import NestedItem from "./nested/NestedItem.vue"
 import Input from "./Input.vue"
 import Textarea from "./Textarea.vue"
 import MainLoading from "./MainLoading.vue"
+import Flash from "./Flash.vue"
 
 export default {
     Button: Button,
@@ -69,6 +70,7 @@ export default {
     Input:Input,
     Textarea:Textarea,
     InputTag:InputTag,
-    MainLoading:MainLoading
+    MainLoading:MainLoading,
+    Flash:Flash
 
 }

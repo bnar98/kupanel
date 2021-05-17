@@ -53,20 +53,15 @@
 
 <style lang="scss">
   .dialog-container {
+    @apply mt-10 mx-auto mb-0 bg-white shadow transition-all duration-300 ease-in rounded-t;
     width: 550px;
-    margin: 40px auto 0;
-    border-radius: 4px 4px 0 0 !important;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-    transition: all .3s ease;
   }
 
   .dialog-container .body {
-    padding: 30px !important;
+    @apply p-7;
   }
 
   .dialog-footer {
-    border-top: 1px solid var(--box-border-color);
-    padding:20px 0;
+    @apply border-t border-solid border-box-border-color py-5 px-0;
   }
 </style>

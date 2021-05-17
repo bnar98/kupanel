@@ -26,6 +26,9 @@ import ValidationViewer from "./ValidationViewer.vue"
 import AddressSelector from "./AddressSelector.vue"
 import EmptyComponent from "./EmptyComponent.vue"
 import ConfirmDialog from "./ConfirmDialog.vue"
+import Input from "./Input.vue"
+import Textarea from "./Textarea.vue"
+
 export default {
     Button: Button,
     Checkbox: Checkbox,
@@ -46,7 +49,6 @@ export default {
     ReadOnlyImages: ReadOnlyImages,
     LabelIcon: LabelIcon,
     HeaderAvatar: HeaderAvatar,
-    InputTag: InputTag,
     Uploader: Uploader,
     SingleUpload: SingleUpload,
     InputCode: InputCode,
@@ -54,6 +56,8 @@ export default {
     ValidationViewer: ValidationViewer,
     AddressSelector: AddressSelector,
     EmptyComponent: EmptyComponent,
-    ConfirmDialog: ConfirmDialog
+    ConfirmDialog: ConfirmDialog,
+    Input:Input,
+    Textarea:Textarea
 
 }

@@ -1,16 +1,26 @@
 <template>
-  <div class="row">
-    <div class="col-xs-12 form-group">
-      <label for="dropzone" class="label">{{ $t('uploader.title') }}</label>
-      <label for="dropzone" class="sub-label">{{ $t('uploader.description') }}</label>
+  <div class="flex flex-row">
+    <div class="w-full form-group">
+      <label for="dropzone" class="label">{{ $t("uploader.title") }}</label>
+      <label for="dropzone" class="sub-label">{{
+        $t("uploader.description")
+      }}</label>
       <div class="dropzone-box">
-        <vue-dropzone :key="multi + 'myVueDropzone'" ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"
-                      :useCustomSlot="true" v-on:vdropzone-success="uploadSuccess" @vdropzone-max-files-exceeded="maxfilesexceeded">
+        <vue-dropzone
+          :key="multi + 'myVueDropzone'"
+          ref="myVueDropzone"
+          id="dropzone"
+          :options="dropzoneOptions"
+          :useCustomSlot="true"
+          v-on:vdropzone-success="uploadSuccess"
+          @vdropzone-max-files-exceeded="maxfilesexceeded"
+        >
           <div class="dropzone-custom-content">
             <ion-icon class="icon" name="image-outline"></ion-icon>
             <div>
-              <span class="title">{{ $t('uploader.guide') }}</span><br>
-              <span class="subtitle">{{ $t('uploader.max') }}</span>
+              <span class="title">{{ $t("uploader.guide") }}</span
+              ><br />
+              <span class="subtitle">{{ $t("uploader.max") }}</span>
             </div>
           </div>
         </vue-dropzone>
@@ -47,9 +57,9 @@ export default {
       type: Boolean,
     },
     baseUrl: {
-      default: '',
+      default: "",
       type: String,
-      required: true
+      required: true,
     },
   },
 
@@ -123,7 +133,7 @@ export default {
     .vue-dropzone {
       .dropzone-custom-content {
         .icon {
-        //   @apply ml-6;
+          //   @apply ml-6;
         }
       }
     }
@@ -135,7 +145,7 @@ export default {
     .vue-dropzone {
       .dropzone-custom-content {
         .icon {
-        //   @apply mr-6;
+          //   @apply mr-6;
         }
       }
     }

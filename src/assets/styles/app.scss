@@ -22,3 +22,21 @@ p,
 span {
     @apply text-base text-gray-800;
 }
+
+//scroll
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    @apply rounded-l-lg bg-scrollbar-track-color;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply rounded-l-lg bg-scrollbar-thumb-color;
+    &:hover {
+        @apply bg-scrollbar-thumb-color;
+    }
+}

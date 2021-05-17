@@ -89,6 +89,10 @@ input:disabled, .disabled{
   @apply absolute my-0 mx-3;
 }
 
+.input-unit{
+  @apply absolute text-sm left-10;
+}
+
 textarea {
   @apply resize-y;
 }

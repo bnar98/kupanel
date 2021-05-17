@@ -91,7 +91,7 @@
   // modal
 
   .modal-mask {
-    @apply fixed top-0 left-0 w-full h-full transition-opacity duration-300 ease-in;
+    @apply fixed top-0 left-0 w-full h-full transition-opacity duration-300 ease-in z-50;
     background-color: rgba(0, 0, 0, .5);
   }
 

@@ -115,11 +115,10 @@ export default {
     border-radius: 50px;
   }
   .upload-img-btn {
-    @apply bg-primary flex items-center justify-center absolute cursor-pointer bottom-0;
+    @apply bg-primary flex items-center justify-center absolute cursor-pointer bottom-0 z-20;
     border-radius: 50px;
     width: 40px;
     height: 40px;
-    z-index: 99;
     * {
       cursor: pointer;
     }

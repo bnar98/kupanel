@@ -60,7 +60,7 @@ input[type="radio"] + label {
 }
 
 input[type="radio"] + label span {
-  @apply bg-white inline-block border-2 border-solid border-input-border-color cursor-pointer relative align-middle;
+  @apply bg-white inline-block border-2 border-solid border-input-border-color cursor-pointer relative align-middle ml-0.5;
   width: 14px;
   height: 14px;
   border-radius: 50%;

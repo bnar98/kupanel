@@ -79,7 +79,7 @@ input[type="checkbox"] {
   input[type="checkbox"] {
     + label {
       span {
-        @apply mb-0 ml-0 mr-2.5;
+        @apply mb-0 mr-0 ml-2.5;
         margin-top: -1px;
       }
     }

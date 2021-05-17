@@ -95,7 +95,7 @@ export default {
   }
 
   &.transparent {
-    border-color: transparent;
+    @apply border-transparent;
   }
 
   &:hover {
@@ -108,7 +108,7 @@ export default {
     }
     &.bordered,
     &.transparent {
-      background-color: transparent;
+      @apply bg-transparent;
       .content span,
       .icon {
         color: $darkBgColor;
@@ -118,15 +118,12 @@ export default {
 }
 
 .btn {
-  @apply inline-block bg-transparent text-gray-700 p-0 font-medium border border-solid border-transparent rounded-md select-none relative shadow-none cursor-pointer outline-none;
+  @apply inline-block bg-transparent text-gray-700 p-0 font-medium border border-solid border-transparent rounded-md no-underline antialiased select-none relative shadow-none cursor-pointer outline-none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   transition: all 100ms;
-  text-decoration: none;
 
   &.loading {
-    pointer-events: none;
+    @apply pointer-events-none;
   }
 
   &:disabled {
@@ -149,9 +146,7 @@ export default {
   }
 
   .tooltip {
-    @apply opacity-0 absolute py-1 px-5 text-xs rounded-md z-10 whitespace-nowrap invisible;
-    background-color: var(--secondary-color);
-    color: var(--white-color);
+    @apply opacity-0 absolute py-1 px-5 text-xs rounded-md z-10 whitespace-nowrap invisible bg-secondary text-white;
     transition: opacity 0.3s;
 
     &::after {
@@ -206,7 +201,7 @@ export default {
   }
 
   &.bordered {
-    background-color: transparent !important;
+    @apply bg-transparent;
   }
 
   &.default {
@@ -220,7 +215,7 @@ export default {
       @apply text-sm p-2;
 
       .icon {
-        font-size: 18px !important;
+        @apply text-lg;
       }
     }
   }
@@ -233,17 +228,17 @@ export default {
       @apply p-2;
 
       span {
-        font-size: 14px !important;
+        @apply text-sm;
       }
 
       .icon {
-        font-size: 18px !important;
+        @apply text-lg;
       }
     }
   }
 
   &:hover {
-    background-color: var(--gray-300-color);
+    @apply bg-gray-300;
 
     .tooltip {
       @apply visible opacity-100;
@@ -251,7 +246,7 @@ export default {
   }
 
   &:disabled {
-    cursor: not-allowed !important;
+    @apply cursor-not-allowed;
   }
 
   &.btn-primary {
@@ -354,8 +349,7 @@ export default {
 }
 // btn loader
 .material-spinner {
-  -webkit-transform-origin: center;
-  transform-origin: center;
+  @apply origin-center;
   -webkit-animation: rotator 1.4s linear infinite;
   animation: rotator 1.4s linear infinite;
 }

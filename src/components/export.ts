@@ -26,6 +26,8 @@ import ValidationViewer from "./ValidationViewer.vue"
 import AddressSelector from "./AddressSelector.vue"
 import EmptyComponent from "./EmptyComponent.vue"
 import ConfirmDialog from "./ConfirmDialog.vue"
+import HeaderDropDownItem from "./HeaderDropDownItem.vue"
+import HeaderDropDownfooter from "./HeaderDropDownfooter.vue"
 import NestedSelect from "./nested/NestedSelect.vue"
 import NestedItem from "./nested/NestedItem.vue"
 import Input from "./Input.vue"
@@ -53,6 +55,14 @@ export default {
     HeaderAvatar: HeaderAvatar,
     Uploader: Uploader,
     SingleUpload: SingleUpload,
+    InputCode:InputCode,
+    SelectBox:SelectBox,
+    ValidationViewer:ValidationViewer,
+    AddressSelector:AddressSelector,
+    EmptyComponent:EmptyComponent,
+    ConfirmDialog:ConfirmDialog,
+    HeaderDropDownItem: HeaderDropDownItem,
+    HeaderDropDownfooter: HeaderDropDownfooter,
     InputCode: InputCode,
     SelectBox: SelectBox,
     ValidationViewer: ValidationViewer,

@@ -33,6 +33,8 @@ import NestedItem from "./nested/NestedItem.vue"
 import Input from "./Input.vue"
 import Textarea from "./Textarea.vue"
 import MainLoading from "./MainLoading.vue"
+import PageHeader from "./PageHeader.vue"
+import PageBody from "./PageBody.vue"
 import Flash from "./Flash.vue"
 import ButtonLoader from "./shimmers/ButtonLoader.vue"
 import Status from "./Status.vue"
@@ -69,10 +71,12 @@ export default {
     HeaderDropDownfooter: HeaderDropDownfooter,
     NestedSelect: NestedSelect,
     NestedItem: NestedItem,
-    Input: Input,
-    Textarea: Textarea,
-    InputTag: InputTag,
-    MainLoading: MainLoading,
+    Input:Input,
+    Textarea:Textarea,
+    InputTag:InputTag,
+    MainLoading:MainLoading,
+    PageHeader: PageHeader,
+    PageBody: PageBody,
     Flash: Flash,
     ButtonLoader: ButtonLoader,
     Status:Status

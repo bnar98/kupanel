@@ -1,12 +1,18 @@
 <template>
-  <div class="navigation flex justify-between items-center w-full h-16 fixed top-0 m-0 p-0 z-10 bg-white border-b-2 border-gray-100">
+  <div class="navigation flex  items-center w-full h-16 fixed top-0 m-0 p-0 z-10 bg-white border-b-2 border-gray-100">
 
-    <div class="right flex items-center">
+    <div class="right flex justify-start items-center w-2/5">
       <ion-icon name="menu-outline" size="large" class="text-icon-color p-4 cursor-pointer" @click="toggle"></ion-icon>
       <slot name="right"></slot>
     </div>
-    <slot name="center"></slot>
-    <slot name="left"></slot>
+    <div class="w-1/5 flex justify-center">
+      <slot name="center"></slot>
+    </div>
+    <div class="w-2/5 flex justify-end">
+      <slot name="left" class=""></slot>
+    </div>
+    
+    
   </div>
 </template>
 <script>

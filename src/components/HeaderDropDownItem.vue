@@ -3,7 +3,7 @@
         <div>
             <img :src="image" alt="image" class="w-10 h-10 rounded-full ">
         </div>
-        <div class="pr-3 flex flex-col justify-center h-10">
+        <div class="px-3 flex flex-col justify-center h-10">
             <span class="text-sub-title-color">{{ title }}</span>
             <span class="text-sm text-gray-800">{{ subtitle }}</span>
         </div>

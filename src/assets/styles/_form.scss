@@ -89,6 +89,12 @@ input:disabled, .disabled{
   @apply absolute my-0 mx-3;
 }
 
+.input-unit{
+  position: absolute;
+  left: 40px;
+  font-size: 0.8rem;
+}
+
 textarea {
   @apply resize-y;
 }

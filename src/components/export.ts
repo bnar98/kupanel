@@ -25,6 +25,8 @@ import ValidationViewer from "./ValidationViewer.vue"
 import AddressSelector from "./AddressSelector.vue"
 import EmptyComponent from "./EmptyComponent.vue"
 import ConfirmDialog from "./ConfirmDialog.vue"
+import Input from "./Input.vue"
+
 export default {
     Button: Button,
     Checkbox: Checkbox,
@@ -52,6 +54,7 @@ export default {
     ValidationViewer:ValidationViewer,
     AddressSelector:AddressSelector,
     EmptyComponent:EmptyComponent,
-    ConfirmDialog:ConfirmDialog
+    ConfirmDialog:ConfirmDialog,
+    Input:Input
 
 }

@@ -1,14 +1,17 @@
 <template>
     <div class="avatar relative" @click="toggle">
         <img :src="avatar" alt="avatar" class="w-10 cursor-pointer rounded-full">
-        <div v-show="showMenu" class="drodown absolute w-72 h-auto bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg mt-3">
-            <div class="dropdown-items ">
-                <slot name="item"></slot>
+        <transition name="fade">
+            <div v-show="showMenu" class="drodown absolute w-72 h-auto bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg mt-3">
+                <div class="dropdown-items ">
+                    <slot name="item"></slot>
+                </div>
+                <div class="dropdown-footer ">
+                    <slot name="footer"></slot>
+                </div>
             </div>
-            <div class="dropdown-footer ">
-                <slot name="footer"></slot>
-            </div>
-        </div>
+        </transition>
+        
     </div>
 </template>
 <script>

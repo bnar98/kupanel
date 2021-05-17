@@ -1,31 +1,49 @@
 <template>
-    <tbody>
-        <tr :class="['real-row']" >
-            <td v-if="$slots.rowDetail" :class="['collapse-icon', {'collapsed': showDetail}]" @click="toggleContent()"><i></i></td>
-            <slot name="rowColumns"></slot>
-            <td v-if="actions.length !== 0" class="dropdown">
-                <button class="dropdown-btn" @focusout="closeDropdown"  @click="dropDown()">
-                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                </button>
-                <ul :class="[{'show':activeDropDown}]"
-                    @mouseout="actionsMouseIn = false"
-                    @mouseover="actionsMouseIn = true">
-                    <li v-for="(action, index2) in actions" :key="index2" @click="selectAction(action.name, row) ">
-                        <ion-icon class="icon" :name="action.icon"></ion-icon>
-                        <span>{{action.label}}</span>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-        <tr v-if="$slots.rowDetail" :class="['collapse-content', {'show':showDetail}]">
-            <td  colspan="100%">
-                <div class="row m-0 collapse-content-box">
-                    <slot name="rowDetail"></slot>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-
+  <tbody>
+    <tr :class="['real-row']">
+      <td
+        v-if="$slots.rowDetail"
+        :class="['collapse-icon', { collapsed: showDetail }]"
+        @click="toggleContent()"
+      >
+        <i></i>
+      </td>
+      <slot name="rowColumns"></slot>
+      <td v-if="actions.length !== 0" class="dropdown">
+        <button
+          class="dropdown-btn"
+          @focusout="closeDropdown"
+          @click="dropDown()"
+        >
+          <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </button>
+        <ul
+          :class="[{ show: activeDropDown }]"
+          @mouseout="actionsMouseIn = false"
+          @mouseover="actionsMouseIn = true"
+        >
+          <li
+            v-for="(action, index2) in actions"
+            :key="index2"
+            @click="selectAction(action.name, row)"
+          >
+            <ion-icon class="icon" :name="action.icon"></ion-icon>
+            <span>{{ action.label }}</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr
+      v-if="$slots.rowDetail"
+      :class="['collapse-content', { show: showDetail }]"
+    >
+      <td colspan="100%">
+        <div class="flex flex-row m-0 collapse-content-box">
+          <slot name="rowDetail"></slot>
+        </div>
+      </td>
+    </tr>
+  </tbody>
 </template>
 
 <script lang="js">

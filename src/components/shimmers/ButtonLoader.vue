@@ -20,7 +20,7 @@
     .localization-rtl{
 
         .button-loader + .button-loader{
-            margin-left: 10px;
+            @apply ml-2.5;
         }
 
     }
@@ -28,7 +28,7 @@
     .localization-ltr{
 
         .button-loader + .button-loader{
-            margin-right: 10px;
+            @apply mr-2.5;
         }
 
     }

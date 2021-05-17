@@ -26,6 +26,8 @@ import ValidationViewer from "./ValidationViewer.vue"
 import AddressSelector from "./AddressSelector.vue"
 import EmptyComponent from "./EmptyComponent.vue"
 import ConfirmDialog from "./ConfirmDialog.vue"
+import NestedSelect from "./nested/NestedSelect.vue"
+import NestedItem from "./nested/NestedItem.vue"
 import Input from "./Input.vue"
 import Textarea from "./Textarea.vue"
 
@@ -57,6 +59,8 @@ export default {
     AddressSelector: AddressSelector,
     EmptyComponent: EmptyComponent,
     ConfirmDialog: ConfirmDialog,
+    NestedSelect: NestedSelect,
+    NestedItem: NestedItem,
     Input:Input,
     Textarea:Textarea
 

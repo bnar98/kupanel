@@ -31,10 +31,11 @@ export default {
 <style lang="scss">
 $sideWidthOpen: 256px;
 $sideWidthClosed: 66px;
+$sidemenu-animation-duration: .4s;
 
 .side-menu {
-    -webkit-transition: var(--sidemenu-animation-duration);
-    transition: var(--sidemenu-animation-duration);
+    -webkit-transition: $sidemenu-animation-duration;
+    transition:  $sidemenu-animation-duration;
 
 
     &.open {

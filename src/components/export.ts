@@ -35,6 +35,7 @@ import Textarea from "./Textarea.vue"
 import MainLoading from "./MainLoading.vue"
 import Flash from "./Flash.vue"
 import ButtonLoader from "./shimmers/ButtonLoader.vue"
+import Status from "./Status.vue"
 
 export default {
     Button: Button,
@@ -73,6 +74,7 @@ export default {
     InputTag: InputTag,
     MainLoading: MainLoading,
     Flash: Flash,
-    ButtonLoader: ButtonLoader
+    ButtonLoader: ButtonLoader,
+    Status:Status
 
 }

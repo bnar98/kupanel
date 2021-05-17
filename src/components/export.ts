@@ -30,6 +30,7 @@ import NestedSelect from "./nested/NestedSelect.vue"
 import NestedItem from "./nested/NestedItem.vue"
 import Input from "./Input.vue"
 import Textarea from "./Textarea.vue"
+import MainLoading from "./MainLoading.vue"
 
 export default {
     Button: Button,
@@ -63,6 +64,7 @@ export default {
     NestedItem: NestedItem,
     Input:Input,
     Textarea:Textarea,
-    InputTag:InputTag
+    InputTag:InputTag,
+    MainLoading:MainLoading
 
 }

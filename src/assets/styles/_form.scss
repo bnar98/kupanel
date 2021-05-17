@@ -90,9 +90,7 @@ input:disabled, .disabled{
 }
 
 .input-unit{
-  position: absolute;
-  left: 40px;
-  font-size: 0.8rem;
+  @apply absolute text-sm left-10;
 }
 
 textarea {

@@ -140,8 +140,8 @@ export default {
 }
 
 .alert-info {
-  @apply bg-steel-600 text-white;
-  /* background-color: #2b4a83; */
+  /*@apply bg-steel-600 text-white;*/
+   background-color: #2b4a83;
 }
 
 .alert-warning {

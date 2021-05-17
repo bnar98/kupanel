@@ -15,6 +15,7 @@ import HorizontalSelect from "./HorizontalSelect.vue";
 import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
+import ReadOnlyImages from "./ReadOnlyImages.vue";
 import LabelIcon from "./LabelIcon.vue";
 import HeaderAvatar from './HeaderAvatar.vue'
 import Uploader from "./Uploader.vue";
@@ -45,17 +46,17 @@ export default {
     HorizontalSelect: HorizontalSelect,
     RadioButton: RadioButton,
     Modal: Modal,
-    InputTag: InputTag,
+    ReadOnlyImages: ReadOnlyImages,
     LabelIcon: LabelIcon,
     HeaderAvatar: HeaderAvatar,
     Uploader: Uploader,
     SingleUpload: SingleUpload,
-    InputCode:InputCode,
-    SelectBox:SelectBox,
-    ValidationViewer:ValidationViewer,
-    AddressSelector:AddressSelector,
-    EmptyComponent:EmptyComponent,
-    ConfirmDialog:ConfirmDialog,
+    InputCode: InputCode,
+    SelectBox: SelectBox,
+    ValidationViewer: ValidationViewer,
+    AddressSelector: AddressSelector,
+    EmptyComponent: EmptyComponent,
+    ConfirmDialog: ConfirmDialog,
     Input:Input,
     Textarea:Textarea
 

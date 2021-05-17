@@ -1,41 +1,31 @@
 <template>
-
-    <div class="row page-header-loader">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <span class="page-title loader-box">
-                <div class="loader-animation"></div>
-            </span>
-            <span class="page-description loader-box">
-                <div class="loader-animation"></div>
-            </span>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <slot />
-        </div>
+  <div class="flex flex-row page-header-loader">
+    <div class="md:w-1/2 sm:w-full">
+      <span class="page-title loader-box">
+        <div class="loader-animation"></div>
+      </span>
+      <span class="page-description loader-box">
+        <div class="loader-animation"></div>
+      </span>
     </div>
-
+    <div class="md:w-1/2 sm:w-full">
+      <slot />
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
+.page-header-loader {
+  @apply mt-5 mr-0 mb-2.5 ml-0 border-b-1 border-solid border-horizontal-seperator-color pb-5 items-end;
 
-    .page-header-loader {
-        margin: 20px 0 10px 0;
-        border-bottom: 1px solid var(--horizontal-seperator-color);
-        padding-bottom: 20px;
-        align-items: flex-end;
+  .page-title {
+    @apply mt-8 mb-0 w-1/2;
+    height: 20px;
+  }
 
-        .page-title {
-            margin-top: 32px;
-            margin-bottom: 0;
-            height: 20px;
-            width: 50%;
-        }
-
-        .page-description {
-            height: 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-    }
-
+  .page-description {
+    @apply mt-2.5 rounded;
+    height: 20px;
+  }
+}
 </style>

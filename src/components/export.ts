@@ -34,6 +34,7 @@ import Input from "./Input.vue"
 import Textarea from "./Textarea.vue"
 import MainLoading from "./MainLoading.vue"
 import Flash from "./Flash.vue"
+import ButtonLoader from "./shimmers/ButtonLoader.vue"
 import Status from "./Status.vue"
 
 export default {
@@ -58,21 +59,22 @@ export default {
     HeaderAvatar: HeaderAvatar,
     Uploader: Uploader,
     SingleUpload: SingleUpload,
-    InputCode:InputCode,
-    SelectBox:SelectBox,
-    ValidationViewer:ValidationViewer,
-    AddressSelector:AddressSelector,
-    EmptyComponent:EmptyComponent,
-    ConfirmDialog:ConfirmDialog,
+    InputCode: InputCode,
+    SelectBox: SelectBox,
+    ValidationViewer: ValidationViewer,
+    AddressSelector: AddressSelector,
+    EmptyComponent: EmptyComponent,
+    ConfirmDialog: ConfirmDialog,
     HeaderDropDownItem: HeaderDropDownItem,
     HeaderDropDownfooter: HeaderDropDownfooter,
     NestedSelect: NestedSelect,
     NestedItem: NestedItem,
-    Input:Input,
-    Textarea:Textarea,
-    InputTag:InputTag,
-    MainLoading:MainLoading,
-    Flash:Flash,
+    Input: Input,
+    Textarea: Textarea,
+    InputTag: InputTag,
+    MainLoading: MainLoading,
+    Flash: Flash,
+    ButtonLoader: ButtonLoader,
     Status:Status
 
 }

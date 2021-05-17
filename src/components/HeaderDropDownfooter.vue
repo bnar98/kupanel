@@ -1,5 +1,5 @@
 <template>
-    <div class="flex px-4 py-1 justify-items-center  cursor-pointer">
+    <div class="flex px-4 py-1 justify-items-center  cursor-pointer"  @click="action">
         <div>
             <ion-icon :name="icon" class="text-2xl text-gray-500"></ion-icon>
         </div>
@@ -14,6 +14,11 @@ export default {
     data() {
         return {
             
+        }
+    },
+    methods: {
+        action(){
+            this.$emit('actionEvent');
         }
     },
     props: {

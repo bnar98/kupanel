@@ -1,5 +1,5 @@
 <template>
-    <div class="flex p-3 justify-items-center border-b border-solid cursor-pointer border-gray-300">
+    <div class="flex p-3 justify-items-center border-b border-solid cursor-pointer border-gray-300" @click="action">
         <div>
             <img :src="image" alt="image" class="w-10 h-10 rounded-full ">
         </div>
@@ -15,6 +15,11 @@ export default {
     data() {
         return {
             
+        }
+    },
+    methods: {
+        action(){
+            this.$emit('actionEvent');
         }
     },
     props: {

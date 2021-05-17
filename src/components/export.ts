@@ -34,6 +34,7 @@ import Input from "./Input.vue"
 import Textarea from "./Textarea.vue"
 import MainLoading from "./MainLoading.vue"
 import PageHeader from "./PageHeader.vue"
+import PageBody from "./PageBody.vue"
 
 export default {
     Button: Button,
@@ -71,6 +72,7 @@ export default {
     Textarea:Textarea,
     InputTag:InputTag,
     MainLoading:MainLoading,
-    PageHeader: PageHeader
+    PageHeader: PageHeader,
+    PageBody: PageBody
 
 }

@@ -39,11 +39,11 @@ export default {
 </script>
 
 <style lang="scss">
-
-
+$sidemenu-animation-duration: .4s;
 
 .localization-rtl {
     #main-content {
+        transition: padding-right $sidemenu-animation-duration;
         &.wide{
             @apply pr-20;
         }
@@ -55,6 +55,7 @@ export default {
 
 .localization-ltr {
     #main-content {
+        transition: padding-left $sidemenu-animation-duration;
         &.wide{
             @apply pl-16;
         }

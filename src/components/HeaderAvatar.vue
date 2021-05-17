@@ -2,7 +2,12 @@
     <div class="avatar relative" @click="toggle">
         <img :src="avatar" alt="avatar" class="w-10 cursor-pointer rounded-full">
         <div v-show="showMenu" class="drodown absolute w-72 h-32 bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg mt-3">
-            ddddd
+            <div class="dropdown-items w-auto">
+                <slot name="item"></slot>
+            </div>
+            <div class="dropdown-footer w-auto">
+                <slot name="footer"></slot>
+            </div>
         </div>
     </div>
 </template>

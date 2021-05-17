@@ -15,6 +15,7 @@ import HorizontalSelect from "./HorizontalSelect.vue";
 import RadioButton from "./RadioButton.vue";
 import Modal from "./Modal.vue";
 import InputTag from "./InputTag.vue";
+import ReadOnlyImages from "./ReadOnlyImages.vue";
 import LabelIcon from "./LabelIcon.vue";
 import HeaderAvatar from './HeaderAvatar.vue'
 import Uploader from "./Uploader.vue";
@@ -27,6 +28,11 @@ import EmptyComponent from "./EmptyComponent.vue"
 import ConfirmDialog from "./ConfirmDialog.vue"
 import HeaderDropDownItem from "./HeaderDropDownItem.vue"
 import HeaderDropDownfooter from "./HeaderDropDownfooter.vue"
+import NestedSelect from "./nested/NestedSelect.vue"
+import NestedItem from "./nested/NestedItem.vue"
+import Input from "./Input.vue"
+import Textarea from "./Textarea.vue"
+
 export default {
     Button: Button,
     Checkbox: Checkbox,
@@ -44,7 +50,7 @@ export default {
     HorizontalSelect: HorizontalSelect,
     RadioButton: RadioButton,
     Modal: Modal,
-    InputTag: InputTag,
+    ReadOnlyImages: ReadOnlyImages,
     LabelIcon: LabelIcon,
     HeaderAvatar: HeaderAvatar,
     Uploader: Uploader,
@@ -56,6 +62,17 @@ export default {
     EmptyComponent:EmptyComponent,
     ConfirmDialog:ConfirmDialog,
     HeaderDropDownItem: HeaderDropDownItem,
-    HeaderDropDownfooter: HeaderDropDownfooter
+    HeaderDropDownfooter: HeaderDropDownfooter,
+    InputCode: InputCode,
+    SelectBox: SelectBox,
+    ValidationViewer: ValidationViewer,
+    AddressSelector: AddressSelector,
+    EmptyComponent: EmptyComponent,
+    ConfirmDialog: ConfirmDialog,
+    NestedSelect: NestedSelect,
+    NestedItem: NestedItem,
+    Input:Input,
+    Textarea:Textarea,
+    InputTag:InputTag
 
 }

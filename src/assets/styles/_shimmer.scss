@@ -1,0 +1,33 @@
+//$shimmer-color-1: theme('colors.shimmer-color-1');
+//$shimmer-color-2: theme('colors.shimmer-color-2');
+//.loader-box {
+//  @apply relative
+//  position: relative block;
+//
+//  .loader-animation {
+//    @apply min-w-full h-full inline-block absolute top-0 right-0 left-0 bg-shimmer-bg-color bg-no-repeat;
+//    animation-duration: 3s;
+//    animation-fill-mode: forwards;
+//    animation-iteration-count: infinite;
+//    animation-name: placeholderShimmer;
+//    animation-timing-function: linear;
+//    background-image: -webkit-gradient(linear, 100% 0, 0 0, from(rgba($shimmer-color-2, .3)), color-stop(0.3, rgba($shimmer-color-1, .5)), to(rgba($shimmer-color-2, .3)));
+//
+//    background-size: 100%;
+//    border-radius: 4px;
+//  }
+//
+//  @keyframes placeholderShimmer {
+//    0% {
+//      background-position: -2000px 0;
+//    }
+//    100% {
+//      background-position: 2000px 0;
+//    }
+//  }
+//
+//}
+
+.empty-placeholder-description {
+  margin-top: -8px;
+}

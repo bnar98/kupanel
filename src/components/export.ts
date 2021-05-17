@@ -25,6 +25,8 @@ import ValidationViewer from "./ValidationViewer.vue"
 import AddressSelector from "./AddressSelector.vue"
 import EmptyComponent from "./EmptyComponent.vue"
 import ConfirmDialog from "./ConfirmDialog.vue"
+import NestedSelect from "./nested/NestedSelect.vue"
+import NestedItem from "./nested/NestedItem.vue"
 export default {
     Button: Button,
     Checkbox: Checkbox,
@@ -44,16 +46,16 @@ export default {
     Modal: Modal,
     InputTag: InputTag,
     LabelIcon: LabelIcon,
-    InputTag:InputTag,
     HeaderAvatar: HeaderAvatar,
-    InputTag: InputTag,
     Uploader: Uploader,
     SingleUpload: SingleUpload,
-    InputCode:InputCode,
-    SelectBox:SelectBox,
-    ValidationViewer:ValidationViewer,
-    AddressSelector:AddressSelector,
-    EmptyComponent:EmptyComponent,
-    ConfirmDialog:ConfirmDialog
+    InputCode: InputCode,
+    SelectBox: SelectBox,
+    ValidationViewer: ValidationViewer,
+    AddressSelector: AddressSelector,
+    EmptyComponent: EmptyComponent,
+    ConfirmDialog: ConfirmDialog,
+    NestedSelect: NestedSelect,
+    NestedItem: NestedItem
 
 }

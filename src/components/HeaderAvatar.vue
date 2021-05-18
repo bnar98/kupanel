@@ -38,18 +38,17 @@ export default {
 }
 </script>
 <style lang="scss">
-.drodown{
-    &::before{
-        content: "";
-         @apply absolute w-0 h-0 box-border border-8 border-solid border-black rounded-sm;
-        top: .04rem;
-    
-        border-color: transparent transparent var(--dropdown-triangle-color) var(--dropdown-triangle-color);
-        transform-origin: 0 0;
-        transform: rotate(136deg);
-        box-shadow: -1px 1px 0 0 var(--dropdown-border-color);
+    .drodown{
+        &::before{
+            content: "";
+            @apply absolute w-0 h-0 box-border border-8 border-solid border-black rounded-sm;
+            top: .04rem;
+            border-color: transparent transparent var(--dropdown-triangle-color) var(--dropdown-triangle-color);
+            transform-origin: 0 0;
+            transform: rotate(136deg);
+            box-shadow: -1px 1px 0 0 var(--dropdown-border-color);
+        }
     }
-}
     .localization-rtl{
         .avatar{
             @apply pl-3 ;

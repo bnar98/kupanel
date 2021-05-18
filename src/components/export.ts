@@ -38,6 +38,8 @@ import PageBody from "./PageBody.vue"
 import Flash from "./Flash.vue"
 import ButtonLoader from "./shimmers/ButtonLoader.vue"
 import Status from "./Status.vue"
+import HeaderNotification from "./HeaderNotification.vue"
+import NotificationItems from "./NotificationItems.vue"
 
 export default {
     Button: Button,
@@ -79,6 +81,7 @@ export default {
     PageBody: PageBody,
     Flash: Flash,
     ButtonLoader: ButtonLoader,
-    Status:Status
-
+    Status:Status,
+    HeaderNotification: HeaderNotification,
+    NotificationItems: NotificationItems,
 }

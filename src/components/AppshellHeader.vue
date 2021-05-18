@@ -1,6 +1,5 @@
 <template>
   <div class="navigation flex  items-center w-full h-16 fixed top-0 m-0 p-0 z-10 bg-white border-b-2 border-gray-100">
-
     <div class="right flex justify-start items-center w-2/5">
       <ion-icon name="menu-outline" size="large" class="text-icon-color p-4 cursor-pointer" @click="toggle"></ion-icon>
       <slot name="right"></slot>
@@ -8,11 +7,10 @@
     <div class="w-1/5 flex justify-center">
       <slot name="center"></slot>
     </div>
-    <div class="w-2/5 flex justify-end">
-      <slot name="left" class=""></slot>
+    <div class="left flex justify-end items-center w-2/5">
+      <slot name="left"></slot>
     </div>
-    
-    
+
   </div>
 </template>
 <script>
@@ -40,6 +38,13 @@ export default {
     background: var(--header-background-color);
     border-bottom: 2px solid var(--default-border-color);
     position: absolute;
+
+    .left{
+      >div{
+        display: flex;
+        align-items: center;
+      }
+    }
 }
 
 .localization-rtl{

@@ -140,7 +140,7 @@ export default {
 }
 
 .alert-info {
-  /*@apply bg-steel-600 text-white;*/
+  @apply text-white;
    background-color: #2b4a83;
 }
 

@@ -60,6 +60,7 @@
 </script>
 
 <style lang="scss">
+  $sidemenu-animation-duration: .4s;
     .menu-item{
         a{
             @apply no-underline;
@@ -72,7 +73,7 @@
                 }
             }
             .sub-menu-box{
-                transition: all  var(--sidemenu-animation-duration);
+                transition: all  $sidemenu-animation-duration;
                 @apply max-h-full;
                 .sub-menu-list{
                     @apply py-2 px-0 block;
@@ -80,7 +81,7 @@
             }
         }
         .parent-menu{
-            
+
             @apply flex items-center text-title-color cursor-pointer h-14;
             .icon{
                 @apply text-icon-default text-sidemenu-icon-color absolute;
@@ -94,7 +95,7 @@
             }
         }
         .sub-menu-box{
-        transition: all var(--sidemenu-animation-duration);
+        transition: all $sidemenu-animation-duration;
             @apply overflow-hidden max-h-0;
             .sub-menu-list{
                 @apply hidden;
@@ -189,5 +190,5 @@
 }
 
 
-    
+
 </style>

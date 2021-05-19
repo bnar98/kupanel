@@ -11,11 +11,17 @@
         @apply block my-4 leading-relaxed;
     }
 }
+#app{
+    @apply h-full;
+}
 
 body{
-    @apply  font-dana;
+    @apply  font-dana select-none m-0 bg-background-color;
     direction: var(--app-direction);
     overflow: hidden;
+}
+body, html{
+    @apply h-screen overflow-x-hidden;
 }
 a,
 li,

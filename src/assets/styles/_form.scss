@@ -43,6 +43,7 @@ textarea {
    text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: var(--app-text-direction);
 
   &.error {
     @apply border-red-light;
@@ -98,7 +99,8 @@ textarea {
 }
 
 .label {
-  @apply text-input-label-color pb-0 text-input-label-color pb-2 block text-input-label;
+  text-align: var(--app-text-direction);
+  @apply text-input-label-color text-input-label-color pb-2 block;
 }
 
 .sub-label {
@@ -123,27 +125,9 @@ textarea {
 }
 
 .localization-rtl{
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="number"],
-  input[type="date"],
-  input[type="color"],
-  input[type="range"],
-  input[type="month"],
-  input[type="week"],
-  input[type="time"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="url"],
-  textarea {
-    @apply text-right;
-  }
-
   .input-with-icon {
     @apply pr-12;
   }
-
   .form-group {
 
     + .btn {
@@ -155,23 +139,6 @@ textarea {
 }
 
 .localization-ltr{
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="number"],
-  input[type="date"],
-  input[type="color"],
-  input[type="range"],
-  input[type="month"],
-  input[type="week"],
-  input[type="time"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="url"],
-  textarea {
-    @apply text-left;
-  }
-
   .input-with-icon {
     @apply pl-12;
   }

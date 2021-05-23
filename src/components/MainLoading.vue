@@ -20,6 +20,17 @@
             }
         },
 
+        props: {
+          title:{
+            type:String,
+            default: ''
+          },
+          isLoaded: {
+            type: Boolean,
+            default: false
+          }
+        },
+
         mounted() {
             setTimeout(() => {
                 this.showLogo = true;

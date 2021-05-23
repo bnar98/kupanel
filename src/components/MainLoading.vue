@@ -1,5 +1,5 @@
 <template>
-    <div class="loading-global flex justify-center items-center" v-if="!isLoaded">
+    <div class="loading-global flex justify-center items-center"  v-if="!$store.state.app.isLoaded">
         <div class="loading-full">
             <div class="logo flex justify-center items-center" :class="{'animated': animated}">
                 <transition name="fade">
@@ -18,17 +18,6 @@
                 animated: false,
                 showLogo: false
             }
-        },
-
-        props: {
-          title:{
-            type:String,
-            default: ''
-          },
-          isLoaded: {
-            type: Boolean,
-            default: false
-          }
         },
 
         mounted() {

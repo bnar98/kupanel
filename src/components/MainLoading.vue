@@ -1,5 +1,5 @@
 <template>
-    <div class="loading-global flex justify-center items-center"  v-if="!$store.state.app.isLoaded">
+    <div class="loading-global flex justify-center items-center" v-if="!isLoaded">
         <div class="loading-full">
             <div class="logo flex justify-center items-center" :class="{'animated': animated}">
                 <transition name="fade">
@@ -16,7 +16,8 @@
         data() {
             return {
                 animated: false,
-                showLogo: false
+                showLogo: false,
+                loading: false
             }
         },
 
@@ -31,7 +32,17 @@
           }
         },
 
-        mounted() {
+      created() {
+          this.loading = this.isLoaded
+      },
+
+      watch: {
+        isLoaded(newValue) {
+          this.loading = newValue
+        }
+      },
+
+      mounted() {
             setTimeout(() => {
                 this.showLogo = true;
                 setTimeout(() => {

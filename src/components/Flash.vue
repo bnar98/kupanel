@@ -1,117 +1,117 @@
 <template>
   <div class="alert-wrap">
     <transition-group :name="transition" tag="div">
-      <div
-        :class="item.typeObject"
-        role="alert"
-        :key="index"
-        v-for="(item, index) in notifications"
-      >
-        <ion-icon
-          :name="Object.keys(item.iconObject)[0]"
-          size="large"
-        ></ion-icon>
-        <span v-if="displayIcons" :class="item.iconObject"></span>
-        <span v-html="item.message"></span>
+      <div :class="item.typeObject" role="alert" :key="'notification' + index" v-for="(item, index) in notifications">
+        <ion-icon :name="Object.keys(item.iconObject)[0]" size="large"></ion-icon>
+        <span v-if="displayIcons" :class="item.iconObject"></span> <span v-html="item.message"></span>
       </div>
     </transition-group>
   </div>
 </template>
 <script>
-export default {
-  props: {
-    timeout: {
-      type: Number,
-      default: 3000,
-    },
-    transition: {
-      type: String,
-      default: "slide-fade",
-    },
-    types: {
-      type: Object,
-      default: () => ({
-        base: "alert",
-        success: "alert-success",
-        error: "alert-danger",
-        warning: "alert-warning",
-        info: "alert-info",
-      }),
-    },
-    displayIcons: {
-      type: Boolean,
-      default: true,
-    },
-    icons: {
-      type: Object,
-      default: () => ({
-        error: "close-circle-outline",
-        success: "checkmark-circle-outline",
-        info: "alert-circle-outline",
-        warning: "warning-outline",
-      }),
-    },
-  },
+  export default {
 
-  data: () => ({
-    notifications: [],
-  }),
+    props: {
 
-  /**
-   * On creation Flash a message if a message exists otherwise listen for
-   * flash event from global event bus
-   */
-  created() {
-    window.events.$on("flash", (message, type) => this.flash(message, type));
-  },
+      timeout: {
+        type: Number,
+        default: 3000
+      },
+      transition: {
+        type: String,
+        default: 'slide-fade'
+      },
+      types: {
+        type: Object,
+        default: () => ({
+          base:    'alert',
+          success: 'alert-success',
+          error:   'alert-danger',
+          warning: 'alert-warning',
+          info:    'alert-info'
+        })
+      },
+      displayIcons: {
+        type: Boolean,
+        default: true
+      },
+      icons: {
+        type: Object,
+        default: () => ({
+          error:   'close-circle-outline',
+          success: 'checkmark-circle-outline',
+          info:    'alert-circle-outline',
+          warning: 'warning-outline',
+        })
+      },
 
-  methods: {
-    /**
-     * Flash our alert to the screen for the user to see
-     * and begin the process to hide it
-     *
-     * @param message
-     * @param type
-     */
-    flash(message, type) {
-      this.notifications.push({
-        message: message,
-        type: type,
-        typeObject: this.classes(this.types, type),
-        iconObject: this.classes(this.icons, type),
-      });
-      setTimeout(this.hide, this.timeout);
     },
+
+    data: () => ({
+      notifications: []
+    }),
 
     /**
-     * Sets and returns the values needed
-     *
-     * @param type
+     * On creation Flash a message if a message exists otherwise listen for
+     * flash event from global event bus
      */
-    classes(propObject, type) {
-      let classes = {};
+    created() {
 
-      if (propObject.hasOwnProperty("base")) {
-        classes[propObject.base] = true;
+      this.$store.subscribe((mutation, state) => {
+        if (mutation.type === 'flash/showMessage') {
+          this.flash(mutation.payload.message, mutation.payload.type)
+        }
+      })
+
+    },
+
+    methods: {
+      /**
+       * Flash our alert to the screen for the user to see
+       * and begin the process to hide it
+       *
+       * @param message
+       * @param type
+       */
+      flash(message, type) {
+        this.notifications.push({
+          message: message,
+          type: type,
+          typeObject: this.classes(this.types, type),
+          iconObject: this.classes(this.icons, type)
+        });
+        setTimeout(this.hide, this.timeout);
+      },
+
+      /**
+       * Sets and returns the values needed
+       *
+       * @param type
+       */
+      classes(propObject, type) {
+        let classes = {};
+
+        if(propObject.hasOwnProperty('base')) {
+          classes[propObject.base] = true;
+        }
+        if (propObject.hasOwnProperty(type)) {
+          classes[propObject[type]] = true;
+        }
+
+        return classes;
+      },
+
+      /**
+       * Hide Our Alert
+       *
+       * @param item
+       */
+      hide(item = this.notifications[0]) {
+        let key = this.notifications.indexOf(item);
+        this.notifications.splice(key, 1);
       }
-      if (propObject.hasOwnProperty(type)) {
-        classes[propObject[type]] = true;
-      }
-
-      return classes;
     },
-
-    /**
-     * Hide Our Alert
-     *
-     * @param item
-     */
-    hide(item = this.notifications[0]) {
-      let key = this.notifications.indexOf(item);
-      this.notifications.splice(key, 1);
-    },
-  },
-};
+  }
 </script>
 <style scoped>
 .alert-wrap {

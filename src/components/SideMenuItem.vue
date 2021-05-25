@@ -1,10 +1,10 @@
 <template>
     <div class="menu-item w-full" :class="{'expend': expand}">
-        <router-link :to="route" class="parent-menu" @click.native="expandIfNeeded">
+        <nuxt-link :to="route" class="parent-menu" @click.native="expandIfNeeded">
             <ion-icon v-if="currentRout" :name="icon" class="icon"></ion-icon>
             <ion-icon v-if="!currentRout" :name="icon + '-outline'" class="icon"></ion-icon>
             <span>{{ title }}</span>
-        </router-link>
+        </nuxt-link>
         <div class="sub-menu-box" v-if="!!$slots.default">
             <ul class="sub-menu-list">
                 <slot />

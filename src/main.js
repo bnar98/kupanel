@@ -18,7 +18,7 @@ Vue.config.productionTip = false
 Vue.config.ignoredElements = [/^ion-/]
 
 export default {
-  install (Vue: any, perfix:String) {
+  install (Vue, perfix) {
   if (!perfix) {
     perfix = 'ku-'
   }

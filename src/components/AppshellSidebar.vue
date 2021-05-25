@@ -1,5 +1,5 @@
 <template>
-    <div class="side-menu p-0 absolute top-16 bottom-0 z-100 overflow-x-hidden overflow-y-auto h-screen bg-sidemenu-background-color z-50" :class="state">
+    <div class="side-menu p-0 fixed top-16 bottom-0 z-100 overflow-x-hidden overflow-y-auto h-screen bg-sidemenu-background-color z-50" :class="state">
         <slot></slot>
     </div>
 </template>

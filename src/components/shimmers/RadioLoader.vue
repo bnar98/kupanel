@@ -17,7 +17,7 @@ export default {
 <style lang="scss">
 .radio-loader {
   .radio-box {
-    @apply inline-blockinline-block ml-2.5;
+    @apply inline-block ml-2.5;
 
     .loader-box {
       height: 20px;

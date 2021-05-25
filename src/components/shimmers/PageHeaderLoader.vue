@@ -16,7 +16,7 @@
 
 <style lang="scss">
 .page-header-loader {
-  @apply mt-5 mr-0 mb-2.5 ml-0 border-b-1 border-solid border-horizontal-seperator-color pb-5 items-end;
+  @apply mt-5 mr-0 mb-2.5 ml-0 border-b border-solid border-horizontal-seperator-color pb-5 items-end;
 
   .page-title {
     @apply mt-8 mb-0 w-1/2;

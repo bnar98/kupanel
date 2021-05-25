@@ -37,8 +37,6 @@ export default {
   .navigation{
     background: var(--header-background-color);
     border-bottom: 2px solid var(--default-border-color);
-    position: absolute;
-
     .left{
       >div{
         display: flex;

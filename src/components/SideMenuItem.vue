@@ -109,8 +109,10 @@
                             @apply text-primary;
                         }
                         &:before{
+                            width: 5px;
+                            height: 5px;
                             content: '';
-                            @apply w-1 h-1 rounded-full bg-sidemenu-expend-right-border-color absolute bottom-3;
+                            @apply rounded-full bg-sidemenu-expend-right-border-color absolute bottom-3;
                         }
                     }
                 }
@@ -142,11 +144,11 @@
         .sub-menu-box {
             @apply border-r-4 border-solid border-white;
             .sub-menu-list {
-                @apply border-r-2 border-solid border-sidemenu-expend-right-border-color px-8 mr-7;
+                @apply border-r border-solid border-sidemenu-expend-right-border-color px-8 mr-7;
                 .sub-menu-item {
                     &.active {
                         &:before {
-                            @apply -right-10;
+                            right: -35px
                         }
                     }
                 }

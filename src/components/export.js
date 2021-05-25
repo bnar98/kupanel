@@ -37,6 +37,16 @@ import PageHeader from "./PageHeader.vue"
 import PageBody from "./PageBody.vue"
 import Flash from "./Flash.vue"
 import ButtonLoader from "./shimmers/ButtonLoader.vue"
+import PageHeaderLoader from "./shimmers/PageHeaderLoader.vue"
+import EditorLoader from "./shimmers/EditorLoader.vue"
+import InputLoader from "./shimmers/InputLoader.vue"
+import RadioLoader from "./shimmers/RadioLoader.vue"
+import SearchLoader from "./shimmers/SearchLoader.vue"
+import SingleUploadLoader from "./shimmers/SingleUploadLoader.vue"
+import TableLoader from "./shimmers/TableLoader.vue"
+import TabLoader from "./shimmers/TabLoader.vue"
+import TabsLoader from "./shimmers/TabsLoader.vue"
+import TextAreaLoader from "./shimmers/TextAreaLoader.vue"
 import Status from "./Status.vue"
 import HeaderNotification from "./HeaderNotification.vue"
 import NotificationItems from "./NotificationItems.vue"
@@ -81,6 +91,16 @@ export default {
     PageBody: PageBody,
     Flash: Flash,
     ButtonLoader: ButtonLoader,
+    PageHeaderLoader: PageHeaderLoader,
+    EditorLoader: EditorLoader,
+    InputLoader: InputLoader,
+    RadioLoader: RadioLoader,
+    SearchLoader: SearchLoader,
+    SingleUploadLoader: SingleUploadLoader,
+    TableLoader: TableLoader,
+    TabLoader: TabLoader,
+    TabsLoader: TabsLoader,
+    TextAreaLoader: TextAreaLoader,
     Status:Status,
     HeaderNotification: HeaderNotification,
     NotificationItems: NotificationItems,

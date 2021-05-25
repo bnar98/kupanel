@@ -1,13 +1,24 @@
 {
   "name": "kupanel",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.5",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "publishConfig": {
+    "registry": "https://sonatype.kubakgroup.com/repository/kupanel-hosted/"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "plugins/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "autoprefixer": "^9",
@@ -19,21 +30,16 @@
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.2.0",
-    "vue2-dropzone": "^3.6.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-standard": "^5.1.2",
-    "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^1.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
@@ -43,7 +49,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5",
     "vue-cli-plugin-tailwind": "~2.0.6",
     "vue-template-compiler": "^2.6.11"
   },
@@ -54,8 +59,7 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "@vue/standard",
-      "@vue/typescript/recommended"
+      "@vue/standard"
     ],
     "parserOptions": {
       "ecmaVersion": 2020
@@ -63,14 +67,6 @@
     "rules": {},
     "overrides": [
       {
-        "files": [
-          "dist/*",
-          "src/*",
-          "public/*",
-          "*.json",
-          "*.js",
-          "*.ts"
-        ],
         "env": {
           "jest": true
         }
@@ -82,11 +78,9 @@
     "last 2 versions",
     "not dead"
   ],
-  "jest": {
-    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
-  },
+  "jest": {},
   "description": "## Project setup ``` yarn install ```",
-  "main": "./src/main.ts",
+  "main": "./src/main.js",
   "directories": {
     "test": "tests"
   },

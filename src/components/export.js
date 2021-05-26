@@ -7,17 +7,18 @@ import Checkbox from './Checkbox.vue'
 import SideMenuItem from './SideMenuItem.vue'
 import SideMenuSubItem from './SideMenuSubItem.vue'
 import Breadcrumb from './Breadcrumb.vue'
-import Tabs from "./tabs/Tabs.vue";
-import Tab from "./tabs/Tab.vue";
-import Table from "./table/Table.vue";
-import TableRow from "./table/TableRow.vue";
-import HorizontalSelect from "./HorizontalSelect.vue";
-import RadioButton from "./RadioButton.vue";
-import Modal from "./Modal.vue";
-import InputTag from "./InputTag.vue";
-import ReadOnlyImages from "./ReadOnlyImages.vue";
-import LabelIcon from "./LabelIcon.vue";
+import Tabs from "./tabs/Tabs.vue"
+import Tab from "./tabs/Tab.vue"
+import Table from "./table/Table.vue"
+import TableRow from "./table/TableRow.vue"
+import HorizontalSelect from "./HorizontalSelect.vue"
+import RadioButton from "./RadioButton.vue"
+import Modal from "./Modal.vue"
+import InputTag from "./InputTag.vue"
+import ReadOnlyImages from "./ReadOnlyImages.vue"
+import LabelIcon from "./LabelIcon.vue"
 import HeaderAvatar from './HeaderAvatar.vue'
+import Paginate from './Paginate.vue'
 // import Uploader from "./Uploader.vue";
 // import SingleUpload from "./SingleUpload.vue";
 import InputCode from "./InputCode.vue"
@@ -104,4 +105,5 @@ export default {
     Status:Status,
     HeaderNotification: HeaderNotification,
     NotificationItems: NotificationItems,
+    Paginate:Paginate
 }

@@ -13,7 +13,7 @@
     },
     props:{
       status:{
-        type: String,
+        type: Object,
         required: true
       }
     },

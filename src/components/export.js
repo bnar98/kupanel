@@ -19,8 +19,9 @@ import ReadOnlyImages from "./ReadOnlyImages.vue"
 import LabelIcon from "./LabelIcon.vue"
 import HeaderAvatar from './HeaderAvatar.vue'
 import Paginate from './Paginate.vue'
-// import Uploader from "./Uploader.vue";
-// import SingleUpload from "./SingleUpload.vue";
+import Shimmer from './shimmers/Shimmer.vue'
+import Uploader from "./Uploader.vue";
+import SingleUpload from "./SingleUpload.vue";
 import InputCode from "./InputCode.vue"
 import SelectBox from "./SelectBox.vue"
 import ValidationViewer from "./ValidationViewer.vue"
@@ -72,8 +73,8 @@ export default {
     ReadOnlyImages: ReadOnlyImages,
     LabelIcon: LabelIcon,
     HeaderAvatar: HeaderAvatar,
-    // Uploader: Uploader,
-    // SingleUpload: SingleUpload,
+    Uploader: Uploader,
+    SingleUpload: SingleUpload,
     InputCode: InputCode,
     SelectBox: SelectBox,
     ValidationViewer: ValidationViewer,
@@ -105,5 +106,6 @@ export default {
     Status:Status,
     HeaderNotification: HeaderNotification,
     NotificationItems: NotificationItems,
-    Paginate:Paginate
+    Paginate:Paginate,
+    Shimmer:Shimmer
 }

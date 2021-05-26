@@ -1,8 +1,6 @@
 <template>
     <div class="button-loader">
-        <span class="report-title loader-box">
-            <div class="loader-animation"></div>
-        </span>
+      <Shimmer :height="'40px'"></Shimmer>
     </div>
 </template>
 
@@ -10,11 +8,6 @@
 
     .button-loader{
         width: 100px;
-
-        .loader-box{
-            height: 41px;
-        }
-
     }
 
     .localization-rtl{
@@ -34,3 +27,9 @@
     }
 
 </style>
+<script>
+  import Shimmer from './Shimmer'
+  export  default {
+    components: {Shimmer}
+  }
+</script>

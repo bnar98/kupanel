@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-row">
-    <div class="w-full form-group">
+  <div class="grid grid-cols-1">
+    <div class="col-span-1 form-group">
       <label for="dropzone" class="label">{{ $t("uploader.title") }}</label>
       <label for="dropzone" class="sub-label">{{
         $t("uploader.description")
@@ -24,6 +24,12 @@
             </div>
           </div>
         </vue-dropzone>
+      </div>
+    </div>
+    <div class="col-span-1">
+      <div class="thumb" v-for="(img,index) in images" :key="index">
+        <img :src="`${$store.state.static.fileBaseUrl}file/free/${img}`" alt="">
+        <ion-icon name="close-outline" class="delete-thumb" @click="destroyImage(img)"></ion-icon>
       </div>
     </div>
   </div>
@@ -61,9 +67,13 @@ export default {
       type: String,
       required: true,
     },
+    value: {
+      type: Array
+    }
   },
 
   created() {
+    this.uploaded = this.value;
     this.setMaxFiles(this.multiple);
   },
 
@@ -71,7 +81,7 @@ export default {
     uploadSuccess: function (file, response) {
       this.uploading = false;
       this.uploaded.push(response.fileName);
-      this.$emit("success", response.fileName);
+      this.$emit("input", uploaded);
     },
 
     maxfilesexceeded(files) {
@@ -85,12 +95,20 @@ export default {
       this.multi = value;
       this.dropzoneOptions.maxFiles = !value ? 1 : 100;
     },
+    destroyImage(image) {
+      this.uploaded.splice( this.uploaded.indexOf(image) , 1);
+      this.$emit('input', this.uploaded);
+    }
+
   },
 
   watch: {
     multiple(value) {
       this.setMaxFiles(value);
     },
+    value(newValue) {
+      this.uploaded = newValue;
+    }
   },
 
   components: {
@@ -149,6 +167,26 @@ export default {
         }
       }
     }
+  }
+}
+
+.thumb {
+  @apply relative;
+  width: 58px;
+  height: 58px;
+
+  >img {
+    @apply w-full h-full rounded-lg;
+  }
+
+  &:hover .delete-thumb {
+    @apply opacity-100;
+  }
+
+  >.delete-thumb {
+    @apply cursor-pointer bg-white absolute opacity-0 transition-opacity duration-150 ease-in-out;
+    right: 18px;
+    top: 19px;
   }
 }
 </style>

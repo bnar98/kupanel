@@ -1,16 +1,7 @@
 <template>
   <div class="table-loader">
-    <div class="flex flex-row" v-if="hasSearch">
-      <div class="md:w-1/2 sm:w-full">
-        <div class="search-container">
-          <span class="loader-box">
-            <div class="loader-animation"></div>
-          </span>
-          <span class="loader-box">
-            <div class="loader-animation"></div>
-          </span>
-        </div>
-      </div>
+    <div v-if="hasSearch">
+        <SearchLoader></SearchLoader>
     </div>
     <table>
       <thead>
@@ -20,9 +11,7 @@
             :key="index"
             :width="column + '%'"
           >
-            <span class="loader-box">
-              <div class="loader-animation"></div>
-            </span>
+            <Shimmer></Shimmer>
           </th>
         </tr>
       </thead>
@@ -33,9 +22,7 @@
             :key="index"
             :width="column + '%'"
           >
-            <span class="loader-box">
-              <div class="loader-animation"></div>
-            </span>
+            <Shimmer></Shimmer>
           </td>
         </tr>
       </tbody>
@@ -44,7 +31,9 @@
 </template>
 
 <script>
+import SearchLoader from "./SearchLoader";
 export default {
+  components: {SearchLoader},
   data() {
     return {
       rowCount: 10,

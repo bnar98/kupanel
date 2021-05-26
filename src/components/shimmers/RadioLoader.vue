@@ -1,16 +1,16 @@
 <template>
   <div class="radio-loader">
     <div class="radio-box" v-for="index in radioCount" :key="index">
-      <span class="report-title loader-box">
-        <div class="loader-animation"></div>
-      </span>
+      <Shimmer :height="'20px'" :width="'130px'"></Shimmer>
     </div>
   </div>
 </template>
 
 <script>
+  import Shimmer from './Shimmer'
 export default {
   props: ["radioCount"],
+  components: {Shimmer}
 };
 </script>
 
@@ -18,11 +18,6 @@ export default {
 .radio-loader {
   .radio-box {
     @apply inline-block ml-2.5;
-
-    .loader-box {
-      height: 20px;
-      width: 130px;
-    }
   }
 }
 </style>

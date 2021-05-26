@@ -1,18 +1,12 @@
 <template>
   <div class="single-upload-loader">
-    <span class="loader-box">
-      <div class="loader-animation"></div>
-    </span>
+    <Shimmer rounded="rounded-full" :height="'100px'" :width="'100px'"></Shimmer>
   </div>
 </template>
 
-<style lang="scss">
-.single-upload-loader {
-  .loader-box,
-  .loader-animation {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+<script>
+  import Shimmer from './Shimmer'
+  export  default {
+    components: {Shimmer}
   }
-}
-</style>
+</script>

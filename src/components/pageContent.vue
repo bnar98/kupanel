@@ -7,7 +7,7 @@
 export default {
     data() {
         return {
-            
+
         }
     },
     props: {
@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
     .content{
-        @apply w-11/12 mt-1 mb-14 mx-auto ;
+        @apply w-11/12 mt-3 mb-14 mx-auto ;
         &.small{
             @apply w-3/5;
         }

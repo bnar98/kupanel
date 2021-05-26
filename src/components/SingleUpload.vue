@@ -61,7 +61,7 @@ export default {
     uploadSuccess: function (file, response) {
       this.uploading = false;
       this.uploaded.push(response.fileName);
-      this.$emit("success", response.fileName);
+      this.$emit("input", response.fileName);
     },
 
     maxfilesexceeded(files) {

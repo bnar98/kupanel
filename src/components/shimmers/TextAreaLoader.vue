@@ -1,26 +1,13 @@
 <template>
   <div class="textarea-loader-box">
-    <span class="textarea-loader-label loader-box">
-      <div class="loader-animation"></div>
-    </span>
-
-    <span class="textarea-loader loader-box">
-      <div class="loader-animation"></div>
-    </span>
+    <Shimmer class="mb-2" :height="'10px'" :width="'60%'"></Shimmer>
+    <Shimmer :height="'88px'" :width="'100%'"></Shimmer>
   </div>
 </template>
 
-<style lang="scss">
-.textarea-loader-box {
-  .textarea-loader-label {
-    @apply mb-2;
-    height: 10px;
-    width: 60%;
+<script>
+  import Shimmer from './Shimmer'
+  export  default {
+    components: {Shimmer}
   }
-
-  .textarea-loader {
-    @apply w-full;
-    height: 80px;
-  }
-}
-</style>
+</script>

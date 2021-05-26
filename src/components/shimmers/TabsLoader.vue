@@ -4,9 +4,7 @@
     <div class="w-full tab-titles">
       <ul>
         <li class="tabs-loader-item" v-for="index in tabsCount" :key="index">
-          <span class="loader-box">
-            <div class="loader-animation"></div>
-          </span>
+          <Shimmer :height="'30px'" :width="'100px'"></Shimmer>
         </li>
       </ul>
     </div>
@@ -17,9 +15,11 @@
 </template>
 
 <script>
-export default {
-  props: ["tabsCount"],
-};
+  import Shimmer from './Shimmer'
+  export  default {
+    props: ["tabsCount"],
+    components: {Shimmer}
+  }
 </script>
 
 <style lang="scss">
@@ -29,11 +29,6 @@ export default {
 
     .tabs-loader-item {
       @apply inline-block ml-2.5;
-
-      .loader-box {
-        height: 30px;
-        width: 100px;
-      }
     }
   }
 }

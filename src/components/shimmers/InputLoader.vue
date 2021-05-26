@@ -1,26 +1,13 @@
 <template>
   <div class="input-loader-box">
-    <span class="input-loader-label loader-box">
-      <div class="loader-animation"></div>
-    </span>
-
-    <span class="input-loader loader-box">
-      <div class="loader-animation"></div>
-    </span>
+    <Shimmer class="mb-2" :height="'10px'" :width="'60%'"></Shimmer>
+    <Shimmer :height="'30px'" :width="'100%'"></Shimmer>
   </div>
 </template>
 
-<style lang="scss">
-.input-loader-box {
-  .input-loader-label {
-    @apply mb-2;
-    height: 10px;
-    width: 60%;
+<script>
+  import Shimmer from './Shimmer'
+  export  default {
+    components: {Shimmer}
   }
-
-  .input-loader {
-    @apply w-full;
-    height: 30px;
-  }
-}
-</style>
+</script>

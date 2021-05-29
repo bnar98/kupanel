@@ -52,6 +52,8 @@ import TextAreaLoader from "./shimmers/TextAreaLoader.vue"
 import Status from "./Status.vue"
 import HeaderNotification from "./HeaderNotification.vue"
 import NotificationItems from "./NotificationItems.vue"
+import Collapse from "./Collapse.vue"
+import SectionTitle from "./SectionTitle.vue"
 
 export default {
     Button: Button,
@@ -107,5 +109,7 @@ export default {
     HeaderNotification: HeaderNotification,
     NotificationItems: NotificationItems,
     Paginate:Paginate,
-    Shimmer:Shimmer
+    Shimmer:Shimmer,
+    Collapse: Collapse,
+    SectionTitle:SectionTitle
 }

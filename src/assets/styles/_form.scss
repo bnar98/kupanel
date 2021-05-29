@@ -152,3 +152,44 @@ textarea {
   }
 
 }
+
+//date picker
+.vpd-content {
+  background-color: var(--datepicker-background-color) !important;
+}
+
+.vpd-actions {
+  button {
+    border-radius: var(--input-border-Radius-size);
+  }
+  button:hover {
+    background-color: var(--secondary-color) !important;
+  }
+}
+
+.vpd-header {
+  background-color: var(--secondary-color) !important;
+  span {
+    color: var(--white-color) !important;
+  }
+}
+
+.vpd-day {
+
+  &.selected {
+
+    .vpd-day-effect {
+      background-color: var(--secondary-color) !important;
+    }
+
+    .vpd-day-text {
+      color: var(--white-color) !important;
+    }
+
+  }
+
+}
+
+.vpd-actions button {
+  font-family: var(--font-family);
+}

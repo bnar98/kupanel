@@ -31,9 +31,10 @@
 </template>
 
 <script>
+import Shimmer from "./Shimmer";
 import SearchLoader from "./SearchLoader";
 export default {
-  components: {SearchLoader},
+  components: {SearchLoader, Shimmer},
   data() {
     return {
       rowCount: 10,

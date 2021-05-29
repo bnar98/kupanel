@@ -16,4 +16,25 @@
   opacity: 0
 }
 
+//collapse
+.collapse-enter-active, .collapse-leave-active {
+  transition: max-height .5s;
+}
+.collapse-enter, .collapse-leave-to {
+  max-height: 0 !important;
+  overflow: hidden;
+}
+
+.fadeHeight-enter-active,
+.fadeHeight-leave-active {
+  transition: all 0.2s;
+  max-height: 500px;
+}
+.fadeHeight-enter,
+.fadeHeight-leave-to
+{
+  opacity: 0;
+  max-height: 0;
+}
+
 

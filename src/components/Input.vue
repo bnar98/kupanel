@@ -6,8 +6,9 @@
       <span class="input-separator" v-if="separator"></span>
       <span class="input-unit" v-if="unit">{{unit}}</span>
       <input :type="type" :class="{'input-with-icon': icon !== '','error': !valid}" @input="handler" @blur="blurHandler"
+             @focus="focusHandler"
              @paste="handlePaste" @keypress='isNumberKey($event)' :placeholder="placeholder"
-             :min="minValue" :disabled="disabled" :value="value" :name="name" :id="name">
+             :min="minValue" :disabled="disabled" :value="value" :name="name" :id="name" autocomplete="off">
     </div>
   </div>
 </template>
@@ -64,8 +65,7 @@
       },
       label: {
         type: String,
-        default: '',
-        required:true
+        default: ''
       }
 
     },
@@ -94,6 +94,10 @@
 
       blurHandler() {
         this.$emit("blur");
+      },
+
+      focusHandler() {
+        this.$emit("focus");
       },
 
       handlePaste(event) {

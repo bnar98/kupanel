@@ -27,9 +27,11 @@
       </div>
     </div>
     <div class="col-span-1">
-      <div class="thumb" v-for="(img,index) in uploaded" :key="index">
-        <img :src="`${$store.state.static.fileBaseUrl}file/free/${img}`" alt="">
-        <ion-icon name="close-outline" class="delete-thumb" @click="destroyImage(img)"></ion-icon>
+      <div class="flex flex-row gap-4">
+        <div class="thumb" v-for="(img,index) in uploaded" :key="index">
+          <img :src="`${$store.state.static.fileBaseUrl}file/free/${img}`" alt="">
+          <ion-icon name="close-outline" class="delete-thumb" @click="destroyImage(img)"></ion-icon>
+        </div>
       </div>
     </div>
   </div>

@@ -45,6 +45,7 @@
 
     methods:{
       selectTab(selectedTab) {
+        this.$emit('getActiveId', selectedTab.componentInstance.id);
         this.tabs.forEach((tab) => {
             tab.componentInstance.isActive = (tab.componentInstance.name === selectedTab.componentInstance.name);
         })

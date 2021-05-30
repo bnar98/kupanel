@@ -54,6 +54,8 @@ import HeaderNotification from "./HeaderNotification.vue"
 import NotificationItems from "./NotificationItems.vue"
 import Collapse from "./Collapse.vue"
 import SectionTitle from "./SectionTitle.vue"
+import List from "./list/List.vue"
+import ListItem from "./list/ListItem.vue"
 
 export default {
     Button: Button,
@@ -111,5 +113,7 @@ export default {
     Paginate:Paginate,
     Shimmer:Shimmer,
     Collapse: Collapse,
-    SectionTitle:SectionTitle
+    SectionTitle:SectionTitle,
+    List:List,
+    ListItem:ListItem
 }

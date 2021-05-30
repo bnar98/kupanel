@@ -81,7 +81,7 @@ export default {
     uploadSuccess: function (file, response) {
       this.uploading = false;
       this.uploaded.push(response.fileName);
-      this.$emit("input", uploaded);
+      this.$emit("input", this.uploaded);
     },
 
     maxfilesexceeded(files) {
@@ -129,7 +129,7 @@ export default {
     }
 
     .dropzone-custom-content {
-      @apply flex flex-row justify-center items-center font-dana;
+      @apply flex flex-col justify-center items-center font-dana;
 
       .title {
         @apply text-input-label text-blue-dark;

@@ -142,7 +142,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['odd','even']
+    },
   },
   plugins: [],
 }

@@ -3,7 +3,7 @@
     <div :class="['tabs', 'grid', 'grid-cols-1', 'w-full', height]">
         <div class="w-full tab-titles px-0">
             <ul class="m-0 p-0">
-                <li v-for="(tab, index) in tabs" :key="index" v-if="tab.componentInstance" :class="['list-none', 'inline-block', 'my-0', 'mx-4', 'cursor-pointer', 'text-lg', 'text-title',{'is-active': tab.componentInstance.isActive}]">
+                <li v-for="(tab, index) in tabs" :key="index" v-if="tab.componentInstance" :class="['list-none', 'inline-block', 'my-0', 'px-4', 'cursor-pointer', 'text-lg', 'text-title',{'is-active': tab.componentInstance.isActive}]">
                     <a class="px-0 pt-0 pb-4 flex items-center" @click="selectTab(tab)">
 
                         <div class="icon-box" v-if="tab.componentInstance.icon !== ''">

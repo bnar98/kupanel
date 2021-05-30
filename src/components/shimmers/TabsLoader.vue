@@ -1,6 +1,6 @@
 
 <template>
-  <div class="tabs-loader flex flex-row">
+  <div class="tabs-loader flex flex-col">
     <div class="w-full tab-titles">
       <ul>
         <li class="tabs-loader-item" v-for="index in tabsCount" :key="index">

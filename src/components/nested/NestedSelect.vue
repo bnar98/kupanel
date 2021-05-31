@@ -86,11 +86,11 @@
             </ul>
             <div class="flex flex-row" v-if="multi">
               <div class="w-full px-7 py-4">
-                <Button
+                <ku-Button
                   ui="btn btn-primary small float-left"
                   :title="$t('account.save')"
                   @click.native="confirm"
-                ></Button>
+                ></ku-Button>
               </div>
             </div>
           </div>

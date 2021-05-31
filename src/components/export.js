@@ -56,6 +56,7 @@ import Collapse from "./Collapse.vue"
 import SectionTitle from "./SectionTitle.vue"
 import List from "./list/List.vue"
 import ListItem from "./list/ListItem.vue"
+import SwitchButton from "./SwitchButton.vue"
 
 export default {
     Button: Button,
@@ -115,5 +116,6 @@ export default {
     Collapse: Collapse,
     SectionTitle:SectionTitle,
     List:List,
-    ListItem:ListItem
+    ListItem:ListItem,
+    SwitchButton:SwitchButton
 }

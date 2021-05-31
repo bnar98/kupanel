@@ -45,7 +45,7 @@
         default: false
       },
       value: {
-        type: String
+
       },
       type: {
         type: String,

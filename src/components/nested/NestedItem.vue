@@ -12,15 +12,16 @@
       name="chevron-back-outline"
       v-if="itemValues.has_child"
     ></ion-icon>
-    <check-box
+    <checkbox
       :name="itemValues.label"
       v-if="!itemValues.has_child && multi"
       v-model="isChecked"
-    ></check-box>
+    ></checkbox>
   </li>
 </template>
 
 <script>
+  import Checkbox from "../Checkbox";
 export default {
   data() {
     return {
@@ -64,5 +65,8 @@ export default {
       }
     },
   },
-};
+
+ components: {Checkbox}
+
+}
 </script>

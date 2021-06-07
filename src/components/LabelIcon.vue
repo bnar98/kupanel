@@ -33,7 +33,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .label-icon {
-  @apply flex items-end py-2.5 px-0;
+  @apply flex items-center py-2.5 px-0;
 
   .icon {
     @apply text-icon-default text-gray-400;

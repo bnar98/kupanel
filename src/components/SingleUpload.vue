@@ -141,7 +141,7 @@ export default {
     @apply bg-transparent;
 
     .dz-image {
-      border-radius: 9999px !important;
+      @apply rounded-full;
       width: 100px;
       height: 100px;
 

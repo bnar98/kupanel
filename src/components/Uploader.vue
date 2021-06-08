@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="col-span-1">
-      <div class="flex flex-row gap-4">
+      <div class="flex flex-row gap-4" v-if="multiple">
         <div class="thumb" v-for="(img,index) in uploaded" :key="index">
           <img :src="`${$store.state.static.fileBaseUrl}file/free/${img}`" alt="">
           <ion-icon name="close-outline" class="delete-thumb" @click="destroyImage(img)"></ion-icon>
@@ -70,20 +70,27 @@ export default {
       required: true,
     },
     value: {
-      type: Array
+
     }
   },
 
   created() {
-    this.uploaded = this.value;
+    this.setUploaded(this.value);
+
     this.setMaxFiles(this.multiple);
   },
 
   methods: {
+
     uploadSuccess: function (file, response) {
       this.uploading = false;
       this.uploaded.push(response.fileName);
-      this.$emit("input", this.uploaded);
+      if (this.multiple){
+        this.$emit("input", this.uploaded);
+      } else {
+        this.$emit("input", this.uploaded[0]);
+      }
+
     },
 
     maxfilesexceeded(files) {
@@ -97,9 +104,18 @@ export default {
       this.multi = value;
       this.dropzoneOptions.maxFiles = !value ? 1 : 100;
     },
+
     destroyImage(image) {
       this.uploaded.splice( this.uploaded.indexOf(image) , 1);
       this.$emit('input', this.uploaded);
+    },
+
+    setUploaded(value) {
+      if (this.multiple && value){
+        this.uploaded = value;
+      } else if(value) {
+        this.uploaded[0] = value;
+      }
     }
 
   },
@@ -109,7 +125,7 @@ export default {
       this.setMaxFiles(value);
     },
     value(newValue) {
-      this.uploaded = newValue;
+      this.setUploaded(newValue);
     }
   },
 

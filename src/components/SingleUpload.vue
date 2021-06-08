@@ -137,19 +137,20 @@ export default {
     @apply m-0;
   }
 
+  .dz-image {
+    @apply rounded-full;
+    width: 100px;
+    height: 100px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   .dropzone .dz-preview.dz-image-preview {
     @apply bg-transparent;
 
-    .dz-image {
-      @apply rounded-full;
-      width: 100px;
-      height: 100px;
-
-      img {
-        width: 100px;
-        height: 100px;
-      }
-    }
   }
 
   .dropzone .dz-preview {

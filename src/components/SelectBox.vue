@@ -79,7 +79,7 @@
        }
 
       ul {
-        @apply absolute w-full p-0 mb-10 bg-input-background-color rounded-lg overflow-y-auto overflow-x-hidden z-10
+        @apply absolute w-full p-0 mb-10 bg-input-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
         left-0 top-8;
         max-height: 300px !important;
 

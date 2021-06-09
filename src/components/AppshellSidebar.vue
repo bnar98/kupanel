@@ -60,7 +60,7 @@ $sidemenu-animation-duration: .4s;
 
 .localization-rtl {
     .side-menu {
-        @apply border-l-2 border-solid border-default-border-color right-0;
+        @apply border-l-2 border-solid border-default-border-color right-0 pb-24;
         &.open {
             .parent-menu {
                 @apply pr-6;
@@ -84,7 +84,7 @@ $sidemenu-animation-duration: .4s;
                 }
 
             }
-        } 
+        }
     }
 }
 </style>

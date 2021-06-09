@@ -64,6 +64,10 @@
     @apply min-w-full w-full max-w-full overflow-x-auto overflow-y-hidden;
 
     table{
+      border-spacing: 2px;
+      border-collapse: separate;
+      box-sizing: border-box;
+      text-indent: initial;
 
       td,th{
         @apply p-4;

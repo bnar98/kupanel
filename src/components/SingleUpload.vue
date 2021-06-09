@@ -1,5 +1,5 @@
 <template>
-  <div class="dropzone-box single-upload">
+  <div :class="['dropzone-box', {'single-upload':type !== 'file', 'file-upload': type === 'file'}]">
     <vue-dropzone
       ref="myVueDropzone"
       id="dropzone"
@@ -7,9 +7,9 @@
       :useCustomSlot="true"
       v-on:vdropzone-success="uploadSuccess"
       @vdropzone-max-files-exceeded="maxfilesexceeded"
-      v-on:vdropzone-sending="test"
+      v-on:vdropzone-sending="sending"
     >
-      <div class="dropzone-custom-content">
+      <div class="dropzone-custom-content" v-if="type === 'img'">
         <div class="upload-img dropzone-previews">
           <img
             class="upload-img-preview"
@@ -25,8 +25,19 @@
             v-if="uploaded.length === 0 && !uploading && url"
           />
           <span class="upload-img-btn"
-            ><ion-icon name="camera-outline"></ion-icon
+          ><ion-icon name="camera-outline"></ion-icon
           ></span>
+        </div>
+      </div>
+      <div class="dropzone-custom-content" v-else>
+        <div class="upload-img dropzone-previews">
+          <Input
+            name="file"
+            :placeholder="'choos a file'"
+            v-model="fileName"
+            icon="attach-outline"
+            separator
+          />
         </div>
       </div>
     </vue-dropzone>
@@ -36,6 +47,7 @@
 <script>
 import vue2Dropzone from "vue2-dropzone";
 import "vue2-dropzone/dist/vue2Dropzone.min.css";
+import Input from "./Input";
 
 export default {
   data() {
@@ -54,11 +66,14 @@ export default {
       },
       uploaded: [],
       uploading: false,
+      fileName: this.placeholder,
+      disabled: false
     };
   },
 
   methods: {
     uploadSuccess: function (file, response) {
+      this.fileName = file.name;
       this.uploading = false;
       this.uploaded.push(response.fileName);
       this.$emit("input", response.fileName);
@@ -69,7 +84,12 @@ export default {
       this.$refs.myVueDropzone.addFile(files);
     },
 
-    test() {
+    sending(file) {
+      if (this.type === 'file') {
+        document.getElementsByClassName('dz-file-preview')[0].style.display = "none";
+        this.fileName = this.uploadingText;
+      }
+
       this.uploading = true;
       this.uploaded = [];
       $(".dz-preview:not(:last-child)").remove();
@@ -78,6 +98,7 @@ export default {
 
   components: {
     vueDropzone: vue2Dropzone,
+    Input
   },
 
   watch: {
@@ -100,6 +121,18 @@ export default {
       default: '',
       type: String,
       required: true
+    },
+    type: {
+      type:String,
+      default:'img'
+    },
+    placeholder: {
+      type:String,
+      default:''
+    },
+    uploadingText: {
+      type:String,
+      default:''
     }
   }
 
@@ -157,6 +190,30 @@ export default {
     @apply m-0;
   }
 }
+
+
+.file-upload{
+  .vue-dropzone{
+    min-height: unset;
+    padding: 0;
+    border: none;
+    &:hover{
+     background-color: white;
+    }
+    .upload-img{
+      @apply w-full;
+    }
+
+  }
+
+  .dz-preview{
+    display: none !important;
+  }
+
+
+
+}
+
 
 .localization-rtl {
   .upload-img {

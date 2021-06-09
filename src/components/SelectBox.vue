@@ -1,5 +1,6 @@
 <template>
     <div :class="['select-box-area', {'disabled': disabled === true}]"  v-click-outside="hideSelectBox">
+      <label :for="name" class="label" v-if="label">{{ label }}</label>
         <div class='select-box' @click="visible = !visible">
             <span class='select-box-selected-item'>{{ selected === undefined ? placeholder : selected[property] }}</span>
             <ion-icon name="chevron-down-outline"></ion-icon>
@@ -12,7 +13,22 @@
 
 <script>
     export default {
-        props: ['value', 'options', 'property', 'placeholder', 'disabled'],
+        props: {
+          value:{},
+          options:{},
+          property:{},
+          placeholder:{},
+          disabled:{},
+          name: {
+            type: String,
+            default: '',
+            required:true
+          },
+          label: {
+            type: String,
+            default: ''
+          }
+        },
 
         data() {
             return {

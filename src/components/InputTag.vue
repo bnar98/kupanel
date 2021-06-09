@@ -1,6 +1,6 @@
 <template>
   <div class="tags-input">
-
+    <label :for="name" class="label" v-if="label">{{ label }}</label>
     <input type="text"
            name="tags"
            class="form-control"
@@ -49,6 +49,15 @@
 
       disabled: {
         default: false
+      },
+      name: {
+        type: String,
+        default: '',
+        required:true
+      },
+      label: {
+        type: String,
+        default: ''
       }
 
     },

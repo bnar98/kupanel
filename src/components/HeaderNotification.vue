@@ -8,13 +8,17 @@
             <div v-show="showDroDown" class="notification-dropDown absolute w-96 bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg">
                 <div class="dropdown-header flex ">
                     <div class="text-gray-600">{{title}}</div>
-                    <div class="text-blue-500 cursor-pointer">{{ headerActiontitle }}</div>
+                    <nuxt-link :to="url">
+                      <div class="text-blue-500 cursor-pointer">{{ headerActiontitle }}</div>
+                    </nuxt-link>
                 </div>
                 <slot></slot>
-                <span class="w-full flex justify-center text-blue-500 cursor-pointer p-4 ">{{footerTitle}}</span>
+                <nuxt-link :to="url">
+                  <span class="w-full flex justify-center text-blue-500 cursor-pointer p-4 ">{{footerTitle}}</span>
+                </nuxt-link>
             </div>
          </transition>
-        
+
     </div>
 </template>
 <script>
@@ -48,7 +52,11 @@ export default {
         footerTitle:{
             type: String,
             default: ""
-        }
+        },
+        url: {
+          type: String,
+          default: "",
+        },
     },
 }
 </script>

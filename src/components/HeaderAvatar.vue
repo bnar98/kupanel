@@ -11,7 +11,7 @@
                 </div>
             </div>
         </transition>
-        
+
     </div>
 </template>
 <script>

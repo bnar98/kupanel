@@ -8,6 +8,7 @@
       v-on:vdropzone-success="uploadSuccess"
       @vdropzone-max-files-exceeded="maxfilesexceeded"
       v-on:vdropzone-sending="sending"
+      @vdropzone-file-added= "error"
     >
       <div class="dropzone-custom-content" v-if="type === 'img'">
         <div class="upload-img dropzone-previews">
@@ -94,6 +95,11 @@ export default {
       this.uploaded = [];
       $(".dz-preview:not(:last-child)").remove();
     },
+    error(){
+      if (this.type === 'file') {
+        document.getElementsByClassName('dz-file-preview')[0].style.display = "none";
+      }
+    }
   },
 
   components: {

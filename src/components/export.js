@@ -57,6 +57,8 @@ import SectionTitle from "./SectionTitle.vue"
 import List from "./list/List.vue"
 import ListItem from "./list/ListItem.vue"
 import SwitchButton from "./SwitchButton.vue"
+import Steps from "./steps/Steps.vue"
+import Step from "./steps/Step.vue"
 
 export default {
     Button: Button,
@@ -117,5 +119,7 @@ export default {
     SectionTitle:SectionTitle,
     List:List,
     ListItem:ListItem,
-    SwitchButton:SwitchButton
+    SwitchButton:SwitchButton,
+    Steps:Steps,
+    Step:Step
 }

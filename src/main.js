@@ -17,8 +17,17 @@ import kuComponents from './components/export'
 Vue.config.productionTip = false
 Vue.config.ignoredElements = [/^ion-/]
 
+
 export default {
   install (Vue, perfix) {
+    Vue.directive(
+      'click-outside',
+      require('./directives/ClickOutside').default
+    );
+    Vue.directive(
+      'can',
+      require('./directives/can').default
+    );
   if (!perfix) {
     perfix = 'ku-'
   }

@@ -13,15 +13,16 @@
   }
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  @apply text-input-placeholder-color opacity-100;
+  color: var(--input-placeholder-color) !important;
+  opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  @apply text-input-placeholder-color;
+  color: var(--input-placeholder-color) !important;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  @apply text-input-placeholder-color;
+  color: var(--input-placeholder-color) !important;
 }
 
 input[type="text"],
@@ -82,12 +83,12 @@ input:disabled, .disabled{
 }
 
 .input-separator {
-  @apply absolute my-0 mx-9 bg-vertical-seperator-color h-4;
+  @apply absolute my-0 mx-10 bg-vertical-seperator-color h-4;
   width: 1px;
 }
 
 .input-icon {
-  @apply absolute my-0 mx-3;
+  @apply absolute my-0 mx-3 text-icon-default text-icon-color;
 }
 
 .input-unit{

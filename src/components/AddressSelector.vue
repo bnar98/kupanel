@@ -4,6 +4,7 @@
       <ku-SelectBox
               :options="countries"
               property="title"
+              name="country"
               :placeholder="$t('country')"
               v-model="addressForm.country_id"
               @change="updateRegions($event)"
@@ -14,6 +15,7 @@
       <ku-SelectBox
               :options="regions"
               property="title"
+              name="region"
               :placeholder="$t('region')"
               v-model="addressForm.region_id"
               @change="updateCities($event)"
@@ -24,6 +26,7 @@
       <ku-SelectBox
               :options="cities"
               property="title"
+              name="city"
               :placeholder="$t('city')"
               v-model="addressForm.city_id"
               @change="emitForm($event)"

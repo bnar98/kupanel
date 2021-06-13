@@ -2,7 +2,7 @@
     <div class="steps col-span-1">
         <div class="steps-box grid grid-cols-12">
             <span v-if="activeStep" class="section-inside-title m-0 col-span-12 lg:col-span-4">{{activeStep.componentInstance.name}}</span>
-            
+
             <div :class="['steps-list', 'col-span-12', 'lg:col-span-8', 'grid', colsNumberClass]">
                 <div class="step col-xs px-0" v-for="(step, index) in steps" :key="index" v-if="step.componentInstance" :class="{'is-active': step.componentInstance.isActive && !step.componentInstance.isValidation, 'is-validate': step.componentInstance.isValidation }">
                     <div class="step-ui">
@@ -59,7 +59,7 @@ import { EventBus } from '../../event'
                             }
                             return true
                         }
-                    
+
                     }
                 })
             }
@@ -72,7 +72,6 @@ import { EventBus } from '../../event'
         methods:{
 
             selectStep(selectedStepIndex) {
-                console.log("aaaaaa",this.steps);
                 this.steps.forEach((step,index) => {
                   if (index < selectedStepIndex -1) {
                     step.componentInstance.isValidation = true;
@@ -188,7 +187,7 @@ import { EventBus } from '../../event'
               .step-title{
                   padding: 10px 15px;
                   pointer-events: none;
-                  
+
               }
 
               &:first-child, &:last-child{

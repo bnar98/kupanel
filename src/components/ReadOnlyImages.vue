@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{'form-group': gap}">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <div class="flex flex-row mx-0 bg-gray-200 p-4">
       <div class="w-1/6" v-for="(img, index) in images" :key="index">
@@ -32,6 +32,10 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+    gap:{
+      type: Boolean,
+      default: true
     }
   },
 };

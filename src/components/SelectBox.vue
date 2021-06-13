@@ -1,5 +1,5 @@
 <template>
-    <div :class="['select-box-area', {'disabled': disabled === true}]"  v-click-outside="hideSelectBox">
+    <div :class="['select-box-area', {'form-group': gap,'disabled': disabled === true}]"  v-click-outside="hideSelectBox">
       <label :for="name" class="label" v-if="label">{{ label }}</label>
         <div class='select-box' @click="visible = !visible">
             <span class='select-box-selected-item'>{{ selected === undefined ? placeholder : selected[property] }}</span>
@@ -27,6 +27,10 @@
           label: {
             type: String,
             default: ''
+          },
+          gap:{
+            type: Boolean,
+            default: true
           }
         },
 

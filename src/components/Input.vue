@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div :class="['w-full', {'form-group': gap}]">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <div class="input-container">
       <ion-icon :name="icon" class="input-icon" v-if="icon !== ''"></ion-icon>
@@ -66,6 +66,10 @@
       label: {
         type: String,
         default: ''
+      },
+      gap:{
+        type: Boolean,
+        default: true
       }
 
     },

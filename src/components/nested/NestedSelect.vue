@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="form-group">
+    <div :class="{'form-group': gap}">
       <label class="label">{{ label }}</label>
       <input
         type="text"
@@ -136,6 +136,10 @@
         default: true,
         type: Boolean,
       },
+      gap:{
+        type: Boolean,
+        default: true
+      }
     },
 
     methods: {

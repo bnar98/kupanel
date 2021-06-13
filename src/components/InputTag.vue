@@ -1,5 +1,5 @@
 <template>
-  <div class="tags-input">
+  <div :class="['tags-input', {'form-group': gap}]">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <input type="text"
            name="tags"
@@ -58,6 +58,10 @@
       label: {
         type: String,
         default: ''
+      },
+      gap:{
+        type: Boolean,
+        default: true
       }
 
     },

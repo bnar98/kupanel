@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div :class="['w-full', {'form-group': gap}]">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <textarea type="text"
               :name="name"
@@ -52,6 +52,10 @@
       label: {
         type: String,
         default: ''
+      },
+      gap:{
+        type: Boolean,
+        default: true
       }
     },
 

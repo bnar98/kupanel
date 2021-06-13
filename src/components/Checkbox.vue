@@ -1,12 +1,20 @@
 <template>
-  <div>
+  <div :class="{'form-group': gap}">
     <input :id="name" type="checkbox" v-model="check" @click="toggle(!check)" />
     <label :for="name"><span></span>{{ title }}</label>
   </div>
 </template>
 <script>
 export default {
-  props: ["name", "title", "value"],
+  props: {
+      name: {},
+      title:{},
+      value:{},
+      gap:{
+        type: Boolean,
+        default: true
+      }
+  },
 
   data() {
     return {

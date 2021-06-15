@@ -1,43 +1,43 @@
-import Appshell from './Appshell.vue'
-import AppshellHeader from './AppshellHeader.vue'
-import AppshellSidebar from './AppshellSidebar.vue'
-import pageContent from './pageContent.vue'
-import Button from './Button.vue'
-import Checkbox from './Checkbox.vue'
-import SideMenuItem from './SideMenuItem.vue'
-import SideMenuSubItem from './SideMenuSubItem.vue'
-import Breadcrumb from './Breadcrumb.vue'
+import Appshell from './appshelll/Appshell.vue'
+import AppshellHeader from './appshelll/AppshellHeader.vue'
+import AppshellSidebar from './appshelll/AppshellSidebar.vue'
+import pageContent from './appshelll/pageContent.vue'
+import Button from './form/Button.vue'
+import Checkbox from './form/Checkbox.vue'
+import SideMenuItem from './appshelll/SideMenuItem.vue'
+import SideMenuSubItem from './appshelll/SideMenuSubItem.vue'
+import Breadcrumb from './util/Breadcrumb.vue'
 import Tabs from "./tabs/Tabs.vue"
 import Tab from "./tabs/Tab.vue"
 import Table from "./table/Table.vue"
 import TableRow from "./table/TableRow.vue"
-import HorizontalSelect from "./HorizontalSelect.vue"
-import RadioButton from "./RadioButton.vue"
-import Modal from "./Modal.vue"
-import InputTag from "./InputTag.vue"
-import ReadOnlyImages from "./ReadOnlyImages.vue"
-import LabelIcon from "./LabelIcon.vue"
-import HeaderAvatar from './HeaderAvatar.vue'
-import Paginate from './Paginate.vue'
+import HorizontalSelect from "./form/HorizontalSelect.vue"
+import RadioButton from "./form/RadioButton.vue"
+import Modal from "./util/Modal.vue"
+import InputTag from "./form/InputTag.vue"
+import ReadOnlyImages from "./form/ReadOnlyImages.vue"
+import LabelIcon from "./util/LabelIcon.vue"
+import HeaderAvatar from './appshelll/HeaderAvatar.vue'
+import Paginate from './util/Paginate.vue'
 import Shimmer from './shimmers/Shimmer.vue'
-import Uploader from "./Uploader.vue";
-import SingleUpload from "./SingleUpload.vue";
-import InputCode from "./InputCode.vue"
-import SelectBox from "./SelectBox.vue"
-import ValidationViewer from "./ValidationViewer.vue"
-import AddressSelector from "./AddressSelector.vue"
-import EmptyComponent from "./EmptyComponent.vue"
-import ConfirmDialog from "./ConfirmDialog.vue"
-import HeaderDropDownItem from "./HeaderDropDownItem.vue"
-import HeaderDropDownfooter from "./HeaderDropDownfooter.vue"
+import Uploader from "./form/Uploader.vue";
+import SingleUpload from "./form/SingleUpload.vue";
+import InputCode from "./form/InputCode.vue"
+import SelectBox from "./form/SelectBox.vue"
+import ValidationViewer from "./form/ValidationViewer.vue"
+import AddressSelector from "./form/AddressSelector.vue"
+import EmptyComponent from "./util/EmptyComponent.vue"
+import ConfirmDialog from "./util/ConfirmDialog.vue"
+import HeaderDropDownItem from "./appshelll/HeaderDropDownItem.vue"
+import HeaderDropDownfooter from "./appshelll/HeaderDropDownfooter.vue"
 import NestedSelect from "./nested/NestedSelect.vue"
 import NestedItem from "./nested/NestedItem.vue"
-import Input from "./Input.vue"
-import Textarea from "./Textarea.vue"
-import MainLoading from "./MainLoading.vue"
-import PageHeader from "./PageHeader.vue"
-import PageBody from "./PageBody.vue"
-import Flash from "./Flash.vue"
+import Input from "./form/Input.vue"
+import Textarea from "./form/Textarea.vue"
+import MainLoading from "./appshelll/MainLoading.vue"
+import PageHeader from "./appshelll/PageHeader.vue"
+import PageBody from "./appshelll/PageBody.vue"
+import Flash from "./util/Flash.vue"
 import ButtonLoader from "./shimmers/ButtonLoader.vue"
 import PageHeaderLoader from "./shimmers/PageHeaderLoader.vue"
 import EditorLoader from "./shimmers/EditorLoader.vue"
@@ -49,17 +49,18 @@ import TableLoader from "./shimmers/TableLoader.vue"
 import TabLoader from "./shimmers/TabLoader.vue"
 import TabsLoader from "./shimmers/TabsLoader.vue"
 import TextAreaLoader from "./shimmers/TextAreaLoader.vue"
-import Status from "./Status.vue"
-import HeaderNotification from "./HeaderNotification.vue"
-import NotificationItems from "./NotificationItems.vue"
-import Collapse from "./Collapse.vue"
-import SectionTitle from "./SectionTitle.vue"
+import Status from "./util/Status.vue"
+import HeaderNotification from "./appshelll/HeaderNotification.vue"
+import NotificationItems from "./appshelll/NotificationItems.vue"
+import Collapse from "./util/Collapse.vue"
+import SectionTitle from "./util/SectionTitle.vue"
 import List from "./list/List.vue"
 import ListItem from "./list/ListItem.vue"
-import SwitchButton from "./SwitchButton.vue"
+import SwitchButton from "./form/SwitchButton.vue"
 import Steps from "./steps/Steps.vue"
 import Step from "./steps/Step.vue"
-import Label from "./Label.vue"
+import Label from "./form/Label.vue"
+import Thumbnail from "./util/Thumbnail.vue"
 
 export default {
     Button: Button,
@@ -123,5 +124,6 @@ export default {
     SwitchButton:SwitchButton,
     Steps:Steps,
     Step:Step,
-    Label:Label
+    Label:Label,
+    Thumbnail:Thumbnail
 }

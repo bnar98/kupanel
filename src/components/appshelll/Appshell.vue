@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import {EventBus} from '../event'
+import {EventBus} from '../../event'
 export default {
     data() {
         return {
@@ -31,7 +31,7 @@ export default {
                 } else {
                     this.state = "wide"
                 }
-                    
+
             }
         );
     }
@@ -65,6 +65,6 @@ $sidemenu-animation-duration: .4s;
     }
 }
 
-    
+
 </style>
 

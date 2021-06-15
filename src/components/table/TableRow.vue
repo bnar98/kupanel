@@ -38,7 +38,7 @@
       :class="['collapse-content', { show: showDetail }]"
     >
       <td colspan="100%">
-        <div class="flex flex-row m-0 collapse-content-box">
+        <div class="collapse-content-box">
           <slot name="rowDetail"></slot>
         </div>
       </td>

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import englishDigit from "../../plugins/englishDigit";
+  import englishDigit from "../../../plugins/englishDigit";
   export default {
 
     data() {

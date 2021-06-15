@@ -9,6 +9,7 @@
               :rows="row"
               :value="normalizedValue"
               :class="{ 'error': !valid }"
+              :disabled="disabled"
               @input="handler" @blur="blurHandler"
     />
   </div>

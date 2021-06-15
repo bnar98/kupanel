@@ -14,11 +14,11 @@
   </div>
 </template>
 <script>
-import {EventBus} from '../event'
+import {EventBus} from '../../event'
 export default {
   data() {
     return {
-      
+
     }
   },
   methods: {

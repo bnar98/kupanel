@@ -14,7 +14,7 @@
         <div class="upload-img dropzone-previews">
           <img
             class="upload-img-preview"
-            src="./../assets/images/users/defaultUser.svg"
+            src="../../assets/images/users/defaultUser.svg"
             alt=""
             v-if="uploaded.length === 0 && !uploading && !url"
           />

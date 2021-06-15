@@ -82,7 +82,7 @@
     }
 
     .loading-global .logo .img {
-        background: url(../assets/images/logo.svg);
+        background: url(../../assets/images/logo.svg);
         @apply bg-cover bg-center bg-no-repeat;
         height: 85px;
         width: 98px;

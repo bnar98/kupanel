@@ -1,26 +1,45 @@
 <template>
-  <div class="flex items-start">
-    <template v-for="(item, index) in items">
-      <div
-        :class="['py-0 px-1', { disabled: disabled }]"
-        @click="toggle(item)"
-        :key="index"
-      >
-        <input type="radio" :checked="check === item.value" />
-        <label
+  <div :class="{'form-group': gap}">
+    <label :for="name" class="label" v-if="label">{{ label }}</label>
+    <div class="flex items-start">
+      <template v-for="(item, index) in items">
+        <div
+          :class="['py-0 px-1', { disabled: disabled }]"
+          @click="toggle(item)"
+          :key="index"
+        >
+          <input type="radio" :checked="check === item.value" />
+          <label
           ><span></span
           >{{
             translatePrefix ? translatePrefix + item.title : item.title
-          }}</label
-        >
-      </div>
-    </template>
+            }}</label
+          >
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["items", "value", "disabled", "translatePrefix"],
+  props: {
+    items:{},
+    value:{},
+    disabled:{},
+    translatePrefix:{},
+    label: {
+      type: String
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    gap:{
+      type: Boolean,
+      default: true
+    }
+  },
 
   data() {
     return {

@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import { EventBus } from '../event'
+import { EventBus } from '../../event'
 
 export default {
 
@@ -34,6 +34,7 @@ $sideWidthClosed: 66px;
 $sidemenu-animation-duration: .4s;
 
 .side-menu {
+  @apply pb-24;
     -webkit-transition: $sidemenu-animation-duration;
     transition:  $sidemenu-animation-duration;
 
@@ -60,7 +61,7 @@ $sidemenu-animation-duration: .4s;
 
 .localization-rtl {
     .side-menu {
-        @apply border-l-2 border-solid border-default-border-color right-0 pb-24;
+        @apply border-l-2 border-solid border-default-border-color right-0 ;
         &.open {
             .parent-menu {
                 @apply pr-6;

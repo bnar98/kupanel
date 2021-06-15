@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import Checkbox from "../Checkbox";
+  import Checkbox from "../form/Checkbox";
 export default {
   data() {
     return {

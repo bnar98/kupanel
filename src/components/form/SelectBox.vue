@@ -88,6 +88,11 @@
 
     &.disabled {
       @apply pointer-events-none cursor-not-allowed;
+
+      .select-box{
+        @apply border-input-background-color;
+      }
+
      }
 
     .select-box {

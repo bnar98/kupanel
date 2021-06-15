@@ -3,9 +3,9 @@
         <table class="min-w-full pb-24">
             <thead>
             <tr class="font-medium">
-                <th class="low-width" v-if="collapsible"></th>
+                <th class="w-px" v-if="collapsible"></th>
                 <th  v-for="(header, index) in headers" :key="index"><span>{{header}}</span></th>
-                <th class="low-width" v-if="hasActions">
+                <th class="w-px" v-if="hasActions">
                     <span>عملیات</span>
                 </th>
             </tr>
@@ -79,9 +79,7 @@
           th{
             @apply  bg-table-header-background-color text-gray-800 whitespace-nowrap cursor-pointer;
 
-            &.low-width{
-              width: 1%;
-            }
+
 
             span{
               @apply flex items-center font-semibold;
@@ -107,9 +105,6 @@
           td{
             @apply text-base text-gray-800 whitespace-nowrap transition duration-200 ease-in;
 
-            &.low-width{
-              width: 1%;
-            }
 
             &.collapse-icon{
               &:before{
@@ -124,7 +119,7 @@
               }
             }
             &.dropdown{
-              @apply relative;
+              @apply relative text-center;
 
               .dropdown-btn{
                 @apply relative cursor-pointer outline-none bg-transparent border-none;

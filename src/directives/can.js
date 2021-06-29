@@ -1,42 +1,47 @@
-import Vue from 'vue';
-// import $store from "@/state/$store";
 
- const can = {
+const can = {
+
+  bind:function (elm, binding, vnode) {
+    elm.classList.add('hidden');
+  },
 
   inserted: function (elm, binding, vnode) {
-
     let show = false;
 
 
-    if (($store.state.permission.isSet && !$store.state.auth.account.is_superAdmin)){
+    if (vnode.context.$store.state.permission.isSet){
       let itemsProcessed = 0;
       binding.value.forEach(function (item) {
-        show = show || $store.state.permission.permissions.includes(item);
+        show = show || vnode.context.$store.state.permission.permissions.includes(item);
         itemsProcessed++;
         if (itemsProcessed === binding.value.length && !show ) {
 
           vnode.elm.parentElement.removeChild(vnode.elm);
 
+        } else {
+          elm.classList.remove('hidden');
         }
       })
     } else {
-      $store.watch(state => state.permission.permissions, permission => {
-        if ((!$store.state.auth.account.is_superAdmin)){
-          let itemsProcessed = 0;
-          binding.value.forEach(function (item, index) {
-            show = show || permission.includes(item);
-            itemsProcessed++;
-            if (itemsProcessed === binding.value.length && !show ) {
+      vnode.context.$store.watch(state => state.permission.permissions, permission => {
 
-              vnode.elm.parentElement.removeChild(vnode.elm);
+        let itemsProcessed = 0;
+        binding.value.forEach(function (item, index) {
+          show = show || permission.includes(item);
+          itemsProcessed++;
+          if (itemsProcessed === binding.value.length && !show ) {
 
-            }
-          })
-        }
+            vnode.elm.parentElement.removeChild(vnode.elm);
+
+          } else {
+            elm.classList.remove('hidden');
+          }
+        })
+
       })
     }
 
   }
 }
-export default can;
-// Vue.directive('can', can)
+
+export default can

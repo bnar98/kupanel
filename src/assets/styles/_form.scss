@@ -157,6 +157,7 @@ textarea {
 //date picker
 .vpd-content {
   background-color: var(--datepicker-background-color) !important;
+ 
 }
 
 .vpd-actions {
@@ -190,6 +191,18 @@ textarea {
   }
 
 }
+.vpd-time .vpd-time-h, .vpd-time .vpd-time-m {
+  text-align: center !important;
+  color: #a2a2a2;
+  // font-family: sans-serif;
+}
+.vpd-time{
+  text-align: center;
+  span{
+    font-size: 90px;
+  }
+}
+
 
 .vpd-actions button {
   font-family: var(--font-family);

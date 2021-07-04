@@ -1,10 +1,4 @@
 module.exports = {
-  purge: [
-    './src/**/*.vue',
-    './components/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.js',
-  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {

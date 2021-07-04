@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="form-group">
+    <label :for="name" class="label" v-if="label">{{ label }}</label>
     <div
       class="horizontal-select flex flex-row items-center justify-start overflow-hidden"
     >
@@ -27,6 +28,18 @@ export default {
     value: {
       default: "",
     },
+
+    label: {
+      type: String,
+      default: ''
+    },
+
+    name: {
+      type: String,
+      default: '',
+      required:true
+    }
+
   },
 
   data() {

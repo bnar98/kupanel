@@ -25,7 +25,6 @@ export default {
     },
 
     color: {
-      type: String,
       required: false,
     },
   },

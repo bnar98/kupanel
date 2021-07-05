@@ -23,7 +23,7 @@ import Shimmer from './shimmers/Shimmer.vue'
 import Uploader from "./form/Uploader.vue";
 import SingleUpload from "./form/SingleUpload.vue";
 import InputCode from "./form/InputCode.vue"
-import SelectBox from "./form/SelectBox.vue"
+import Select from "./form/Select.vue"
 import ValidationViewer from "./form/ValidationViewer.vue"
 import AddressSelector from "./form/AddressSelector.vue"
 import EmptyComponent from "./util/EmptyComponent.vue"
@@ -85,7 +85,7 @@ export default {
     Uploader: Uploader,
     SingleUpload: SingleUpload,
     InputCode: InputCode,
-    SelectBox: SelectBox,
+    Select: Select,
     ValidationViewer: ValidationViewer,
     AddressSelector: AddressSelector,
     EmptyComponent: EmptyComponent,

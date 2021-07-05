@@ -1,6 +1,6 @@
 <template>
-	<div class="row">
-        <div class="section col-lg-12 col-md-12 col-xs-12 col-sm-12">
+	<!-- <div class="row"> -->
+        <div>
             <div class="box bg-box-background-color border border-solid border-box-border-color " v-if="hasBox">
             	<div class="body py-3 px-6 text-title-color ">
             	    <slot />
@@ -8,7 +8,7 @@
             </div>
             <slot v-if="!hasBox" />
         </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script>

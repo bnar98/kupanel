@@ -33,10 +33,7 @@ body{
 body, html{
     @apply h-screen overflow-x-hidden;
 }
-a,
-li,
-p,
-span {
+a,li,p,span {
     @apply text-base text-gray-800;
 }
 

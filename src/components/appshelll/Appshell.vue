@@ -57,10 +57,10 @@ $sidemenu-animation-duration: .4s;
     #main-content {
         transition: padding-left $sidemenu-animation-duration;
         &.wide{
-            @apply pl-16;
+            @apply pl-14;
         }
         &.narrow{
-            @apply pl-64;
+            @apply pl-64 ;
         }
     }
 }

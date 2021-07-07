@@ -24,18 +24,22 @@
     computed: {
 
       crumbs() {
+
         const fullPath = this.$route.fullPath
+
         const params = fullPath.startsWith('/')
           ? fullPath.substring(1).split('/')
           : fullPath.split('/')
+
         if (Object.keys(this.$route.params).length > 0){
           // because /1014343 make problem for translate ,show edit translate twice
           params.pop()
         }
-        const crumbs = []
 
+        const crumbs = []
         let path = ''
         let translatableTitle = '';
+
         params.forEach((param, index) => {
           path = `${path}/${param}`
           const match = this.$router.match(path)
@@ -59,7 +63,6 @@
             } else if (index !== 0 && this.hasChild() > 0) {
               translatableTitle = translatableTitle + '.index'
             }
-            // }
 
           }
 
@@ -78,10 +81,12 @@
     },
 
     methods: {
+
       hasChild() {
         const childRoutes = this.$router.options.routes.filter(x => x.path.startsWith(this.$route.path+ '/'))
         return childRoutes.length;
       }
+
     }
 
   }

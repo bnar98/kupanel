@@ -61,6 +61,7 @@ import Steps from "./steps/Steps.vue"
 import Step from "./steps/Step.vue"
 import Label from "./form/Label.vue"
 import Thumbnail from "./util/Thumbnail.vue"
+import SelectMulti from "./form/SelectMulti";
 
 export default {
     Button: Button,
@@ -125,5 +126,6 @@ export default {
     Steps:Steps,
     Step:Step,
     Label:Label,
-    Thumbnail:Thumbnail
+    Thumbnail:Thumbnail,
+    SelectMulti: SelectMulti
 }

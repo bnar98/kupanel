@@ -203,6 +203,11 @@ export default {
   &.bordered {
     @apply bg-transparent;
   }
+  &.full {
+    .content {
+      @apply text-base p-0 m-0;
+    }
+  }
 
   &.default {
     .content {

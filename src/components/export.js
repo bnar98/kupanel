@@ -61,6 +61,7 @@ import Steps from "./steps/Steps.vue"
 import Step from "./steps/Step.vue"
 import Label from "./form/Label.vue"
 import Thumbnail from "./util/Thumbnail.vue"
+import PhoneInput from "./form/PhoneInput.vue"
 
 export default {
     Button: Button,
@@ -125,5 +126,6 @@ export default {
     Steps:Steps,
     Step:Step,
     Label:Label,
-    Thumbnail:Thumbnail
+    Thumbnail:Thumbnail,
+    PhoneInput:PhoneInput
 }

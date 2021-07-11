@@ -2,7 +2,7 @@
     <div>
         <label :for="name" class="label" v-if="label">{{ label }}</label>
         <div class="flex w-full relative" v-click-outside="hideSelectBox">
-            <Input :numeric="true" class="input" type="text" :gap="false" @keyup.prevent.native="pressKey" @keyup.enter.native="enter" :name="name" v-model="input" :placeholder="placeholder"></Input>
+            <Input ui="phone-input" :numeric="true" type="text" :gap="false" @keyup.prevent.native="pressKey" @keyup.enter.native="enter" :name="name" v-model="input" :placeholder="placeholder"></Input>
             <div class='select-box' @click="visible = !visible">
                 <ion-icon name="chevron-down-outline"></ion-icon>
                 <span class='select-box-selected-item '>{{ selected === undefined ? $t("mobile-input.code") : selected }}</span>
@@ -98,17 +98,19 @@ import Input from "./Input.vue"
     },
   }
 </script>
-<style lang="scss" >
-input{
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+<style lang="scss" scoped >
+.phone-input{
+    .input-container{
+        input{
+            border-left: none !important;
+        }
+    }
 }
 .code{
     direction: ltr;
 }
 .select-box {
-      @apply flex items-center justify-between relative cursor-pointer border-r-0 bg-input-background-color font-extralight text-sm py-2 px-4  rounded-l-lg outline-none box-border border border-solid border-input-border-color;
-        height: 41px;
+        @apply flex justify-between rounded-r-none border-r-0 px-4 relative box-border font-extralight items-center bg-input-background-color border-input-border-color border rounded-lg border-solid cursor-pointer;
         min-width: 100px;
       &:focus {
         @apply border border-solid border-input-focus-border-color;

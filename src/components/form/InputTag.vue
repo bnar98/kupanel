@@ -30,16 +30,16 @@
 
 <script>
 
-  export default {
+  export  default {
 
-    data() {
-      return {
-        newTagValue: '',
+    data(){
+      return{
+        newTagValue:'',
         tags: []
       }
     },
 
-    props: {
+    props:{
 
       value: {
         default: []
@@ -53,29 +53,29 @@
       name: {
         type: String,
         default: '',
-        required: true
+        required:true
       },
       label: {
         type: String,
         default: ''
       },
-      gap: {
+      gap:{
         type: Boolean,
         default: true
       }
 
     },
 
-    methods: {
+    methods:{
 
-      addTags() {
-        if (this.newTagValue !== '')
+      addTags(){
+        if(this.newTagValue !== '')
           this.tags.push(this.newTagValue);
         this.newTagValue = '';
         this.$emit('input', this.tags);
       },
 
-      removeTag(tagIndex) {
+      removeTag(tagIndex){
         this.tags.splice(tagIndex, 1);
         this.$emit('input', this.tags);
       }
@@ -99,34 +99,38 @@
 
 <style lang="scss">
 
-  .tag-list {
+  .tags-input{
 
-    ul {
-      @apply p-0 m-0 list-none;
+    .tag-list {
 
-      li {
-        @apply inline-block py-0 px-2 border border-input-border-color border-solid bg-input-background-color mt-4 rounded-lg;
+      ul {
+        @apply p-0 m-0 list-none;
 
-        .tag-content {
-          @apply flex items-center justify-between;
+        li{
+          @apply inline-block py-0 px-2 border border-input-border-color border-solid bg-input-background-color mt-4 rounded-lg;
 
-          &.disabled {
-            @apply cursor-not-allowed;
-          }
+          .tag-content{
+            @apply flex items-center justify-between;
 
-          .tag-title {
-            @apply text-input-text-color text-sm;
-          }
-
-          .tag-remove-btn {
-            @apply cursor-pointer flex items-center;
-
-            .icon {
-              @apply text-sm;
+            &.disabled{
+              @apply cursor-not-allowed;
             }
 
-          }
+            .tag-title{
+              @apply text-input-text-color text-sm;
+            }
 
+            .tag-remove-btn{
+              @apply cursor-pointer flex items-center;
+
+              .icon{
+                @apply text-sm;
+              }
+
+            }
+
+
+          }
 
         }
 
@@ -136,19 +140,23 @@
 
   }
 
-  .localization-rtl {
+  .localization-rtl{
 
-    .tag-list {
+    .tags-input{
 
-      ul {
+      .tag-list {
 
-        li {
-          @apply ml-2;
+        ul {
 
-          .tag-content {
+          li{
+            @apply ml-2;
 
-            .tag-remove-btn {
-              @apply pr-4;
+            .tag-content{
+
+              .tag-remove-btn{
+                @apply pr-4;
+              }
+
             }
 
           }
@@ -159,22 +167,25 @@
 
     }
 
-
   }
 
-  .localization-ltr {
+  .localization-ltr{
 
-    .tag-list {
+    .tags-input{
 
-      ul {
+      .tag-list {
 
-        li {
-          @apply mr-2;
+        ul {
 
-          .tag-content {
+          li{
+            @apply mr-2;
 
-            .tag-remove-btn {
-              @apply pl-4;
+            .tag-content{
+
+              .tag-remove-btn{
+                @apply pl-4;
+              }
+
             }
 
           }

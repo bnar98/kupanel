@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-1">
+    <div class="grid grid-cols-1 gap-4">
 
         <!--      // help text-->
         <small class="help" v-if="!currentFieldClient.$error && !backend.has(id) && helpText">{{helpText}}</small>
@@ -33,12 +33,6 @@
         <!--      //email validation tex-->
         <small class="help error" v-if="currentFieldClient.hasOwnProperty('email') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.numeric"
                v-text="name +' ' + $t('validations.email')"></small>
-      <!--      //maxValue validation text-->
-      <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('maxValue') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.maxValue"
-             v-text="name +' ' + $t('validations.max-value') + $t('validations.end-date') + $t('validations.be')"></small>
-      <!--      //minValue validation text-->
-      <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('minValue') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.minValue"
-             v-text="name +' ' + $t('validations.min-value') + $t('validations.start-date') + $t('validations.be')"></small>
 
     </div>
 </template>

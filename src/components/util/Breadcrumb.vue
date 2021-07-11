@@ -24,12 +24,19 @@
     computed: {
 
       crumbs() {
+
         const fullPath = this.$route.fullPath
+
         const params = fullPath.startsWith('/')
           ? fullPath.substring(1).split('/')
           : fullPath.split('/')
-        const crumbs = []
 
+        if (Object.keys(this.$route.params).length > 0){
+          // because /1014343 make problem for translate ,show edit translate twice
+          params.pop()
+        }
+
+        const crumbs = []
         let path = ''
         let translatableTitle = '';
 
@@ -37,20 +44,24 @@
           path = `${path}/${param}`
           const match = this.$router.match(path)
           translatableTitle = '';
+          let crumbTitle = ''
           if (match.name) {
-            const crumbTitle = match.name.split("___")[0].split("-");
-            crumbTitle.shift();
-            // index 0 is for /panel that has no name it apply in html code
-            if (index === 1 && !match.name.includes("-list")) {
-              translatableTitle = crumbTitle[0] + '.index'
-            } else {
-              crumbTitle.forEach((title, index) => {
-                if (index !== 0) {
-                  translatableTitle = translatableTitle + '.' + title
-                } else {
-                  translatableTitle = translatableTitle + title
-                }
-              })
+            crumbTitle = match.path.split("/");
+            crumbTitle.splice(0, 2);
+
+            crumbTitle.forEach((title, index1) => {
+              if (index1 !== 0) {
+                translatableTitle = translatableTitle + '.' + title
+              } else {
+                translatableTitle = translatableTitle + title
+              }
+            })
+
+
+            if(index !== 0 && index !== params.length -1){
+              translatableTitle = translatableTitle + '.index'
+            } else if (index !== 0 && this.hasChild() > 0) {
+              translatableTitle = translatableTitle + '.index'
             }
 
           }
@@ -66,6 +77,15 @@
 
         return crumbs
       },
+
+    },
+
+    methods: {
+
+      hasChild() {
+        const childRoutes = this.$router.options.routes.filter(x => x.path.startsWith(this.$route.path+ '/'))
+        return childRoutes.length;
+      }
 
     }
 

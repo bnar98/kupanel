@@ -39,13 +39,12 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 textarea {
-  @apply font-normal text-input-default py-2.5 px-3.5 rounded-lg bg-input-background-color outline-none transition-colors duration-100 ease-in-out
+  @apply font-normal text-input-default py-2.5 px-4  rounded-lg bg-input-background-color outline-none transition-colors duration-100 ease-in-out
    border border-solid border-input-border-color box-border w-full;
    text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: var(--app-text-direction);
-
   &.error {
     @apply border-red-light;
   }
@@ -80,6 +79,9 @@ input:disabled, textarea:disabled, .disabled{
 
 .input-container {
   @apply w-full relative flex items-center;
+  .phone-input{
+    @apply rounded-l-none;
+  }
 }
 
 .input-separator {

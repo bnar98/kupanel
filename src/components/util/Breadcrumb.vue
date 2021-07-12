@@ -35,11 +35,13 @@
           // because /1014343 make problem for translate ,show edit translate twice
           params.pop()
         }
+        if(localStorage.getItem('language') !== this.$i18n.defaultLocale) {
+          params.splice(0,1);
+        }
 
         const crumbs = []
         let path = ''
         let translatableTitle = '';
-
         params.forEach((param, index) => {
           path = `${path}/${param}`
           const match = this.$router.match(path)

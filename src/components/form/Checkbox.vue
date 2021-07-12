@@ -1,6 +1,6 @@
 <template>
   <div :class="{'form-group': gap}">
-    <input :id="name" type="checkbox" v-model="check" @click="toggle(!check)" />
+    <input :disabled="disabled" :id="name" type="checkbox" v-model="check" @click="toggle(!check)" />
     <label :for="name"><span></span>{{ title }}</label>
   </div>
 </template>
@@ -13,7 +13,11 @@ export default {
       gap:{
         type: Boolean,
         default: true
-      }
+      },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
   },
 
   data() {

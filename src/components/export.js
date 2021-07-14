@@ -62,6 +62,7 @@ import Step from "./steps/Step.vue"
 import Label from "./form/Label.vue"
 import Thumbnail from "./util/Thumbnail.vue"
 import PhoneInput from "./form/PhoneInput.vue"
+import SelectMulti from "./form/SelectMulti.vue"
 
 export default {
     Button: Button,
@@ -127,5 +128,6 @@ export default {
     Step:Step,
     Label:Label,
     Thumbnail:Thumbnail,
-    PhoneInput:PhoneInput
+    PhoneInput:PhoneInput,
+    SelectMulti:SelectMulti
 }

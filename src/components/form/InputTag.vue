@@ -1,17 +1,23 @@
 <template>
   <div :class="['tags-input', {'form-group': gap}]">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
-    <input type="text"
-           name="tags"
-           class="form-control"
-           id="tags"
-           :placeholder="placeholder"
-           autocomplete="off"
-           @keyup.enter.prevent="addTags"
-           v-model="newTagValue"
-           v-if="!disabled"
-    />
-
+    <div class="flex flex-row gap-4">
+      <Input type="text"
+             name="tags"
+             :placeholder="placeholder"
+             @keyup.enter.native="addTags"
+             v-model="newTagValue"
+             v-if="!disabled"
+             :gap="false"
+             :type="type"
+             :numeric="numeric"
+      />
+      <ku-Button v-if="btn"
+                 ui="btn btn-secondary bordered small float-left"
+                 icon="add-outline"
+                 @click.native="addTags"
+      ></ku-Button>
+    </div>
     <div class="tag-list">
       <ul>
         <li v-for="(tag, index) in tags" :key="index">
@@ -29,17 +35,18 @@
 </template>
 
 <script>
+  import Input from "./Input";
 
-  export  default {
+  export default {
 
-    data(){
-      return{
-        newTagValue:'',
+    data() {
+      return {
+        newTagValue: '',
         tags: []
       }
     },
 
-    props:{
+    props: {
 
       value: {
         default: []
@@ -53,29 +60,41 @@
       name: {
         type: String,
         default: '',
-        required:true
+        required: true
       },
       label: {
         type: String,
         default: ''
       },
-      gap:{
+      gap: {
         type: Boolean,
         default: true
-      }
+      },
+      btn: {
+        type: Boolean,
+        default: false
+      },
+      type:{
+        type: String,
+        default: 'text'
+      },
+      numeric: {
+        type: Boolean,
+        default: false
+      },
 
     },
 
-    methods:{
+    methods: {
 
-      addTags(){
-        if(this.newTagValue !== '')
+      addTags() {
+        if (this.newTagValue !== '')
           this.tags.push(this.newTagValue);
         this.newTagValue = '';
         this.$emit('input', this.tags);
       },
 
-      removeTag(tagIndex){
+      removeTag(tagIndex) {
         this.tags.splice(tagIndex, 1);
         this.$emit('input', this.tags);
       }
@@ -90,7 +109,9 @@
       value() {
         this.tags = this.value
       }
-    }
+    },
+
+    components:{Input}
 
   }
 
@@ -99,36 +120,60 @@
 
 <style lang="scss">
 
-  .tags-input{
+
+  .tag-list {
+
+    ul {
+      @apply p-0 m-0 list-none;
+
+      li {
+        @apply inline-block py-0 px-2 border border-input-border-color border-solid bg-input-background-color mt-4 rounded-lg;
+
+        .tag-content {
+          @apply flex items-center justify-between;
+
+          &.disabled {
+            @apply cursor-not-allowed;
+          }
+
+          .tag-title {
+            @apply text-input-text-color text-sm;
+          }
+
+          .tag-remove-btn {
+            @apply cursor-pointer flex items-center;
+
+            .icon {
+              @apply text-sm;
+            }
+
+          }
+
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+  .localization-rtl {
+
 
     .tag-list {
 
       ul {
-        @apply p-0 m-0 list-none;
 
-        li{
-          @apply inline-block py-0 px-2 border border-input-border-color border-solid bg-input-background-color mt-4 rounded-lg;
+        li {
+          @apply ml-2;
 
-          .tag-content{
-            @apply flex items-center justify-between;
+          .tag-content {
 
-            &.disabled{
-              @apply cursor-not-allowed;
+            .tag-remove-btn {
+              @apply pr-4;
             }
-
-            .tag-title{
-              @apply text-input-text-color text-sm;
-            }
-
-            .tag-remove-btn{
-              @apply cursor-pointer flex items-center;
-
-              .icon{
-                @apply text-sm;
-              }
-
-            }
-
 
           }
 
@@ -137,26 +182,24 @@
       }
 
     }
+
 
   }
 
-  .localization-rtl{
+  .localization-ltr {
 
-    .tags-input{
 
-      .tag-list {
+    .tag-list {
 
-        ul {
+      ul {
 
-          li{
-            @apply ml-2;
+        li {
+          @apply mr-2;
 
-            .tag-content{
+          .tag-content {
 
-              .tag-remove-btn{
-                @apply pr-4;
-              }
-
+            .tag-remove-btn {
+              @apply pl-4;
             }
 
           }
@@ -167,34 +210,6 @@
 
     }
 
-  }
-
-  .localization-ltr{
-
-    .tags-input{
-
-      .tag-list {
-
-        ul {
-
-          li{
-            @apply mr-2;
-
-            .tag-content{
-
-              .tag-remove-btn{
-                @apply pl-4;
-              }
-
-            }
-
-          }
-
-        }
-
-      }
-
-    }
 
   }
 

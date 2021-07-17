@@ -1,6 +1,6 @@
 <template>
     <div>
-        <label :for="name" class="label" v-if="label">{{ label }}</label>
+        <label :for="name" class="label" :class="{'form-group': gap}" v-if="label">{{ label }}</label>
         <div class="flex w-full relative" v-click-outside="hideSelectBox">
             <Input ui="phone-input" :numeric="true" type="text" :gap="false" @keyup.prevent.native="pressKey" @keyup.enter.native="enter" :name="name" v-model="input" :placeholder="placeholder"></Input>
             <div class='select-box' @click="visible = !visible">
@@ -53,6 +53,10 @@ import Input from "./Input.vue"
             type: Number,
             default: null,
             required: false
+        },
+        gap:{
+            type: Boolean,
+            default: true
         }
     },
     mounted(){
@@ -91,11 +95,11 @@ import Input from "./Input.vue"
     created() {
         
     },
-    watch: {
-      value(newValue) {
-            console.log(newValue);
-      }
-    },
+    // watch: {
+    //   value(newValue) {
+    //         console.log(newValue);
+    //   }
+    // },
   }
 </script>
 <style lang="scss" scoped >

@@ -2,11 +2,11 @@
   <div :class="['select-box-area', {'form-group': gap,'disabled': disabled === true}]" v-click-outside="hideSelectBox">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <div class='select-box' @click="visible = !visible">
-      <span class='select-box-selected-item'>{{ selected === undefined ? placeholder : selected[property] }}</span>
+      <span class='select-box-selected-item'>{{ selected === undefined ? placeholder : selectedTitle}}</span>
       <ion-icon name="chevron-down-outline"></ion-icon>
       <ul class="select-box-item" v-if="visible">
         <li v-for="(option, index) in options" :key="index" :class="{'selected': isSelected(option)}"
-            @click="onChange(option)">{{ option[property] }}
+            @click="onChange(option)">{{ prefix ? $t(prefix + option[property]) : option[property] }}
         </li>
       </ul>
     </div>
@@ -33,6 +33,9 @@
       gap: {
         type: Boolean,
         default: true
+      },
+      prefix:{
+        type:String
       }
     },
 
@@ -50,6 +53,14 @@
       options() {
         this.find(this.value);
       }
+    },
+
+    computed: {
+
+      selectedTitle() {
+        return this.prefix ? this.$t(this.prefix + this.selected[this.property]) : this.selected[this.property]
+      }
+
     },
 
     methods: {

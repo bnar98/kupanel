@@ -76,6 +76,14 @@
     @apply bg-white;
    }
   }
+
+  &.default {
+    @apply text-white bg-gray-400;
+    &::before{
+      @apply bg-white;
+    }
+  }
+
   }
 
   .localization-rtl{

@@ -1,9 +1,16 @@
 .localization-rtl {
   --app-direction: rtl;
   --app-text-direction: right;
-  --font-family: dana-fa;
 
-  
+
+  &.fa_IR{
+    --font-family: 'dana-fa';
+  }
+
+  &.ku_IQ{
+    --font-family: 'yekan-ku';
+  }
+
   // input[type=radio] + label span{
   //   margin-left: 8px;
   // }

@@ -1,13 +1,13 @@
 <template>
     <div>
         <label :for="name" class="label" :class="{'form-group': gap}" v-if="label">{{ label }}</label>
-        <div class="flex w-full relative" v-click-outside="hideSelectBox">
+        <div class="number   flex w-full relative " v-click-outside="hideSelectBox">
             <Input ui="phone-input" :numeric="true" type="text" :gap="false" @keyup.prevent.native="pressKey" @keyup.enter.native="enter" :name="name" v-model="input" :placeholder="placeholder"></Input>
             <div class='select-box' @click="visible = !visible">
                 <ion-icon name="chevron-down-outline"></ion-icon>
                 <span class='select-box-selected-item '>{{ selected === undefined ? $t("mobile-input.code") : selected }}</span>
             </div>
-            <div v-if="visible" class="z-50 flex flex-col w-auto border border-solid border-input-border-color bg-input-background-color text-center absolute top-11 left-0 rounded-l-md">
+            <div v-if="visible" class="drop-down z-50 flex flex-col w-auto border border-solid border-input-border-color bg-input-background-color text-left absolute top-11 left-0 rounded-l-md">
                 <div v-for="(option, index) in options" :key="index" @click="onChange(option)"  class="flex justify-end m-1 px-1 cursor-pointer text-gray-100">
                     <span class="text-gray-700">{{options[index].country}}</span>
                     <span class="code w-12 text-left text-gray-700">{{options[index].code}}</span>
@@ -103,6 +103,13 @@ import Input from "./Input.vue"
   }
 </script>
 <style lang="scss" scoped >
+.number{
+    display: flex;
+    flex-direction: row-reverse;
+    .drop-down{
+        direction: rtl;
+    }
+}
 .phone-input{
     .input-container{
         input{
@@ -116,6 +123,7 @@ import Input from "./Input.vue"
 .select-box {
         @apply flex justify-between rounded-r-none border-r-0 px-4 relative box-border font-extralight items-center bg-input-background-color border-input-border-color border rounded-lg border-solid cursor-pointer;
         min-width: 100px;
+         direction: ltr;
       &:focus {
         @apply border border-solid border-input-focus-border-color;
       }
@@ -129,6 +137,17 @@ import Input from "./Input.vue"
           margin: auto;
       }
 
+    }
+    .localization-rtl{
+        .number{
+            display: flex;
+            flex-direction: row-reverse;
+            direction: ltr;
+            // .select-box{
+            //     direction: rtl;
+            // }
+        }
+        
     }
 
 </style>

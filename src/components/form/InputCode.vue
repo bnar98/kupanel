@@ -7,6 +7,7 @@
                    :autofocus="autofocus"
                    :name="name"
                    :value="value"
+                   autocomplete= "off"
                    @input="onOutput"/>
         </div>
         <div class="error-label" v-if="!isValid">

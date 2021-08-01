@@ -9,8 +9,8 @@
                     <div class="w-full px-7">
                         <div class="flex flex-row dialog-footer">
                             <div class="w-full px-0">
-                                <ku-Button v-if="buttons.custom" ui="btn btn-primary small float-left" :title="buttons.custom" @click.native="custom"></ku-Button>
-                                <ku-Button v-if="buttons.confirm" ui="btn btn-default small float-left" :title="buttons.confirm" @click.native="confirm"></ku-Button>
+                                <ku-Button v-if="buttons.custom" ui="btn btn-default small float-left" :title="buttons.custom" @click.native="custom"></ku-Button>
+                                <ku-Button v-if="buttons.confirm" ui="btn btn-primary small float-left" :title="buttons.confirm" @click.native="confirm"></ku-Button>
                                 <ku-Button v-if="buttons.cancel" ui="btn small float-left" :title="buttons.cancel" @click.native="cancel"></ku-Button>
                             </div>
 

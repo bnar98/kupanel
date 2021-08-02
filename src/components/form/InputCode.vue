@@ -1,6 +1,6 @@
 <template>
     <div class="input-code">
-        <div class="label font-medium" :for="id">{{label}}</div>
+        <div class="label font-medium" :for="id" v-html="label"></div>
         <div :class="['input-box',{'error-border': !isValid}]">
             <input maxlength='6'
                    :tabindex="tabindex"
@@ -52,7 +52,8 @@
       @apply flex flex-col items-center bg-gray-200 p-3 rounded-xl mt-3;
 
       input {
-        @apply block border-0 my-0 mx-auto text-gray-600;
+        @apply block border-0 my-0 mx-auto text-gray-600 ;
+        direction: ltr;
         width: $in-w;
         background: repeating-linear-gradient(90deg,
           $dash-color 0, $dash-color $char-w,
@@ -68,6 +69,8 @@
     }
     .label{
       @apply text-gray-600 w-full text-center;
+      direction: ltr !important;
+      
     }
   }
 </style>

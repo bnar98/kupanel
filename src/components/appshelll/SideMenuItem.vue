@@ -5,11 +5,11 @@
             <ion-icon v-if="!currentRout" :name="icon + '-outline'" class="icon"></ion-icon>
             <span>{{ title }}</span>
         </nuxt-link>
-        <div class="sub-menu-box" v-if="!!$slots.default">
-            <ul class="sub-menu-list">
-                <slot />
-            </ul>
-        </div>
+            <div class="sub-menu-box" v-if="!!$slots.default">
+                <ul class="sub-menu-list">
+                    <slot />
+                </ul>
+            </div>
     </div>
 </template>
 
@@ -60,28 +60,28 @@
 </script>
 
 <style lang="scss">
-  $sidemenu-animation-duration: .4s;
+  $sidemenu-animation-duration: .5s;
     .menu-item{
+        @apply border-b border-solid border-white;
         a{
             @apply no-underline;
         }
         &.expend{
-            @apply bg-sidemenu-expend-background-color border-t border-b border-solid border-sidemenu-expend-seperator-color ;
+            @apply bg-sidemenu-expend-background-color border-b border-solid border-sidemenu-expend-seperator-color ;
             .parent-menu{
                 .icon{
                     @apply text-sidemenu--active-icon-color;
                 }
             }
             .sub-menu-box{
-                transition: all  $sidemenu-animation-duration;
-                @apply max-h-full;
+                transition: all $sidemenu-animation-duration;
+                max-height: 100px;
                 .sub-menu-list{
-                    @apply py-2 px-0 block;
+                    @apply  px-0 block;
                 }
             }
         }
         .parent-menu{
-
             @apply flex items-center text-title-color cursor-pointer h-14;
             .icon{
                 @apply text-icon-default text-sidemenu-icon-color absolute;
@@ -95,10 +95,9 @@
             }
         }
         .sub-menu-box{
-        transition: all $sidemenu-animation-duration;
             @apply overflow-hidden max-h-0;
             .sub-menu-list{
-                @apply hidden;
+                
                 .sub-menu-item{
                     @apply relative cursor-pointer list-none;
                     a{
@@ -122,13 +121,16 @@
             }
         }
     }
-
-
 .localization-rtl {
     .menu-item {
+        .sub-menu-box {
+                @apply border-r-4 border-solid border-sidemenu-active-border-color;
+                transition: all $sidemenu-animation-duration;
+            }
         &.expend {
             .sub-menu-box {
-                @apply border-r-4 border-solid border-sidemenu-active-border-color;
+                transition: all $sidemenu-animation-duration;
+                
             }
         }
         .parent-menu {
@@ -141,8 +143,7 @@
                 @apply border-r-4 border-solid border-sidemenu-active-border-color;
             }
         }
-        .sub-menu-box {
-            @apply border-r-4 border-solid border-white;
+        .sub-menu-box { 
             .sub-menu-list {
                 @apply border-r border-solid border-sidemenu-expend-right-border-color px-8 mr-7;
                 .sub-menu-item {
@@ -161,6 +162,7 @@
     .menu-item {
         &.expend {
             .sub-menu-box {
+                // transition: all $sidemenu-animation-duration;
                  @apply border-l-4 border-solid border-sidemenu-active-border-color border-r-0;
             }
         }
@@ -175,7 +177,8 @@
             }
         }
         .sub-menu-box {
-            @apply border-l-4 border-solid border-white border-r-0;
+            // transition: all $sidemenu-animation-duration;
+           
             .sub-menu-list {
                 margin-left: 28px;
                 @apply border-l-2 border-solid border-sidemenu-expend-right-border-color border-r-0 px-9 ml-7;

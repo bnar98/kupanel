@@ -5,7 +5,7 @@
       <ion-icon :name="icon" class="input-icon" v-if="icon !== ''"></ion-icon>
       <span class="input-separator" v-if="separator"></span>
       <span class="input-unit" v-if="unit">{{unit}}</span>
-      <input :type="type" :class="[ui,{'input-with-icon': icon !== ''},{'error': !valid},{'numeric': numeric}]"  @input="handler" @blur="blurHandler"
+      <input :type="type" :class="[ui,align,{'input-with-icon': icon !== ''},{'error': !valid},{'numeric': numeric}]"  @input="handler" @blur="blurHandler"
              @focus="focusHandler"
              @paste="handlePaste" @keypress='isNumberKey($event)' :placeholder="placeholder"
              :min="minValue" :disabled="disabled" :value="value" :name="name" :id="name" autocomplete="off">
@@ -74,6 +74,10 @@
       ui:{
         type: String,
         default: ""
+      },
+      align:{
+        type: String,
+        required: false,
       }
 
     },

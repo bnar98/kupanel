@@ -15,11 +15,9 @@ const can = {
         if (item){
           show = show || vnode.context.$store.state.permission.permissions.includes(item);
           itemsProcessed++;
-          if (itemsProcessed === binding.value.length && !show ) {
+          if (itemsProcessed === binding.value.length && !show && vnode.elm.parentElement) {
 
-            if(vnode.elm.parentElement) {
               vnode.elm.parentElement.removeChild(vnode.elm);
-            }
 
           } else {
             elm.classList.remove('hidden');
@@ -34,10 +32,10 @@ const can = {
           if (item) {
             show = show || permission.includes(item);
             itemsProcessed++;
-            if (itemsProcessed === binding.value.length && !show ) {
-              if(vnode.elm.parentElement) {
+            if (itemsProcessed === binding.value.length && !show && vnode.elm.parentElement) {
+
                 vnode.elm.parentElement.removeChild(vnode.elm);
-              }
+
             } else {
               elm.classList.remove('hidden');
             }

@@ -17,6 +17,15 @@
 }
 
 //collapse
+.collapse2-enter-active, .collapse2-leave-active {
+  transition: all 0.5s;
+}
+.collapse2-enter, .collapse2-leave-to {
+  transition: all 0.5s;
+}
+
+
+//collapse
 .collapse-enter-active, .collapse-leave-active {
   transition: max-height .5s;
 }

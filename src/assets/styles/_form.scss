@@ -157,9 +157,20 @@ textarea {
 }
 
 //date picker
+
+.vpd-controls{
+
+  button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
 .vpd-content {
   background-color: var(--datepicker-background-color) !important;
- 
+
 }
 
 .vpd-actions {

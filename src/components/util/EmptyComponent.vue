@@ -10,6 +10,7 @@
       :title="routeTitle"
       @click.native="changeRoute"
       icon="add-outline"
+      v-can="[permission]"
     />
   </div>
 
@@ -19,7 +20,7 @@
 
 export default {
 
-  props:['title','description', 'image', 'route', 'routeTitle'],
+  props:['title','description', 'image', 'route', 'routeTitle', 'permission'],
 
   methods: {
     changeRoute() {

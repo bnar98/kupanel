@@ -3,7 +3,7 @@
     <li class="inline text-gray-800">
       <nuxt-link to="/panel/home" class="text-gray-600 no-underline">{{$t('breadcrumb.panel.index') }}</nuxt-link>
     </li>
-    <ion-icon class="text-gray-600 text-icon-small block py-0 px-1" name="chevron-back-outline"></ion-icon>
+    <ion-icon class=" icon text-gray-600 text-icon-small block py-0 px-1" name="chevron-back-outline"></ion-icon>
     <template v-for="(crumb, index) in crumbs"
 
               property="itemListElement"
@@ -11,7 +11,7 @@
       <li :key="index" class="inline text-gray-800">
         <nuxt-link :to="crumb.path" class="text-gray-600 no-underline">{{crumb.title}}</nuxt-link>
       </li>
-      <ion-icon class="text-gray-600 text-icon-small block py-0 px-1" name="chevron-back-outline"
+      <ion-icon class="icon text-gray-600 text-icon-small block py-0 px-1" name="chevron-back-outline"
                 v-if="index !== crumbs.length - 1"></ion-icon>
     </template>
   </ul>
@@ -93,3 +93,13 @@
 
   }
 </script>
+<style lang="scss">
+.localization-ltr{
+  .icon{
+    transform: rotate(180deg);
+  }
+}
+
+
+</style>
+

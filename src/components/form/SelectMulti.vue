@@ -5,17 +5,30 @@
       <span class='select-box-selected-item'>{{ placeholder }}</span>
       <ion-icon name="chevron-down-outline"></ion-icon>
       <ul class="select-box-item" v-if="visible">
+        <li :class="{'selected': isSelected(all)}"
+            @click="onChange(all)">{{ allTitle }}
+        </li>
         <li v-for="(option, index) in options" :key="index" :class="{'selected': isSelected(option)}"
             @click="onChange(option)">{{ option[property] }}
         </li>
       </ul>
     </div>
     <div class="tag-list">
-      <ul>
+      <ul v-if="selected.length !== options.length">
         <li v-for="(selectedItem, index) in selected" :key="index">
             <span class="tag-content">
                 <span :class="['tag-title', {'disabled': disabled}]">{{getTitle(selectedItem)}}</span>
                 <span class="tag-remove-btn" v-if="!disabled" @click="removeSelected(index)">
+                    <ion-icon class="icon" name="close-outline"></ion-icon>
+                </span>
+            </span>
+        </li>
+      </ul>
+      <ul v-else-if="selected.length > 0">
+        <li>
+            <span class="tag-content">
+                <span :class="['tag-title', {'disabled': disabled}]">{{allTitle}}</span>
+                <span class="tag-remove-btn" v-if="!disabled" @click="removeSelected('all')">
                     <ion-icon class="icon" name="close-outline"></ion-icon>
                 </span>
             </span>
@@ -45,13 +58,21 @@
       gap: {
         type: Boolean,
         default: true
+      },
+      allTitle:{
+        type: String,
+        default: 'all'
       }
     },
 
     data() {
       return {
         visible: false,
-        selected: []
+        selected: [],
+        all: {
+          title: 'all',
+          value: 'all'
+        }
       }
     },
 
@@ -72,7 +93,19 @@
 
     methods: {
       onChange(option) {
-        if (!this.isSelected(option)) {
+        if (option.value !== 'all' && this.selected.length === this.options.length) {
+          this.selected = [];
+          this.selected.push(option.value)
+          this.$emit('change', this.selected);
+        }
+        else if (option.value === 'all' && this.selected.length !== this.options.length) {
+          this.selected = [];
+          this.selected = this.options.map(item => {
+            return item.value
+          })
+          this.$emit('change', this.selected);
+        }
+        else if (!this.isSelected(option) && option.value !== 'all') {
           this.selected.push(option.value)
           this.$emit('change', this.selected);
         }
@@ -91,6 +124,9 @@
       },
 
       isSelected(option) {
+        if (option.value === 'all' && this.selected.length === this.options.length) {
+          return true
+        }
         return this.selected.findIndex(x => x.toString() === option.value.toString()) !== -1
       },
 
@@ -103,8 +139,13 @@
       },
 
       removeSelected(selectedIndex) {
-        this.selected.splice(selectedIndex, 1);
-        this.$emit('input', this.selected);
+        if (selectedIndex === 'all') {
+          this.selected = [];
+          this.$emit('input', this.selected);
+        } else {
+          this.selected.splice(selectedIndex, 1);
+          this.$emit('input', this.selected);
+        }
       }
 
     },

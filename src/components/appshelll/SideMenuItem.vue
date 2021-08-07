@@ -75,7 +75,7 @@
             }
             .sub-menu-box{
                 transition: all $sidemenu-animation-duration;
-                max-height: 100px;
+                max-height: 1000px;
                 .sub-menu-list{
                     @apply  px-0 block;
                 }

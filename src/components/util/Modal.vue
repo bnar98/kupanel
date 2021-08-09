@@ -119,11 +119,14 @@
       @qapply w-11/12;
     }
 
+    .body{
+      @apply p-2.5 overflow-auto;
+      max-height: 77vh;
+
+    }
+
   }
 
-  .modal-container .body {
-    @apply p-2.5;
-  }
 
   .modal-header {
     @apply text-right text-sm py-3.5 px-5 rounded-t flex items-center justify-between bg-gray-700;

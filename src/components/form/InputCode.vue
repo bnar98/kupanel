@@ -1,6 +1,6 @@
 <template>
     <div class="input-code">
-        <div class="label font-medium" :for="id" v-html="label"></div>
+        <div class="label font-medium" :for="name" v-html="label"></div>
         <div :class="['input-box',{'error-border': !isValid}]">
             <input maxlength='6'
                    :tabindex="tabindex"
@@ -21,7 +21,6 @@
     export default {
         props: {
             label: { type: String, default: "label", required:true },
-            id: { type: String, required:true },
             name: { type: String, required:true },
             tabindex: { type:Number, default:0, required:false },
             value:{ type: String, default:'', required:false },
@@ -70,7 +69,7 @@
     .label{
       @apply text-gray-600 w-full text-center;
       direction: ltr !important;
-      
+
     }
   }
 </style>

@@ -64,6 +64,7 @@ import Thumbnail from "./util/Thumbnail.vue"
 import PhoneInput from "./form/PhoneInput.vue"
 import SelectMulti from "./form/SelectMulti.vue"
 import SimpleCard from "./util/SimpleCard.vue"
+import Badge from "./util/Badge.vue"
 
 export default {
     Button: Button,
@@ -131,5 +132,6 @@ export default {
     Thumbnail:Thumbnail,
     PhoneInput:PhoneInput,
     SelectMulti:SelectMulti,
-    SimpleCard:SimpleCard
+    SimpleCard:SimpleCard,
+    Badge:Badge,
 }

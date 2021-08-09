@@ -64,6 +64,9 @@ import Thumbnail from "./util/Thumbnail.vue"
 import PhoneInput from "./form/PhoneInput.vue"
 import SelectMulti from "./form/SelectMulti.vue"
 import SimpleCard from "./util/SimpleCard.vue"
+import TableItemCounter from "./table/TableItemCounter.vue"
+
+
 
 export default {
     Button: Button,
@@ -131,5 +134,6 @@ export default {
     Thumbnail:Thumbnail,
     PhoneInput:PhoneInput,
     SelectMulti:SelectMulti,
-    SimpleCard:SimpleCard
+    SimpleCard:SimpleCard,
+    TableItemCounter:TableItemCounter
 }

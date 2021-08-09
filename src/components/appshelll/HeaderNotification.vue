@@ -4,7 +4,7 @@
             <ion-icon class="text-icon-color text-icon-default" name="notifications-outline"></ion-icon>
             <span v-show="blink" class="notification-blink absolute top-0 right-5 w-3 h-3 rounded-full "></span>
         </div>
-         <transition name="fade">
+         <transition name="ku-fade">
             <div v-show="showDroDown" class="notification-dropDown absolute w-96 bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg">
                 <div class="dropdown-header flex ">
                     <div class="text-gray-600">{{title}}</div>

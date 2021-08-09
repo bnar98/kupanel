@@ -1,46 +1,28 @@
 
-.fade-tab-enter-active, .fade-tab-leave-active {
+.ku-fade-tab-enter-active, .ku-fade-tab-leave-active {
   transition: opacity 0.5s;
 }
-.fade-tab-enter, .fade-tab-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.ku-fade-tab-enter, .ku-fade-tab-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
   max-height: 0 !important;
   border: none !important;
   overflow: hidden;
 }
 
-.fade-enter-active, .fade-leave-active {
+.ku-fade-enter-active, .ku-fade-leave-active {
   transition: opacity .5s
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.ku-fade-enter, .ku-fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0
 }
 
-//collapse
-.collapse2-enter-active, .collapse2-leave-active {
-  transition: all 0.5s;
-}
-.collapse2-enter, .collapse2-leave-to {
-  transition: all 0.5s;
-}
-
-
-//collapse
-.collapse-enter-active, .collapse-leave-active {
-  transition: max-height .5s;
-}
-.collapse-enter, .collapse-leave-to {
-  max-height: 0 !important;
-  overflow: hidden;
-}
-
-.fadeHeight-enter-active,
-.fadeHeight-leave-active {
+.ku-fadeHeight-enter-active,
+.ku-fadeHeight-leave-active {
   transition: all 0.2s;
   max-height: 500px;
 }
-.fadeHeight-enter,
-.fadeHeight-leave-to
+.ku-fadeHeight-enter,
+.ku-fadeHeight-leave-to
 {
   opacity: 0;
   max-height: 0;

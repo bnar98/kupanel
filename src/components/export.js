@@ -63,6 +63,7 @@ import Label from "./form/Label.vue"
 import Thumbnail from "./util/Thumbnail.vue"
 import PhoneInput from "./form/PhoneInput.vue"
 import SelectMulti from "./form/SelectMulti.vue"
+import SimpleCard from "./util/SimpleCard.vue"
 
 export default {
     Button: Button,
@@ -129,5 +130,6 @@ export default {
     Label:Label,
     Thumbnail:Thumbnail,
     PhoneInput:PhoneInput,
-    SelectMulti:SelectMulti
+    SelectMulti:SelectMulti,
+    SimpleCard:SimpleCard
 }

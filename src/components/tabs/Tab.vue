@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade-tab" mode="out-in">
+    <transition name="ku-fade-tab" mode="out-in">
         <div class="tab grid grid-cols-1" v-show="isActive">
             <div class="tab-content px-0 w-full">
                 <slot></slot>

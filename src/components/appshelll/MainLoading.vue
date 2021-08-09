@@ -2,7 +2,7 @@
     <div class="loading-global flex justify-center items-center" v-if="!isLoaded">
         <div class="loading-full">
             <div class="logo flex justify-center items-center" :class="{'animated': animated}">
-                <transition name="fade">
+                <transition name="ku-fade">
                     <div class="img" v-show="showLogo"></div>
                 </transition>
             </div>

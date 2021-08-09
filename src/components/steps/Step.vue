@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade-tab" mode="out-in">
+    <transition name="ku-fade-tab" mode="out-in">
         <div class="tab row" v-show="isActive">
             <div class="tab-content col-xs-12">
                 <slot></slot>
@@ -11,7 +11,7 @@
 <script>
     export default {
         name: 'step',
-        
+
         data(){
 
             return{

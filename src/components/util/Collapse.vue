@@ -4,7 +4,7 @@
             <div class="collapse-header-title"><ion-icon :name="icon"></ion-icon><span>{{title}}</span></div>
             <span><ion-icon class="icon" name="chevron-down-outline"></ion-icon></span>
         </div>
-        <transition name="fadeHeight">
+        <transition name="ku-fadeHeight">
             <div class="collapse-body" v-show="collapse">
                 <div class="row m-0">
                     <slot></slot>

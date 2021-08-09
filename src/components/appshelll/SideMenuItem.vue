@@ -97,7 +97,7 @@
         .sub-menu-box{
             @apply overflow-hidden max-h-0;
             .sub-menu-list{
-                
+
                 .sub-menu-item{
                     @apply relative cursor-pointer list-none;
                     a{
@@ -130,7 +130,7 @@
         &.expend {
             .sub-menu-box {
                 transition: all $sidemenu-animation-duration;
-                
+
             }
         }
         .parent-menu {
@@ -143,7 +143,7 @@
                 @apply border-r-4 border-solid border-sidemenu-active-border-color;
             }
         }
-        .sub-menu-box { 
+        .sub-menu-box {
             .sub-menu-list {
                 @apply border-r border-solid border-sidemenu-expend-right-border-color px-8 mr-7;
                 .sub-menu-item {
@@ -178,7 +178,7 @@
         }
         .sub-menu-box {
             // transition: all $sidemenu-animation-duration;
-           
+
             .sub-menu-list {
                 margin-left: 28px;
                 @apply border-l-2 border-solid border-sidemenu-expend-right-border-color border-r-0 px-9 ml-7;

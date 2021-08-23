@@ -1,8 +1,8 @@
 <template>
     <div class="items">
-        <div>{{ $t("components.numbers") }}</div>
-        <div>&nbsp;{{count}}&nbsp;</div>
-        <div>{{ $t("components.from") }}</div>
+        <div>{{ $t(prefix + "numbers") }}</div>
+        <div>&nbsp;{{total > count ? count : total}}&nbsp;</div>
+        <div>{{ $t(prefix + "from") }}</div>
         <div>&nbsp;{{total}}</div>
     </div>
 </template>
@@ -21,6 +21,10 @@ export default {
       total:{
         type: Number,
         required: true
+      },
+      prefix:{
+        type: String,
+        required: true
       }
     },
 }
@@ -38,6 +42,6 @@ export default {
         /* border: 1px solid green; */
         border-bottom: 2px solid #efefef;
         font-size: 12px !important;
-        
+
     }
 </style>

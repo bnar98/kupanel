@@ -5,7 +5,7 @@
       <span class='select-box-selected-item'>{{ placeholder }}</span>
       <ion-icon name="chevron-down-outline"></ion-icon>
       <ul class="select-box-item" v-if="visible">
-        <li :class="{'selected': isSelected(all)}"
+        <li :class="{'selected': isSelected(all)}" v-if="options.length > 1"
             @click="onChange(all)">{{ allTitle }}
         </li>
         <li v-for="(option, index) in options" :key="index" :class="{'selected': isSelected(option)}"

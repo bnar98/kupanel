@@ -101,7 +101,7 @@
         li {
 
           &.is-active {
-            @apply border-b-2 border-solid border-primary
+            @apply border-b-2 border-solid border-primary;
            }
 
         }
@@ -115,7 +115,7 @@
       .tab {
 
         .tab-content {
-          @apply min-h-tab
+          @apply min-h-tab;
         }
 
       }

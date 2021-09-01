@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.4",
+    "@types/webpack-hot-middleware": "^2.25.5",
     "autoprefixer": "^9.8.6",
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",

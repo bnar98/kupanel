@@ -37,6 +37,10 @@
       href: {
         default: null
       },
+      disabled:{
+        type: Boolean,
+        default: false
+      }
 
     },
     created() {

@@ -3,7 +3,7 @@
     <div :class="['tabs', 'grid', 'grid-cols-1', 'w-full', height]">
         <div class="w-full tab-titles px-0">
             <ul class="m-0 p-0">
-                <li v-for="(tab, index) in tabs" :key="index" v-if="tab.componentInstance" :class="['list-none', 'inline-block', 'my-0', 'px-4', 'cursor-pointer', 'text-lg', 'text-title',{'is-active': tab.componentInstance.isActive}]">
+                <li v-for="(tab, index) in tabs" :key="index" v-if="tab.componentInstance" :class="['list-none', 'inline-block', 'my-0', 'px-4', 'cursor-pointer', 'text-lg', 'text-title',{'disable': tab.componentInstance.disabled},{'is-active': tab.componentInstance.isActive}]">
                     <a class="px-0 pt-0 pb-4 flex items-center" @click="selectTab(tab)">
 
                         <div class="icon-box" v-if="tab.componentInstance.icon !== ''">
@@ -46,7 +46,9 @@
     methods:{
       selectTab(selectedTab) {
         this.$emit('getActiveId', selectedTab.componentInstance.id);
+        
         this.tabs.forEach((tab) => {
+          // console.log(tab.componentInstance);
             tab.componentInstance.isActive = (tab.componentInstance.name === selectedTab.componentInstance.name);
         })
 
@@ -99,9 +101,21 @@
       ul {
 
         li {
+          &.disable{
+            cursor: not-allowed;
+            pointer-events: none;
+            ion-icon{
+              color: rgb(202, 202, 202);
+              
+            }
+            span{
+              color: rgb(202, 202, 202);
+            }
+            
+          }
 
           &.is-active {
-            @apply border-b-2 border-solid border-primary;
+            @apply border-b-2 border-solid border-primary
            }
 
         }
@@ -115,7 +129,7 @@
       .tab {
 
         .tab-content {
-          @apply min-h-tab;
+          @apply min-h-tab
         }
 
       }

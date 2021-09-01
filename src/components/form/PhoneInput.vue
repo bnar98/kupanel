@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </template>
 
@@ -57,6 +57,10 @@ import Input from "./Input.vue"
         gap:{
             type: Boolean,
             default: true
+        },
+        disabled:{
+          type: Boolean,
+          default: false
         }
     },
     mounted(){
@@ -79,9 +83,9 @@ import Input from "./Input.vue"
             this.$emit("input",this.selected + mobile);
         },
         enter(){
-            if (this.selected) {
+            if (this.selected && !this.disabled) {
                 let mobile = this.selected + this.input.replace(/^0+/, "")
-                
+
                 this.$emit("input",mobile)
                 this.$emit("enter");
 
@@ -93,7 +97,7 @@ import Input from "./Input.vue"
         }
     },
     created() {
-        
+
     },
     // watch: {
     //   value(newValue) {
@@ -147,7 +151,7 @@ import Input from "./Input.vue"
             //     direction: rtl;
             // }
         }
-        
+
     }
 
 </style>

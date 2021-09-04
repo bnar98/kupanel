@@ -1,6 +1,6 @@
 <template>
     <div class="content" :class="size">
-        <div class="flex items-center justify-start router-back" v-if="back" @click="routerBack">
+        <div class="router-back" v-if="back" @click="routerBack">
           <ion-icon class="icon" name="chevron-forward-outline"></ion-icon>
           <span>{{$t('components.back')}}</span>
         </div>
@@ -48,7 +48,7 @@ export default {
         }
 
       .router-back{
-        @apply cursor-pointer text-lg mt-8;
+        @apply flex items-center justify-start cursor-pointer text-lg mt-8;
 
         span, .icon{
          @apply text-gray-600;

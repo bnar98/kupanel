@@ -61,13 +61,9 @@
             })
 
 
-            if(index !== 0 && index !== params.length -1){
-              console.log(index);
-              console.log(params.length);
+            if(index !== 0 && index !== params.length -1 && param){
               translatableTitle = translatableTitle + '.index'
-            } else if (index !== 0 && this.hasChild() > 0) {
-              console.log(index);
-              console.log(this.hasChild());
+            } else if (index !== 0 && this.hasChild() > 0 && param) {
               translatableTitle = translatableTitle + '.index'
             }
 

@@ -43,6 +43,7 @@
         let path = ''
         let translatableTitle = '';
         params.forEach((param, index) => {
+          console.log(param);
           path = `${path}/${param}`
           const match = this.$router.match(path)
           translatableTitle = '';
@@ -61,8 +62,12 @@
 
 
             if(index !== 0 && index !== params.length -1){
+              console.log(index);
+              console.log(params.length);
               translatableTitle = translatableTitle + '.index'
             } else if (index !== 0 && this.hasChild() > 0) {
+              console.log(index);
+              console.log(this.hasChild());
               translatableTitle = translatableTitle + '.index'
             }
 

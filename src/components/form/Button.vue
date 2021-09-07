@@ -311,9 +311,9 @@ export default {
       }
     }
 
-    + .btn {
-      @apply ml-2.5;
-    }
+    /*+ .btn {*/
+    /*  @apply ml-2.5;*/
+    /*}*/
   }
 }
 
@@ -347,9 +347,9 @@ export default {
       }
     }
 
-    + .btn {
-      @apply mr-2.5;
-    }
+    /*+ .btn {*/
+    /*  @apply mr-2.5;*/
+    /*}*/
   }
 }
 // btn loader

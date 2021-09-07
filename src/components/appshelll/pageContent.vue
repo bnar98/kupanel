@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
     .content{
-        @apply w-11/12 mt-3 mb-14 mx-auto ;
+        @apply w-11/12 mt-0 mx-auto min-h-full ;
         &.small{
             @apply w-3/5;
         }

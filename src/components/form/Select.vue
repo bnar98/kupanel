@@ -2,10 +2,10 @@
   <div :class="['select-box-area', {'form-group': gap,'disabled': disabled === true}]" v-click-outside="hideSelectBox">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <div class='select-box' @click="visible = !visible">
-      <span class='select-box-selected-item' v-html="selected === undefined ? placeholder : selectedTitle"></span>
+      <span class='select-box-selected-item ellipsis' v-html="selected === undefined ? placeholder : selectedTitle"></span>
       <ion-icon name="chevron-down-outline"></ion-icon>
       <ul class="select-box-item" v-if="visible">
-        <li v-for="(option, index) in options" :key="index" :class="{'selected': isSelected(option)}"
+        <li v-for="(option, index) in options" :key="index" :class="['ellipsis', {'selected': isSelected(option)}]"
             @click="onChange(option)" v-html="prefix ? $t(prefix + option[property]) : option[property]">
         </li>
       </ul>

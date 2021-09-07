@@ -7,7 +7,7 @@
             <!-- sidebar  -->
             <slot name="sidebar"></slot>
             <!-- body -->
-            <div id="main-content" class="bg-background-color w-full h-full mt-16 pb-16 overflow-y-auto overflow-x-hidden" :class="state" >
+            <div id="main-content" class="bg-background-color w-full h-full py-16 overflow-y-auto overflow-x-hidden" :class="state" >
                 <slot name="content"></slot>
             </div>
         </div>
@@ -45,7 +45,7 @@ $sidemenu-animation-duration: .4s;
     #main-content {
         transition: padding-right $sidemenu-animation-duration;
         &.wide{
-            @apply pr-20;
+            @apply pr-16;
         }
         &.narrow{
             @apply pr-64;

@@ -1,6 +1,5 @@
 <template>
     <div class="grid grid-cols-1 gap-4">
-
         <!--      // help text-->
         <small class="help" v-if="!currentFieldClient.$error && !backend.has(id) && helpText">{{helpText}}</small>
 
@@ -11,9 +10,13 @@
         <small class="help error" v-if="currentFieldClient.hasOwnProperty('required') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.required"
                v-text="$t('validations.required')"></small>
 
+        <!--      //array required validation-->
+        <small class="help error" v-if="currentFieldClient.hasOwnProperty('required') && !$store.state.static.formLoading && currentFieldClient.$each && currentFieldClient.$each[index].$error"
+               v-text="$t('validations.required')"></small>
+
         <!--      //required variant array validation-->
-        <small class="help error" v-if="currentFieldClient.hasOwnProperty('required') && !$store.state.static.formLoading && currentFieldClient.$each && currentFieldClient.$each.$error"
-               v-text="$t('validations.variant-required')"></small>
+<!--        <small class="help error" v-if="currentFieldClient.hasOwnProperty('required') && !$store.state.static.formLoading && currentFieldClient.$each && currentFieldClient.$each.$error"-->
+<!--               v-text="$t('validations.variant-required')"></small>-->
 
         <!--      //minLength validation text-->
         <small class="help error" v-if="currentFieldClient.hasOwnProperty('minLength') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.minLength"
@@ -39,6 +42,7 @@
       <!--      //minValue validation text-->
       <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('minValueDate') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.minValue"
              v-text="name +' ' + $t('validations.min-value') + $t('validations.start-date') + $t('validations.be')"></small>
+
 
     </div>
 </template>
@@ -78,6 +82,11 @@
                 default: null,
                 type: String,
                 required: false
+            },
+
+            index:{
+              type: Number,
+              required: false
             }
 
         },

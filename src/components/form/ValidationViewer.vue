@@ -36,13 +36,19 @@
         <!--      //email validation tex-->
         <small class="help error" v-if="currentFieldClient.hasOwnProperty('email') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.numeric"
                v-text="name +' ' + $t('validations.email')"></small>
-      <!--      //maxValue validation text-->
+      <!--      //maxValue date validation text-->
       <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('maxValueDate') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.maxValue"
              v-text="name +' ' + $t('validations.max-value') + $t('validations.end-date') + $t('validations.be')"></small>
-      <!--      //minValue validation text-->
+      <!--      //minValue date validation text-->
       <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('minValueDate') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.minValue"
              v-text="name +' ' + $t('validations.min-value') + $t('validations.start-date') + $t('validations.be')"></small>
 
+      <!--      //maxValue validation text-->
+      <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('maxValue') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.maxValue"
+             v-text="name +' ' + $t('validations.max-value') + ' ' + $t('validations.end-mount')  + ' '+ $t('validations.be')"></small>
+      <!--      //minValue validation text-->
+      <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('minValue') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.minValue"
+             v-text="name +' ' + $t('validations.min-value') + ' ' + $t('validations.start-mount') + ' ' + $t('validations.be')"></small>
 
     </div>
 </template>

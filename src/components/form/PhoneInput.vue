@@ -94,16 +94,30 @@ import Input from "./Input.vue"
 
         hideSelectBox() {
             this.visible = false
+        },
+
+        setNewValue(newValue) {
+          if (newValue && newValue.length > 0) {
+            const selectedLength = newValue.label - 10;
+            this.selected = newValue.substr(0,selectedLength);
+            this.input = newValue.substr(newValue.length - 10);
+            console.log(this.selected);
+            console.log(this.input);
+          }
         }
-    },
-    created() {
 
     },
-    // watch: {
-    //   value(newValue) {
-    //         console.log(newValue);
-    //   }
-    // },
+
+    created() {
+      // this.setNewValue(this.value);
+    },
+
+    watch: {
+      value(newValue) {
+        // this.setNewValue(newValue);
+      }
+    }
+
   }
 </script>
 <style lang="scss" scoped >

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div :class="{'form-group': gap}">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <div
       class="horizontal-select flex flex-row items-center justify-start overflow-hidden"
@@ -38,7 +38,11 @@ export default {
       type: String,
       default: '',
       required:true
-    }
+    },
+    gap:{
+      type: Boolean,
+      default: true
+    },
 
   },
 

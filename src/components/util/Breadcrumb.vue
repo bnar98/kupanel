@@ -93,7 +93,7 @@
 
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .localization-ltr{
   .icon{
     transform: rotate(180deg);

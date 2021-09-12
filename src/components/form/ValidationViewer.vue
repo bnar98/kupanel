@@ -45,10 +45,14 @@
 
       <!--      //maxValue validation text-->
       <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('maxValue') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.maxValue"
-             v-text="name +' ' + $t('validations.max-value') + ' ' + $t('validations.end-mount')  + ' '+ $t('validations.be')"></small>
+             v-text="name +' ' + $t('validations.max-value') + ' ' + currentFieldClient.$params.maxValue.max  + ' '+ $t('validations.be')"></small>
       <!--      //minValue validation text-->
       <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('minValue') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.minValue"
-             v-text="name +' ' + $t('validations.min-value') + ' ' + $t('validations.start-mount') + ' ' + $t('validations.be')"></small>
+             v-text="name +' ' + $t('validations.min-value') + ' ' + currentFieldClient.$params.minValue.min + ' ' + $t('validations.be')"></small>
+      <!--      //between validation text-->
+      <small class="col-xs-12 help error" v-if="currentFieldClient.hasOwnProperty('between') && !$store.state.static.formLoading && currentFieldClient.$error && !currentFieldClient.between"
+             v-text="name +' ' + $t('validations.between') + ' ' + currentFieldClient.$params.between.min + ' ' + $t('validations.to')  + ' ' + currentFieldClient.$params.between.max + ' ' + $t('validations.be')"></small>
+
 
     </div>
 </template>

@@ -82,6 +82,10 @@
       max:{
         type: Number,
         required: false,
+      },
+      min:{
+        type: Number,
+        required: false,
       }
 
     },
@@ -92,7 +96,12 @@
 
     computed: {
       minValue() {
-        return this.type === 'number' ? 0 : '';
+        if (this.type === 'number' && this.min) {
+          return this.min;
+        } else {
+          return this.type === 'number' ? 0 : '';
+        }
+
       }
     },
 
@@ -105,13 +114,13 @@
     methods: {
 
       handler(event) {
-        if ( this.numeric && this.max && event.target.value >= this.max) {
+        if (  (this.numeric || this.type === 'number') && this.max && event.target.value >= this.max) {
           event.target.value = this.max
           this.$emit("input", englishDigit(this.max));
         }else{
           this.$emit("input", englishDigit(event.target.value));
         }
-        
+
       },
 
       blurHandler() {

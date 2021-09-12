@@ -78,6 +78,10 @@
       align:{
         type: String,
         required: false,
+      },
+      max:{
+        type: Number,
+        required: false,
       }
 
     },
@@ -101,7 +105,13 @@
     methods: {
 
       handler(event) {
-        this.$emit("input", englishDigit(event.target.value));
+        if ( this.numeric && this.max && event.target.value >= this.max) {
+          event.target.value = this.max
+          this.$emit("input", englishDigit(this.max));
+        }else{
+          this.$emit("input", englishDigit(event.target.value));
+        }
+        
       },
 
       blurHandler() {

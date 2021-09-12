@@ -4,7 +4,7 @@
 			<p class="page-title text-sub-title-color text-2xl font-medium mt-4 mb-0 ">{{ title }}</p>
 			<small class=" text-description-color">{{ description }}</small>
 		</div>
-		<div class="grid content-end col-span-2 md:col-span-1">
+		<div class="grid content-end justify-end col-span-2 md:col-span-1">
 			<slot />
 		</div>
 	</div>

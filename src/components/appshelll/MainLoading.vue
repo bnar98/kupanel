@@ -1,6 +1,6 @@
 <template>
     <div class="loading-global flex justify-center items-center" v-if="!isLoaded">
-        <div class="loading-full">
+        <div class="loading-full flex justify-center">
             <div class="logo flex justify-center items-center" :class="{'animated': animated}">
                 <transition name="ku-fade">
                     <div class="img" v-show="showLogo"></div>

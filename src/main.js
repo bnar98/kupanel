@@ -20,12 +20,37 @@ Vue.config.ignoredElements = [/^ion-/]
 
 export default {
   install (Vue, perfix) {
+
+
+
+
+
+
+
+
     Vue.filter('currencyFormat', function (value) {
+
       var formatter = new Intl.NumberFormat({
-        minimumFractionDigits: 0
+        minimumFractionDigits: 2
       });
-      return formatter.format(value);
+
+      var pointPosition = value.indexOf(".");
+      if (pointPosition >= 0) {
+        return formatter.format(value)+value.slice( pointPosition, value.lenght);
+      }else{
+        return formatter.format(value);
+      }
     });
+
+
+
+
+
+
+
+
+
+
 
     Vue.directive(
       'click-outside',

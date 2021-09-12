@@ -181,7 +181,7 @@
       ul {
         @apply absolute w-full p-0 mb-10 bg-input-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
         left-0 top-8;
-        max-height: 300px !important;
+        max-height: 180px !important;
 
         li {
           @apply cursor-pointer h-8 px-4 pt-2 pb-1.5 box-border transition-all duration-100 whitespace-nowrap;

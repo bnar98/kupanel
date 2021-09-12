@@ -2,7 +2,7 @@
   <div class="label-icon">
     <ion-icon v-if="icon" class="icon" :name="icon"></ion-icon>
     <label class="label">{{ label }}</label>
-    <span v-if="value" :class="[color]">{{ value }}</span>
+    <span v-if="value" :class="[color, {'dir-ltr' : dir === 'ltr'}]">{{ value }}</span>
   </div>
 </template>
 
@@ -26,6 +26,10 @@ export default {
     color: {
       required: false,
     },
+    dir: {
+      type: String,
+      default:'rtl'
+    }
   },
 };
 </script>

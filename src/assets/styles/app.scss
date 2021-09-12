@@ -30,7 +30,7 @@
 }
 
 body{
-    @apply  font-dana select-none m-0 bg-background-color;
+    @apply  font-dana m-0 bg-background-color;
     direction: var(--app-direction);
     overflow: hidden;
 }

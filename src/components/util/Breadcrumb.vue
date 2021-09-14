@@ -30,10 +30,17 @@
         const params = fullPath.startsWith('/')
           ? fullPath.substring(1).split('/')
           : fullPath.split('/')
-
+        console.log(this.$route.params);
+        params.pop(); // it is for trailing slash
+        // because /1014343 make problem for translate ,show edit translate twice
         if (Object.keys(this.$route.params).length > 0){
-          // because /1014343 make problem for translate ,show edit translate twice
-          params.pop()
+          Object.keys(this.$route.params).forEach((routeParam) => {
+            if (this.$route.params[routeParam]) {
+              params.pop()
+            }
+          })
+
+
         }
         if(localStorage.getItem('language') !== this.$i18n.defaultLocale) {
           params.splice(0,1);
@@ -44,7 +51,7 @@
         let translatableTitle = '';
         params.forEach((param, index) => {
           path = `${path}/${param}`
-          const match = this.$router.match(path)
+          const match = this.$router.match(path + "/")
           translatableTitle = '';
           let crumbTitle = ''
           if (match.name) {
@@ -52,15 +59,15 @@
             crumbTitle.splice(0, 2);
 
             crumbTitle.forEach((title, index1) => {
-              if (index1 !== 0) {
+              if (index1 !== 0 && title) {
                 translatableTitle = translatableTitle + '.' + title
-              } else {
+              } else if (title) {
                 translatableTitle = translatableTitle + title
               }
             })
 
-
-            if(index !== 0 && index !== params.length -1){
+            console.log(params.length + 'i'+ index);
+            if(index !== 0 && index !== params.length -1 ){
               translatableTitle = translatableTitle + '.index'
             } else if (index !== 0 && this.hasChild() > 0) {
               translatableTitle = translatableTitle + '.index'

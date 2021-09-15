@@ -26,11 +26,9 @@
       crumbs() {
 
         const fullPath = this.$route.fullPath
-
         const params = fullPath.startsWith('/')
           ? fullPath.substring(1).split('/')
           : fullPath.split('/')
-        console.log(this.$route.params);
         params.pop(); // it is for trailing slash
         // because /1014343 make problem for translate ,show edit translate twice
         if (Object.keys(this.$route.params).length > 0){
@@ -66,7 +64,6 @@
               }
             })
 
-            console.log(params.length + 'i'+ index);
             if(index !== 0 && index !== params.length -1 ){
               translatableTitle = translatableTitle + '.index'
             } else if (index !== 0 && this.hasChild() > 0) {
@@ -92,7 +89,7 @@
     methods: {
 
       hasChild() {
-        const childRoutes = this.$router.options.routes.filter(x => x.path.startsWith(this.$route.path+ '/'))
+        const childRoutes = this.$router.options.routes.filter(x => x.path.startsWith(this.$route.path) && x.path !== this.$route.path )
         return childRoutes.length;
       }
 

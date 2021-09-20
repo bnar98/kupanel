@@ -72,6 +72,7 @@ import { EventBus } from '../../event'
         methods:{
 
             selectStep(selectedStepIndex) {
+              console.log(this.steps.length);
                 this.steps.forEach((step,index) => {
                   if (index < selectedStepIndex -1) {
                     step.componentInstance.isValidation = true;
@@ -83,6 +84,8 @@ import { EventBus } from '../../event'
 
                   if (step.componentInstance.name === this.steps[selectedStepIndex-1].componentInstance.name) {
                       this.activeStep = step;
+                      // alert(this.steps[selectedStepIndex-1].componentInstance.id);
+                      this.$emit('getActiveId', this.steps[selectedStepIndex-1].componentInstance.id);
                   }
 
                 })

@@ -45,16 +45,16 @@
     },
     created() {
       this.link = this.href;
+      this.isActive = this.selected;
     },
 
     watch: {
       href(value) {
         this.link = value;
+      },
+      selected() {
+        this.isActive = this.selected;
       }
-    },
-
-    mounted() {
-      this.isActive = this.selected;
     }
 
   }

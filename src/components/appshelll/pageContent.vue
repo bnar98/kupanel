@@ -60,4 +60,16 @@ export default {
       }
     }
 
+    @media only screen and (max-width: 768px) {
+
+      .content {
+
+        &.small, &.default {
+          @apply full;
+        }
+
+      }
+
+    }
+
 </style>

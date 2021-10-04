@@ -63,7 +63,7 @@
                 translatableTitle = translatableTitle + title
               }
             })
-
+            console.log(this.hasChild());
             if(index !== 0 && index !== params.length -1 ){
               translatableTitle = translatableTitle + '.index'
             } else if (index !== 0 && this.hasChild() > 0) {
@@ -89,7 +89,7 @@
     methods: {
 
       hasChild() {
-        const childRoutes = this.$router.options.routes.filter(x => x.path.startsWith(this.$route.path) && x.path !== this.$route.path )
+        const childRoutes = this.$router.options.routes.filter(x => x.path.startsWith(this.$route.path) && x.path !== this.$route.path && Object.keys(this.$route.params).length < 0 )
         return childRoutes.length;
       }
 

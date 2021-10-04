@@ -57,7 +57,7 @@ $sidemenu-animation-duration: .4s;
     #main-content {
         transition: padding-left $sidemenu-animation-duration;
         &.wide{
-            @apply pl-14;
+            @apply pl-16;
         }
         &.narrow{
             @apply pl-64 ;
@@ -65,6 +65,29 @@ $sidemenu-animation-duration: .4s;
     }
 }
 
+@media only screen and (max-width: 768px) {
+  .localization-rtl {
+    #main-content {
+      &.wide{
+        @apply px-5;
+      }
+      &.narrow{
+        @apply px-5;
+      }
+    }
+  }
+
+  .localization-ltr {
+    #main-content {
+      &.wide{
+        @apply px-5;
+      }
+      &.narrow{
+        @apply px-5 ;
+      }
+    }
+  }
+}
 
 </style>
 

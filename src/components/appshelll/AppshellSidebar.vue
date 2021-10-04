@@ -88,4 +88,16 @@ $sidemenu-animation-duration: .4s;
         }
     }
 }
+
+@media only screen and (max-width: 768px) {
+
+  .side-menu {
+
+    &.closed {
+      width: 0;
+    }
+
+  }
+
+}
 </style>

@@ -67,6 +67,7 @@ import SelectMulti from "./form/SelectMulti.vue"
 import SimpleCard from "./util/SimpleCard.vue"
 import TableItemCounter from "./table/TableItemCounter.vue"
 import Badge from "./util/Badge.vue"
+import Progress from "./util/Progress.vue"
 export default {
     Button: Button,
     Checkbox: Checkbox,
@@ -137,4 +138,5 @@ export default {
     SimpleCard:SimpleCard,
     TableItemCounter:TableItemCounter,
     Badge:Badge,
+    Progress:Progress
 }

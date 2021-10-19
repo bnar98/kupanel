@@ -22,6 +22,7 @@ import Paginate from './util/Paginate.vue'
 import Shimmer from './shimmers/Shimmer.vue'
 import Uploader from "./form/Uploader.vue";
 import SingleUpload from "./form/SingleUpload.vue";
+import MediaManager from "./form/MediaManager.vue";
 import InputCode from "./form/InputCode.vue"
 import Select from "./form/Select.vue"
 import ValidationViewer from "./form/ValidationViewer.vue"
@@ -88,6 +89,7 @@ export default {
     HeaderAvatar: HeaderAvatar,
     Uploader: Uploader,
     SingleUpload: SingleUpload,
+    MediaManager: MediaManager,
     InputCode: InputCode,
     Select: Select,
     ValidationViewer: ValidationViewer,

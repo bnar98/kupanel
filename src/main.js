@@ -33,13 +33,16 @@ export default {
       var formatter = new Intl.NumberFormat({
         minimumFractionDigits: 2
       });
-
-      var pointPosition = value.indexOf(".");
-      if (pointPosition >= 0) {
-        return formatter.format(value)+value.slice( pointPosition, value.lenght);
-      }else{
-        return formatter.format(value);
+      if(value){
+        var pointPosition = value.indexOf(".");
+        if (pointPosition >= 0) {
+          return formatter.format(value)+value.slice( pointPosition, value.lenght);
+        }else{
+          return formatter.format(value);
+        }
       }
+      return ''
+      
     });
 
 

@@ -343,7 +343,7 @@ export default {
 }
 .modal-mask {
   .modal-container {
-    width: 85%;
+    // width: 85%;
     .modal-header {
       background-color: #4a5459 !important;
     }

@@ -63,7 +63,7 @@
                 translatableTitle = translatableTitle + title
               }
             })
-            console.log(this.hasChild());
+            // console.log(this.hasChild());
             if(index !== 0 && index !== params.length -1 ){
               translatableTitle = translatableTitle + '.index'
             } else if (index !== 0 && this.hasChild() > 0) {

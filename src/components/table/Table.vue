@@ -130,6 +130,8 @@
                 min-width: 120px;
                 border: 2px solid var(--default-border-color);
                 border-top: 3px solid var(--primary-color);
+                max-height: 95px;
+                overflow: auto;
                 li{
                   @apply cursor-pointer p-2.5 flex items-center;
 

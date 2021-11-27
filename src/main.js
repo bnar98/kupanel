@@ -34,6 +34,7 @@ export default {
         minimumFractionDigits: 2
       });
       if(value){
+        value = value.toString();
         var pointPosition = value.indexOf(".");
         if (pointPosition >= 0) {
           return formatter.format(value)+value.slice( pointPosition, value.lenght);

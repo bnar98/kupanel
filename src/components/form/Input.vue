@@ -86,6 +86,7 @@
       min:{
         type: Number,
         required: false,
+        default: undefined
       }
 
     },
@@ -158,8 +159,11 @@
       },
 
       isNumberKey(evt) {
-        if (this.numeric) {
+        if (this.numeric || this.type === 'number') {
           const charCode = (evt.which) ? evt.which : evt.keyCode
+          if (charCode === 45 && ((this.min !== undefined && this.min < 0) || this.min === undefined)) {
+            return true;
+          }
           if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 1776 || charCode > 1785) && (charCode < 1632 || charCode > 1641)) {
             evt.preventDefault();
           }

@@ -107,13 +107,13 @@ import { EventBus } from '../../event'
   // steps
   .steps-box{
     //   display: flex;
-      border-bottom: 1px solid var(--gray-300-color);
+      border-bottom: 1px solid var(--kgray-300-color);
       margin-bottom: 30px;
     //   justify-content: flex-start;
 
       .section-inside-title{
           font-size: 1.5rem;
-          color: var(--gray-900-color);
+          color: var(--kgray-900-color);
           width: 190px;
           margin-top: 8px;
       }
@@ -143,11 +143,11 @@ import { EventBus } from '../../event'
               &.is-validate{
 
                   .step-number{
-                      border: 1px solid var(--green-color) !important;
+                      border: 1px solid var(--kgreen-color) !important;
                       background-color: transparent !important;
 
                       .icon{
-                          color: var(--green-color);
+                          color: var(--kgreen-color);
                           font-size: 1.2rem;
                       }
 
@@ -171,17 +171,17 @@ import { EventBus } from '../../event'
                       width: 30px;
                       height: 30px;
                       border-radius: 9999px;
-                      background-color: var(--gray-500-color);
+                      background-color: var(--kgray-500-color);
                       display: flex;
                       align-items: center;
                       justify-content: center;
-                      color: var(--white-color);
-                      border: 1px solid var(--gray-500-color);
+                      color: var(--kwhite-color);
+                      border: 1px solid var(--kgray-500-color);
                       pointer-events: none;
                   }
 
                   .step-line{
-                      border-top: 1px dotted var(--gray-500-color);
+                      border-top: 1px dotted var(--kgray-500-color);
                       flex-grow: 1;
                   }
 

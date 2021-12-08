@@ -78,7 +78,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid var(--gray-300-color);
+        border-bottom: 1px solid var(--kgray-300-color);
         padding: 12px;
     }
 
@@ -91,13 +91,13 @@ export default {
     }
     @keyframes blink {
         0% {
-            background-color: var(--gray-300-color);
+            background-color: var(--kgray-300-color);
         }
         50% {
-            background-color: var(--green-color);
+            background-color: var(--kgreen-color);
         }
         100% {
-            background-color: var(--gray-300-color);
+            background-color: var(--kgray-300-color);
         }
     }
 

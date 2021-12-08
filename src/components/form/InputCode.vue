@@ -43,7 +43,7 @@
   $n-char: 6;
   $in-w: $n-char*($char-w + $gap);
   $inputHeight: 46px;
-  $dash-color: var(--gray-600-color);
+  $dash-color: var(--kgray-600-color);
 
   .input-code{
     @apply w-full;

@@ -55,7 +55,7 @@
 
     .switch-button {
       $switch-button-height: 1.1rem;
-      $switch-button-color: var(--green-color);
+      $switch-button-color: var(--kgreen-color);
       $switch-button-border-thickness: 2px;
       $switch-transition: all 0.3s ease-in-out;
       $switch-is-rounded: true;
@@ -103,7 +103,7 @@
 
       .switch-button {
         $switch-button-height: 1.1em;
-        $switch-button-color: var(--green-color);
+        $switch-button-color: var(--kgreen-color);
         $switch-button-border-thickness: 2px;
         $switch-transition: all 0.3s ease-in-out;
         $switch-is-rounded: true;
@@ -136,7 +136,7 @@
 
       .switch-button {
         $switch-button-height: 1.1em;
-        $switch-button-color: var(--green-color);
+        $switch-button-color: var(--kgreen-color);
         $switch-button-border-thickness: 2px;
         $switch-transition: all 0.3s ease-in-out;
         $switch-is-rounded: true;

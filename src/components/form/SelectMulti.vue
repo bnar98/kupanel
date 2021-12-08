@@ -5,7 +5,7 @@
       <span class='select-box-selected-item ellipsis'>{{ placeholder }}</span>
       <ion-icon name="chevron-down-outline"></ion-icon>
       <ul class="select-box-item" v-if="visible">
-        <li :class="['ellipsis', {'selected': isSelected(all)}]" v-if="options.length > 1"
+        <li :class="['ellipsis', {'selected': isSelected(all)}]" v-if="options.length > 1 && allTitle"
             @click="onChange(all)">{{ allTitle }}
         </li>
         <li v-for="(option, index) in options" :key="index" :class="['ellipsis', {'selected': isSelected(option)}]"
@@ -27,7 +27,7 @@
       <ul v-else-if="selected.length > 0">
         <li>
             <span class="tag-content">
-                <span :class="['tag-title', {'disabled': disabled}]">{{allTitle}}</span>
+                <span :class="['tag-title', {'disabled': disabled}]" v-if="allTitle">{{allTitle}}</span>
                 <span class="tag-remove-btn" v-if="!disabled" @click="removeSelected('all')">
                     <ion-icon class="icon" name="close-outline"></ion-icon>
                 </span>
@@ -61,7 +61,7 @@
       },
       allTitle:{
         type: String,
-        default: 'all'
+        default: null
       }
     },
 

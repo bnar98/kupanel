@@ -72,7 +72,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@mixin button($bgColor, $darkBgColor, $textColor: var(--white-color)) {
+@mixin button($bgColor, $darkBgColor, $textColor: var(--kwhite-color)) {
   border-color: $bgColor;
 
   &:not(.bordered):not(.transparent) {
@@ -81,7 +81,7 @@ export default {
     .icon {
       color: $textColor;
     }
-    --spinerColor: var(--white-color);
+    --spinerColor: var(--kwhite-color);
   }
 
   &.bordered,
@@ -175,7 +175,7 @@ export default {
         @apply -ml-1.5;
         bottom: 100%;
         left: 50%;
-        border-color: transparent transparent var(--gray-600-color) transparent;
+        border-color: transparent transparent var(--kgray-600-color) transparent;
       }
     }
 
@@ -263,7 +263,7 @@ export default {
   }
 
   &.btn-success {
-    @include button(var(--green-color), var(--green-dark-color));
+    @include button(var(--kgreen-color), var(--green-dark-color));
   }
 
   &.btn-error {
@@ -275,7 +275,7 @@ export default {
   }
 
   &.btn-info {
-    @include button(var(--blue-color), var(--blue-dark-color));
+    @include button(var(--kblue-color), var(--kblue-dark-color));
   }
 
   &.btn-default {
@@ -295,7 +295,7 @@ export default {
 
         &::after {
           right: 100%;
-          border-color: transparent var(--gray-600-color) transparent
+          border-color: transparent var(--kgray-600-color) transparent
             transparent;
         }
       }
@@ -306,7 +306,7 @@ export default {
         &::after {
           left: 100%;
           border-color: transparent transparent transparent
-            var(--gray-600-color);
+            var(--kgray-600-color);
         }
       }
     }
@@ -332,7 +332,7 @@ export default {
         &::after {
           left: 100%;
           border-color: transparent transparent transparent
-            var(--gray-600-color);
+            var(--kgray-600-color);
         }
       }
 
@@ -341,7 +341,7 @@ export default {
 
         &::after {
           right: 100%;
-          border-color: transparent var(--gray-600-color) transparent
+          border-color: transparent var(--kgray-600-color) transparent
             transparent;
         }
       }

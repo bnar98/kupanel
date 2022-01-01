@@ -3,7 +3,7 @@
         <img :src="avatar" alt="avatar" class="w-10 cursor-pointer rounded-full">
         <transition name="ku-fade">
             <div v-show="showMenu" class="drodown absolute w-72 h-auto bg-dropdown-background-color border border-solid border-dropdown-border-color rounded-lg mt-3" >
-                <div class="dropdown-items ">
+                <div class="dropdown-items max-h-96 overflow-y-auto">
                     <slot name="item"></slot>
                 </div>
                 <div class="dropdown-footer ">

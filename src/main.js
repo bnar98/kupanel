@@ -21,13 +21,6 @@ Vue.config.ignoredElements = [/^ion-/]
 export default {
   install (Vue, perfix) {
 
-
-
-
-
-
-
-
     Vue.filter('currencyFormat', function (value) {
 
       var formatter = new Intl.NumberFormat({
@@ -42,18 +35,9 @@ export default {
           return formatter.format(value);
         }
       }
-      return ''
+      return 0
       
     });
-
-
-
-
-
-
-
-
-
 
 
     Vue.directive(

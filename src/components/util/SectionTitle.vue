@@ -14,7 +14,8 @@
 
 <style lang="scss">
   .section-header {
-    @apply relative text-lg z-10 overflow-hidden text-right block w-full text-gray-500 my-14 font-normal;
+    @apply relative text-lg overflow-hidden text-right block w-full text-gray-500 my-14 font-normal;
+    z-index: 9;
   }
   .section-header:after{
     @apply absolute top-1/2 overflow-hidden w-full h-px bg-gray-400 mr-4;

@@ -135,7 +135,11 @@
       },
 
       getTitle(selectedValue) {
-        return this.options.find(x => x.value.toString() === selectedValue.toString()).title
+        console.log(selectedValue);
+        console.log(this.options);
+        if(this.options.length > 0){
+          return this.options.find(x => x.value.toString() === selectedValue.toString()).title
+        }
       },
 
       removeSelected(selectedIndex) {

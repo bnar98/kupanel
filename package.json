@@ -1,6 +1,6 @@
 {
   "name": "kupanel",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -20,12 +20,14 @@
     "*.js"
   ],
   "dependencies": {
+    "4": "^0.0.0",
     "@tailwindcss/postcss7-compat": "^2.2.4",
     "@types/webpack-hot-middleware": "^2.25.5",
     "autoprefixer": "^9.8.6",
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
     "postcss": "^7.0.36",
+    "sass-loader": "^10.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
@@ -50,9 +52,12 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.49.9",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.46.0"
   },
   "eslintConfig": {
     "root": false,

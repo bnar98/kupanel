@@ -33,7 +33,7 @@
 <style lang="scss">
 
   .status {
-    @apply relative rounded-full text-sm whitespace-nowrap inline font-medium;
+    @apply relative rounded-full text-sm whitespace-nowrap inline font-medium ;
 
   &::before {
     @apply inline-block rounded-md absolute top-2;;
@@ -78,9 +78,9 @@
   }
 
   &.default {
-    @apply text-white bg-gray-400;
+    @apply text-black bg-gray-400;
     &::before{
-      @apply bg-white;
+      @apply bg-black;
     }
   }
 

@@ -72,7 +72,6 @@ import { EventBus } from '../../event'
         methods:{
 
             selectStep(selectedStepIndex) {
-              console.log(this.steps.length);
                 this.steps.forEach((step,index) => {
                   if (index < selectedStepIndex -1) {
                     step.componentInstance.isValidation = true;

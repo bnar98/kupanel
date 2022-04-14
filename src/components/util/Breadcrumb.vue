@@ -11,7 +11,7 @@
     "
   >
     <li class="inline text-gray-800">
-      <nuxt-link to="/panel/home" class="text-gray-600 no-underline">{{
+      <nuxt-link :to="lang" class="text-gray-600 no-underline">{{
         $t("breadcrumb.panel.index")
       }}</nuxt-link>
     </li>
@@ -40,6 +40,14 @@
 
 <script>
 export default {
+  data() {
+    return {
+      lang:
+        localStorage.getItem("language") === "fa_IR"
+          ? "/panel/home/"
+          : `/${localStorage.getItem("language")}/panel/home/`,
+    };
+  },
   computed: {
     crumbs() {
       const fullPath = this.$route.fullPath;
@@ -57,10 +65,6 @@ export default {
           }
         });
       }
-      if (localStorage.getItem("language") !== this.$i18n.defaultLocale) {
-        params.splice(0, 1);
-      }
-
       const crumbs = [];
       let path = "";
       let translatableTitle = "";
@@ -71,7 +75,9 @@ export default {
         let crumbTitle = "";
         if (match.name) {
           crumbTitle = match.path.split("/");
-          crumbTitle.splice(0, 2);
+          localStorage.getItem("language") === "fa_IR"
+            ? crumbTitle.splice(0, 2)
+            : crumbTitle.splice(0, 3);
 
           crumbTitle.forEach((title, index1) => {
             if (index1 !== 0 && title) {
@@ -80,22 +86,19 @@ export default {
               translatableTitle = translatableTitle + title;
             }
           });
-          // console.log(this.hasChild());
           if (index !== 0 && index !== params.length - 1) {
             translatableTitle = translatableTitle + ".index";
           } else if (index !== 0 && this.hasChild() > 0) {
             translatableTitle = translatableTitle + ".index";
           }
         }
-
-        if (match.name !== null) {
+        if (match.name !== null && crumbTitle.length !== 0) {
           crumbs.push({
             title: this.$t("breadcrumb." + translatableTitle),
             path: match.path,
           });
         }
       });
-
       return crumbs;
     },
   },
@@ -120,4 +123,3 @@ export default {
   }
 }
 </style>
-

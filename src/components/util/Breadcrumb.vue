@@ -1,109 +1,123 @@
 <template>
-  <ul class="breadcrumb flex justify-items-center items-center py-0 px-2 list-none">
+  <ul
+    class="
+      breadcrumb
+      flex
+      justify-items-center
+      items-center
+      py-0
+      px-2
+      list-none
+    "
+  >
     <li class="inline text-gray-800">
-      <nuxt-link to="/panel/home" class="text-gray-600 no-underline">{{$t('breadcrumb.panel.index') }}</nuxt-link>
+      <nuxt-link to="/panel/home" class="text-gray-600 no-underline">{{
+        $t("breadcrumb.panel.index")
+      }}</nuxt-link>
     </li>
-    <ion-icon class=" icon text-gray-600 text-icon-small block py-0 px-1" name="chevron-back-outline"></ion-icon>
-    <template v-for="(crumb, index) in crumbs"
-
-              property="itemListElement"
-              typeof="ListItem">
+    <ion-icon
+      class="icon text-gray-600 text-icon-small block py-0 px-1"
+      name="chevron-back-outline"
+    ></ion-icon>
+    <template
+      v-for="(crumb, index) in crumbs"
+      property="itemListElement"
+      typeof="ListItem"
+    >
       <li :key="index" class="inline text-gray-800">
-        <nuxt-link :to="crumb.path" class="text-gray-600 no-underline">{{crumb.title}}</nuxt-link>
+        <nuxt-link :to="crumb.path" class="text-gray-600 no-underline">{{
+          crumb.title
+        }}</nuxt-link>
       </li>
-      <ion-icon class="icon text-gray-600 text-icon-small block py-0 px-1" name="chevron-back-outline"
-                v-if="index !== crumbs.length - 1"></ion-icon>
+      <ion-icon
+        class="icon text-gray-600 text-icon-small block py-0 px-1"
+        name="chevron-back-outline"
+        v-if="index !== crumbs.length - 1"
+      ></ion-icon>
     </template>
   </ul>
 </template>
 
 <script>
-
-  export default {
-
-    computed: {
-
-      crumbs() {
-
-        const fullPath = this.$route.fullPath
-        const params = fullPath.startsWith('/')
-          ? fullPath.substring(1).split('/')
-          : fullPath.split('/')
+export default {
+  computed: {
+    crumbs() {
+      const fullPath = this.$route.fullPath;
+      const params = fullPath.startsWith("/")
+        ? fullPath.substring(1).split("/")
+        : fullPath.split("/");
+      if (params[params.length - 1] === "") {
         params.pop(); // it is for trailing slash
-        // because /1014343 make problem for translate ,show edit translate twice
-        if (Object.keys(this.$route.params).length > 0){
-          Object.keys(this.$route.params).forEach((routeParam) => {
-            if (this.$route.params[routeParam]) {
-              params.pop()
-            }
-          })
-
-
-        }
-        if(localStorage.getItem('language') !== this.$i18n.defaultLocale) {
-          params.splice(0,1);
-        }
-
-        const crumbs = []
-        let path = ''
-        let translatableTitle = '';
-        params.forEach((param, index) => {
-          path = `${path}/${param}`
-          const match = this.$router.match(path + "/")
-          translatableTitle = '';
-          let crumbTitle = ''
-          if (match.name) {
-            crumbTitle = match.path.split("/");
-            crumbTitle.splice(0, 2);
-
-            crumbTitle.forEach((title, index1) => {
-              if (index1 !== 0 && title) {
-                translatableTitle = translatableTitle + '.' + title
-              } else if (title) {
-                translatableTitle = translatableTitle + title
-              }
-            })
-            // console.log(this.hasChild());
-            if(index !== 0 && index !== params.length -1 ){
-              translatableTitle = translatableTitle + '.index'
-            } else if (index !== 0 && this.hasChild() > 0) {
-              translatableTitle = translatableTitle + '.index'
-            }
-
+      }
+      // because /1014343 make problem for translate ,show edit translate twice
+      if (Object.keys(this.$route.params).length > 0) {
+        Object.keys(this.$route.params).forEach((routeParam) => {
+          if (this.$route.params[routeParam]) {
+            params.pop();
           }
-
-          if (match.name !== null) {
-            crumbs.push({
-              title: this.$t('breadcrumb.' + translatableTitle),
-              path: match.path
-            })
-          }
-
-        })
-
-        return crumbs
-      },
-
-    },
-
-    methods: {
-
-      hasChild() {
-        const childRoutes = this.$router.options.routes.filter(x => x.path.startsWith(this.$route.path) && x.path !== this.$route.path && Object.keys(this.$route.params).length < 0 )
-        return childRoutes.length;
+        });
+      }
+      if (localStorage.getItem("language") !== this.$i18n.defaultLocale) {
+        params.splice(0, 1);
       }
 
-    }
+      const crumbs = [];
+      let path = "";
+      let translatableTitle = "";
+      params.forEach((param, index) => {
+        path = `${path}/${param}`;
+        const match = this.$router.match(path + "/");
+        translatableTitle = "";
+        let crumbTitle = "";
+        if (match.name) {
+          crumbTitle = match.path.split("/");
+          crumbTitle.splice(0, 2);
 
-  }
+          crumbTitle.forEach((title, index1) => {
+            if (index1 !== 0 && title) {
+              translatableTitle = translatableTitle + "." + title;
+            } else if (title) {
+              translatableTitle = translatableTitle + title;
+            }
+          });
+          // console.log(this.hasChild());
+          if (index !== 0 && index !== params.length - 1) {
+            translatableTitle = translatableTitle + ".index";
+          } else if (index !== 0 && this.hasChild() > 0) {
+            translatableTitle = translatableTitle + ".index";
+          }
+        }
+
+        if (match.name !== null) {
+          crumbs.push({
+            title: this.$t("breadcrumb." + translatableTitle),
+            path: match.path,
+          });
+        }
+      });
+
+      return crumbs;
+    },
+  },
+
+  methods: {
+    hasChild() {
+      const childRoutes = this.$router.options.routes.filter(
+        (x) =>
+          x.path.startsWith(this.$route.path) &&
+          x.path !== this.$route.path &&
+          Object.keys(this.$route.params).length < 0
+      );
+      return childRoutes.length;
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
-.localization-ltr{
-  .icon{
+.localization-ltr {
+  .icon {
     transform: rotate(180deg);
   }
 }
-
-
 </style>
 

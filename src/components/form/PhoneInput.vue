@@ -36,7 +36,7 @@
               flex flex-col
               w-auto
               border border-solid border-input-border-color
-              bg-input-background-color
+              bg-dropdown-background-color
               text-left
               absolute
               top-11

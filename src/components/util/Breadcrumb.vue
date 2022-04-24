@@ -75,7 +75,7 @@ export default {
         let crumbTitle = "";
         if (match.name) {
           crumbTitle = match.path.split("/");
-          localStorage.getItem("language") === "fa_IR"
+          localStorage.getItem("language") === "en_US"
             ? crumbTitle.splice(0, 2)
             : crumbTitle.splice(0, 3);
 

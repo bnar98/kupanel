@@ -80,7 +80,9 @@ textarea {
     direction: ltr;
   }
 }
-
+input{
+  color: var(--input-placeholder-color);
+}
 input:disabled,
 textarea:disabled,
 .disabled {

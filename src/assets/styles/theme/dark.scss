@@ -2,8 +2,8 @@
   // colors
   --primary-color: #F07F18;
   --primary-dark-color: #DE6B01;
-  --secondary-color: #67758D;
-  --secondary-dark-color: #909ca7;
+  --secondary-color: #ffffff;
+  --secondary-dark-color: #ffffff;
   --kgreen-color: #1CBFAD;
   --kgreen-dark-color: #15AD9C;
   --kred-color: #FF645D;
@@ -31,6 +31,7 @@
   --foreground-color: #cfced9;
   --header-background-color: #37393d;
   --overlay-background-color: #4f4f50;
+  --dropdown-info-background-color:#545558;
 
   // buttons
   --btn-default-background-color: #676a6d;
@@ -50,7 +51,7 @@
   // inputs
   --input-placeholder-color: #eceaea;
   --input-border-color: #eceaea;
-  --input-label-color: ##d2cdcd;
+  --input-label-color: #d2cdcd;
   --input-text-color: #67758d;
   --input-background-color: #cfced912;
 
@@ -99,6 +100,7 @@
   --dropdown-background-color: #46494c;
   --dropdown-border-color: transparent;
   --dropdown-triangle-color: #46494c;
+  --select-dropdown-background-color:#2f333a;
 
   // datepicker
   --datepicker-background-color: #272B33;

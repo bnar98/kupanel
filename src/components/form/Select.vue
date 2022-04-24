@@ -138,7 +138,7 @@ export default {
     }
 
     ul {
-      @apply absolute w-full p-0 mb-10 bg-input-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
+      @apply absolute w-full p-0 mb-10 bg-select-dropdown-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
         left-0 top-8;
       max-height: 180px !important;
 

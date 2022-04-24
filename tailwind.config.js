@@ -13,17 +13,17 @@ module.exports = {
         'tab': '445px'
       },
       fontSize: {
-        'icon-default':'1.5rem',
-        'icon-large':'1.8rem',
-        'icon-small':'0.9rem',
-        'input-default':'0.8rem',
-        'hypertext-default':'1rem',
-        'p-default':'1rem',
-        'span-default':'1rem',
-        'input-label':'0.93rem',
-        'input-sub-label':'0.75rem',
+        'icon-default': '1.5rem',
+        'icon-large': '1.8rem',
+        'icon-small': '0.9rem',
+        'input-default': '0.8rem',
+        'hypertext-default': '1rem',
+        'p-default': '1rem',
+        'span-default': '1rem',
+        'input-label': '0.93rem',
+        'input-sub-label': '0.75rem',
       },
-      colors:{
+      colors: {
         'primary': 'var(--primary-color)',
         'primary-dark': 'var(--primary-dark-color)',
         'secondary': 'var(--secondary-color)',
@@ -57,6 +57,7 @@ module.exports = {
         'foreground-color': 'var(--foreground-color)',
         'header-background-color': 'var(--header-background-color)',
         'overlay-background-color': 'var(--overlay-background-color)',
+        'dropdown-info-background-color': 'var(--dropdown-info-background-color)',
 
         // buttons
         'btn-default-background-color': 'var(--btn-default-background-color)',
@@ -127,6 +128,7 @@ module.exports = {
         'dropdown-background-color': 'var(--dropdown-background-color)',
         'dropdown-border-color': 'var(--dropdown-border-color)',
         'dropdown-triangle-color': 'var(--dropdown-triangle-color)',
+        'select-dropdown-background-color': 'var(--select-dropdown-background-color)',
 
         // datepicker
         'datepicker-background-color': 'var(--datepicker-background-color)',
@@ -143,7 +145,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['odd','even']
+      backgroundColor: ['odd', 'even']
     },
   },
   plugins: [],

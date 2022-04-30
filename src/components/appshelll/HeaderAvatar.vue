@@ -5,12 +5,15 @@
         h-16
         flex
         items-center
-        md:w-44
+        md:w-60
         justify-around
         md:bg-overlay-background-color
       "
     >
-      <div class="mx-3 text-title-color hidden md:block">
+      <div
+        class="mx-3 text-title-color hidden md:block"
+        v-if="adminInfo.name != ''"
+      >
         <h1 class="w-full text-center text-md">{{ adminInfo.name }}</h1>
         <h1 class="text-xs w-full text-center">{{ adminInfo.role }}</h1>
       </div>

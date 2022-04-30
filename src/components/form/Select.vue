@@ -10,7 +10,7 @@
     <div class="select-box" @click="visible = !visible">
       <span
         class="select-box-selected-item ellipsis"
-        v-html="selected === undefined ? placeholder : selectedTitle"
+        v-html="selected === undefined ? placeholder : selected.title"
       ></span>
       <ion-icon name="chevron-down-outline"></ion-icon>
       <ul class="select-box-item" v-if="visible">
@@ -29,6 +29,9 @@
 <script>
 export default {
   props: {
+    id: {
+      default: undefined,
+    },
     value: {},
     options: {},
     property: {},
@@ -70,6 +73,13 @@ export default {
     },
     options() {
       this.getOptions();
+      if (this.id >= 0 && this.id != null && this.id) {
+        let index = this.options.findIndex((e) => {
+          return e.value === +this.id;
+        });
+
+        this.selected = this.options[index];
+      }
     },
   },
 
@@ -130,7 +140,7 @@ export default {
   }
 
   .select-box {
-    @apply flex items-center justify-between relative cursor-pointer bg-input-background-color
+    @apply flex items-center justify-between relative cursor-pointer bg-input-dropdown-background-color
       font-extralight text-sm py-2 px-4 rounded-lg outline-none box-border border border-solid border-input-border-color;
 
     &:focus {
@@ -138,7 +148,7 @@ export default {
     }
 
     ul {
-      @apply absolute w-full p-0 mb-10 bg-select-dropdown-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
+      @apply absolute w-full p-0 mb-10 bg-input-dropdown-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
         left-0 top-8;
       max-height: 180px !important;
 

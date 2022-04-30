@@ -83,6 +83,7 @@ module.exports = {
         'input-text-color': 'var(--input-text-color)',
         'input-background-color': 'var(--input-background-color)',
         'input-hover-background-color': 'var(--input-hover-background-color)',
+        'input-dropdown-background-color': 'var(--input-dropdown-background-color)',
 
         // seperators
         'hr-color': 'var(--hr-color)',

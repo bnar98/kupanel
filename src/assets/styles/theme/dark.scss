@@ -50,10 +50,14 @@
 
   // inputs
   --input-placeholder-color: #eceaea;
+  --input-value-color: #eceaea;
+
   --input-border-color: #eceaea;
   --input-label-color: #d2cdcd;
   --input-text-color: #67758d;
   --input-background-color: #cfced912;
+  --input-dropdown-background-color: #cfced9;
+
 
   // seperators
   --hr-color: #cbcbcb;
@@ -100,7 +104,7 @@
   --dropdown-background-color: #46494c;
   --dropdown-border-color: transparent;
   --dropdown-triangle-color: #46494c;
-  --select-dropdown-background-color:#2f333a;
+  --select-dropdown-background-color:#1d1f22;
 
   // datepicker
   --datepicker-background-color: #272B33;

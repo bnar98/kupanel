@@ -207,7 +207,7 @@ export default {
   }
 
   .select-box {
-    @apply flex items-center justify-between relative cursor-pointer bg-input-background-color
+    @apply flex items-center justify-between relative cursor-pointer bg-input-dropdown-background-color
       font-extralight text-sm py-2 px-4 rounded-lg outline-none box-border border border-solid border-input-border-color;
 
     &:focus {
@@ -215,7 +215,7 @@ export default {
     }
 
     ul {
-      @apply absolute w-full p-0 mb-10 bg-input-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
+      @apply absolute w-full p-0 mb-10 bg-input-dropdown-background-color rounded-lg overflow-y-auto overflow-x-hidden z-20
         left-0 top-8;
       max-height: 180px !important;
 

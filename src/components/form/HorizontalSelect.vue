@@ -1,8 +1,14 @@
 <template>
-  <div :class="{'form-group': gap}">
+  <div :class="{ 'form-group': gap }">
     <label :for="name" class="label" v-if="label">{{ label }}</label>
     <div
-      class="horizontal-select flex flex-row items-center justify-start overflow-hidden"
+      class="
+        horizontal-select
+        flex flex-row
+        items-center
+        justify-start
+        overflow-hidden
+      "
     >
       <template v-for="item in items">
         <div
@@ -31,19 +37,18 @@ export default {
 
     label: {
       type: String,
-      default: ''
+      default: "",
     },
 
     name: {
       type: String,
-      default: '',
-      required:true
+      default: "",
+      required: true,
     },
-    gap:{
+    gap: {
       type: Boolean,
-      default: true
+      default: true,
     },
-
   },
 
   data() {
@@ -85,7 +90,7 @@ export default {
       @apply bg-secondary;
 
       span {
-        @apply border-secondary text-white;
+        @apply border-secondary text-background-color;
       }
     }
   }

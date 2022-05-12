@@ -128,10 +128,10 @@ export default {
   methods: {
     pressKey() {
       let mobile = this.input.replace(/^0+/, "");
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
-        this.$emit("input", this.selected + mobile);
-      }, 300);
+      this.$emit("input", this.selected + mobile);
+      // clearTimeout(this.timeout);
+      // this.timeout = setTimeout(() => {
+      // }, 300);
     },
     onChange(option) {
       this.selected = option.code;

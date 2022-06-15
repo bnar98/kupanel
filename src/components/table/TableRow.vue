@@ -26,7 +26,7 @@
             v-for="(action, index2) in actions"
             :key="index2"
             @click="selectAction(action.name, row)"
-            v-can="[action.permission ? action.permission: '']"
+            v-can="[action.permission ? action.permission : '']"
           >
             <ion-icon class="icon" :name="action.icon"></ion-icon>
             <span>{{ action.label }}</span>

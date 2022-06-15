@@ -58,8 +58,14 @@
           </div>
         </div>
       </div>
-      <div @click="enter" v-if="showBtn" class="">
-        <ku-Button :title="title" :ui="btnUi" />
+      <div v-if="showBtn" class="">
+        <ku-Button
+          @click="enter"
+          :title="title"
+          :ui="btnUi"
+          :isLoading="isLoadingButton"
+          :disabled="disabledButton"
+        />
       </div>
     </div>
   </div>
@@ -117,6 +123,14 @@ export default {
     btnUi: {
       type: String,
       default: "btn-default btn-search small",
+    },
+    isLoadingButton: {
+      type: Boolean,
+      default: false,
+    },
+    disabledButton: {
+      type: Boolean,
+      default: false,
     },
     title: "",
   },

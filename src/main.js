@@ -1,4 +1,4 @@
- /* eslint-disable */
+/* eslint-disable */
 import Vue from 'vue'
 import "./assets/styles/theme/ltr.scss"
 import "./assets/styles/theme/rtl.scss"
@@ -11,7 +11,7 @@ import kuComponents from './components/export'
 
 
 // @ts-ignore
- window.$ = window.jQuery = require('jquery');
+window.$ = window.jQuery = require('jquery');
 
 
 Vue.config.productionTip = false
@@ -19,24 +19,24 @@ Vue.config.ignoredElements = [/^ion-/]
 
 
 export default {
-  install (Vue, perfix) {
+  install(Vue, perfix) {
 
     Vue.filter('currencyFormat', function (value) {
 
       var formatter = new Intl.NumberFormat({
         minimumFractionDigits: 2
       });
-      if(value){
+      if (value) {
         value = value.toString();
         var pointPosition = value.indexOf(".");
         if (pointPosition >= 0) {
-          return formatter.format(value)+value.slice( pointPosition, value.lenght);
-        }else{
+          return formatter.format(value) + value.slice(pointPosition, value.lenght);
+        } else {
           return formatter.format(value);
         }
       }
       return 0
-      
+
     });
 
 
@@ -48,11 +48,11 @@ export default {
       'can',
       require('./directives/can').default
     );
-  if (!perfix) {
-    perfix = 'ku-'
+    if (!perfix) {
+      perfix = 'ku-'
+    }
+    Object.entries(kuComponents).forEach(([key, value]) => {
+      Vue.component(perfix + key, value)
+    })
   }
-  Object.entries(kuComponents).forEach( ([key, value])=>{
-    Vue.component(perfix + key, value)
-  })
-  }
- }
+}

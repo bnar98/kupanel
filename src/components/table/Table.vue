@@ -4,8 +4,24 @@
       <thead>
         <tr class="font-medium">
           <th class="w-px" v-if="collapsible"></th>
-          <th v-for="(header, index) in headers" :key="index">
-            <span>{{ header }}</span>
+          <th
+            v-for="(header, index) in headers"
+            :key="index"
+            @click="header.actionfield ? changeOrder(header.actionfield) : ''"
+          >
+            <div class="flex justify-between">
+              <span>{{ header.header ? header.header : header }}</span>
+              <span class="mt-1" v-if="orderIcon !== ''">
+                <ion-icon
+                  v-if="header.actionfield !== ''"
+                  :color="
+                    header.actionfield == orderedField ? 'light' : 'medium'
+                  "
+                  class="icon"
+                  :name="orderIcon"
+                ></ion-icon>
+              </span>
+            </div>
           </th>
           <th class="w-px" v-if="hasActions">
             <span>{{ $t("components.actions") }}</span>
@@ -18,6 +34,7 @@
 </template>
 
 <script lang="js">
+
 export default {
 
   props:{
@@ -35,29 +52,31 @@ export default {
       },
       required: false
     },
-
+    
+    orderIcon:{
+     type:String,
+     default:''
+    },
     hasActions:{
       type: Boolean,
       default: false,
       require: false
+    },
+    orderedField:{
+      type:String,
+      default:''
     }
 
+  },
+created(){
+  console.log(this.orderedField)
+},
+  methods:{
+  changeOrder(actionfield){
+     this.$emit("changeOrder",actionfield);
   }
-
-
+  },
 }
-// import { Component, Prop, Vue } from 'vue-property-decorator'
-//
-// @Component
-// export default class Table extends Vue {
-//
-//   @Prop({required: false, type: Boolean, default: false}) collapsible!: boolean
-//   @Prop({required: false, type: Array, default: function () {
-//       return []
-//     }}) headers!: any
-//   @Prop({required: false, type: Boolean, default: false}) hasActions!: boolean
-//
-// }
 </script>
 
 <style lang="scss">

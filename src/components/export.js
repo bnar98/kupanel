@@ -51,6 +51,7 @@ import TabLoader from "./shimmers/TabLoader.vue"
 import TabsLoader from "./shimmers/TabsLoader.vue"
 import TextAreaLoader from "./shimmers/TextAreaLoader.vue"
 import Status from "./util/Status.vue"
+import Raiting from "./util/Raiting.vue"
 import HeaderNotification from "./appshelll/HeaderNotification.vue"
 import NotificationItems from "./appshelll/NotificationItems.vue"
 import Collapse from "./util/Collapse.vue"
@@ -101,10 +102,10 @@ export default {
     HeaderDropDownfooter: HeaderDropDownfooter,
     NestedSelect: NestedSelect,
     NestedItem: NestedItem,
-    Input:Input,
-    Textarea:Textarea,
-    InputTag:InputTag,
-    MainLoading:MainLoading,
+    Input: Input,
+    Textarea: Textarea,
+    InputTag: InputTag,
+    MainLoading: MainLoading,
     PageHeader: PageHeader,
     PageBody: PageBody,
     Flash: Flash,
@@ -119,24 +120,25 @@ export default {
     TabLoader: TabLoader,
     TabsLoader: TabsLoader,
     TextAreaLoader: TextAreaLoader,
-    Status:Status,
+    Status: Status,
+    Raiting: Raiting,
     HeaderNotification: HeaderNotification,
     NotificationItems: NotificationItems,
-    Paginate:Paginate,
-    Shimmer:Shimmer,
+    Paginate: Paginate,
+    Shimmer: Shimmer,
     Collapse: Collapse,
-    SectionTitle:SectionTitle,
-    List:List,
-    ListItem:ListItem,
-    SwitchButton:SwitchButton,
-    Steps:Steps,
-    Step:Step,
-    Label:Label,
-    Thumbnail:Thumbnail,
-    PhoneInput:PhoneInput,
-    SelectMulti:SelectMulti,
-    SimpleCard:SimpleCard,
-    TableItemCounter:TableItemCounter,
-    Badge:Badge,
-    Progress:Progress
+    SectionTitle: SectionTitle,
+    List: List,
+    ListItem: ListItem,
+    SwitchButton: SwitchButton,
+    Steps: Steps,
+    Step: Step,
+    Label: Label,
+    Thumbnail: Thumbnail,
+    PhoneInput: PhoneInput,
+    SelectMulti: SelectMulti,
+    SimpleCard: SimpleCard,
+    TableItemCounter: TableItemCounter,
+    Badge: Badge,
+    Progress: Progress
 }

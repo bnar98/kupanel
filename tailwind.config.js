@@ -117,7 +117,7 @@ module.exports = {
         'table-footer-background-color': 'var(--table-footer-background-color)',
         'table-odd-background-color': 'var(--table-odd-background-color)',
         'table-even-background-color': 'var(--table-even-background-color)',
-
+        'table-modal-background-color': 'var( --table-modal-background-color)',
         // scrollbar
         'scrollbar-track-color': 'var(--scrollbar-track-color)',
         'scrollbar-thumb-color': 'var(--scrollbar-thumb-color)',

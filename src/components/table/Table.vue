@@ -68,9 +68,6 @@ export default {
     }
 
   },
-created(){
-  console.log(this.orderedField)
-},
   methods:{
   changeOrder(actionfield){
      this.$emit("changeOrder",actionfield);

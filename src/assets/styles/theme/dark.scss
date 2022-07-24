@@ -1,37 +1,37 @@
 .theme-dark {
   // colors
-  --primary-color: #F07F18;
-  --primary-dark-color: #DE6B01;
+  --primary-color: #f07f18;
+  --primary-dark-color: #de6b01;
   --secondary-color: #ffffff;
   --secondary-dark-color: #ffffff;
-  --kgreen-color: #1CBFAD;
-  --kgreen-dark-color: #15AD9C;
-  --kred-color: #FF645D;
-  --kred-dark-color: #E65953;
+  --kgreen-color: #1cbfad;
+  --kgreen-dark-color: #15ad9c;
+  --kred-color: #ff645d;
+  --kred-dark-color: #e65953;
   --kyellow-color: #ffba54;
   --kyellow-dark-color: #fdb74d;
   --kpruple-color: #8c77f1;
   --kpruple-dark-color: #826cf6;
-  --kblue-color: #2DA2D6;
-  --kblue-dark-color: #0489C4;
+  --kblue-color: #2da2d6;
+  --kblue-dark-color: #0489c4;
   --kblack-color: #1b1c1f;
   --kwhite-color: #fff;
   --kgray-100-color: #101010;
-  --kgray-200-color: #3E3E3E;
+  --kgray-200-color: #3e3e3e;
   --kgray-300-color: #686868;
   --kgray-400-color: #969696;
-  --kgray-500-color: #BBBABA;
-  --kgray-600-color: #E0E0E0;
-  --kgray-700-color: #EFEFEF;
-  --kgray-800-color: #FAFAFA;
-  --kgray-900-color: #FDFDFD;
+  --kgray-500-color: #bbbaba;
+  --kgray-600-color: #e0e0e0;
+  --kgray-700-color: #efefef;
+  --kgray-800-color: #fafafa;
+  --kgray-900-color: #fdfdfd;
 
   // backgrounds
   --background-color: #2f3133;
   --foreground-color: #cfced9;
   --header-background-color: #37393d;
   --overlay-background-color: #4f4f50;
-  --dropdown-info-background-color:#545558;
+  --dropdown-info-background-color: #545558;
 
   // buttons
   --btn-default-background-color: #676a6d;
@@ -42,9 +42,9 @@
   --sidemenu-background-color: #37393d;
   --sidemenu-expend-background-color: transparent;
   --sidemenu-hover-background-color: #47494c;
-  --sidemenu-active-border-color: #F07F18;
+  --sidemenu-active-border-color: #f07f18;
   --sidemenu-expend-seperator-color: transparent;
-  --sidemenu-expend-right-border-color: #BBBABA;
+  --sidemenu-expend-right-border-color: #bbbaba;
   --sidemenu-icon-color: #a5abb5;
   --sidemenu--active-icon-color: #eae2e2;
 
@@ -58,7 +58,6 @@
   --input-background-color: #cfced912;
   --input-dropdown-background-color: #424448;
 
-
   // seperators
   --hr-color: #cbcbcb;
   --vertical-seperator-color: #cbcbcb;
@@ -70,7 +69,7 @@
 
   // icons
   --icon-color: #969696;
-  --icon-active-color: #3E3E3E;
+  --icon-active-color: #3e3e3e;
 
   // texts
   --title-color: #d2cdcd;
@@ -86,6 +85,7 @@
   --table-footer-background-color: transparent;
   --table-odd-background-color: #4f4f5045;
   --table-even-background-color: transparent;
+  --table-modal-background-color: #37393d;
 
   // boxes
   --box-background-color: #37393d;
@@ -95,7 +95,7 @@
 
   // scrollbar
   --scrollbar-track-color: #484545;
-  --scrollbar-thumb-color: #484545;
+  --scrollbar-thumb-color: #b8b7b7;
 
   // select-box
   --selectbox-background-color: #4f4f50;
@@ -104,10 +104,10 @@
   --dropdown-background-color: #46494c;
   --dropdown-border-color: transparent;
   --dropdown-triangle-color: #46494c;
-  --select-dropdown-background-color:#1d1f22;
+  --select-dropdown-background-color: #1d1f22;
 
   // datepicker
-  --datepicker-background-color: #272B33;
+  --datepicker-background-color: #272b33;
 
   // shimmer
   --shimmer-bg-color: #363a3d;
@@ -122,7 +122,6 @@
     display: block;
 
     .loader-img {
-
     }
 
     .loader-animation {
@@ -139,7 +138,14 @@
       animation-name: placeholderShimmer;
       animation-timing-function: linear;
       background: var(--shimmer-bg-color);
-      background-image: -webkit-gradient(linear, 100% 0, 0 0, from(rgba($shimmer-color-2, .3)), color-stop(0.3, rgba($shimmer-color-1, .5)), to(rgba($shimmer-color-2, .3)));
+      background-image: -webkit-gradient(
+        linear,
+        100% 0,
+        0 0,
+        from(rgba($shimmer-color-2, 0.3)),
+        color-stop(0.3, rgba($shimmer-color-1, 0.5)),
+        to(rgba($shimmer-color-2, 0.3))
+      );
       //background-image: linear-gradient(65deg ,rgba($gray, .2) 0%, rgba($white, .4) 20%, rgba($gray, .2) 100%);
       background-repeat: no-repeat;
       background-size: 100%;
@@ -153,7 +159,6 @@
         background-position: 2000px 0;
       }
     }
-
   }
 
   .empty-placeholder-image {
@@ -163,5 +168,4 @@
   .empty-placeholder-description {
     margin-top: -8px;
   }
-
 }

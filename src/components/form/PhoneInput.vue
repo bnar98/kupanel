@@ -60,7 +60,7 @@
       </div>
       <div v-if="showBtn" class="">
         <ku-Button
-          @click="enter"
+          @click.native="enter"
           :title="title"
           :ui="btnUi"
           :isLoading="isLoadingButton"

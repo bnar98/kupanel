@@ -48,6 +48,10 @@ export default {
       'can',
       require('./directives/can').default
     );
+    Vue.directive(
+      'show-super',
+      require('./directives/showSuper').default
+    )
     if (!perfix) {
       perfix = 'ku-'
     }

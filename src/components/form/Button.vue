@@ -6,7 +6,6 @@
     </span>
     <svg
       width="25px"
-      v-show="loading"
       height="25px"
       viewBox="0 0 66 66"
       xmlns="http://www.w3.org/2000/svg"

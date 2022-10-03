@@ -4,7 +4,8 @@
       <span v-if="title">{{ title }}</span>
       <ion-icon class="icon" v-if="icon !== ''" :name="icon"></ion-icon>
     </span>
-    <svg
+    <div class="lds-dual-ring" v-show="loading"></div>
+    <!-- <svg
       width="25px"
       height="25px"
       viewBox="0 0 66 66"
@@ -20,7 +21,7 @@
         r="30"
         class="path"
       ></circle>
-    </svg>
+    </svg> -->
     <span class="tooltip top" v-if="tooltip !== ''">{{ tooltip }}</span>
   </button>
 </template>
@@ -71,6 +72,35 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.lds-dual-ring {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @mixin button($bgColor, $darkBgColor, $textColor: var(--kwhite-color)) {
   border-color: $bgColor;
 

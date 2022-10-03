@@ -4,7 +4,6 @@
       <span v-if="title">{{ title }}</span>
       <ion-icon class="icon" v-if="icon !== ''" :name="icon"></ion-icon>
     </span>
-    <h1 v-show="loading">test</h1>
     <svg
       width="25px"
       v-show="loading"
@@ -68,7 +67,6 @@ export default {
   watch: {
     isLoading(value) {
       this.loading = value;
-      console.log(this.loading)
     },
   },
 };

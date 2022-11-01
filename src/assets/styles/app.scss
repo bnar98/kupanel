@@ -1,60 +1,64 @@
-@import 'transitions';
-@import '_form';
-@import '_fonts';
-@import '_shimmer';
+@import "transitions";
+@import "_form";
+@import "_fonts";
+@import "_shimmer";
 
 @layer base {
-    h3 {
-        @apply block text-lg font-bold my-4;
-    }
+  h3 {
+    @apply block text-lg font-bold my-4;
+  }
 
-    p{
-        @apply block my-4 leading-relaxed;
-    }
+  p {
+    @apply block my-4 leading-relaxed;
+  }
 
-    ul{
-        display: block;
-        list-style-type: disc;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 40px;
-    }
-    .dir-ltr{
-        direction: ltr;
-    }
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+  .dir-ltr {
+    direction: ltr;
+  }
 }
-#app{
-    @apply h-full;
+#app {
+  @apply h-full;
 }
 
-body{
-    @apply  font-dana m-0 bg-background-color;
-    direction: var(--app-direction);
-    overflow: hidden;
+body {
+  @apply font-dana m-0 bg-background-color;
+  direction: var(--app-direction);
+  overflow: hidden;
 }
-body, html{
-    @apply h-screen overflow-x-hidden;
+body,
+html {
+  @apply h-screen overflow-x-hidden;
 }
-a,li,p,span {
-    @apply text-base text-gray-800;
+a,
+li,
+p,
+span {
+  @apply text-base text-gray-800;
 }
 
 //scroll
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+  width: 7px;
+  height: 5px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
-    @apply rounded-l-lg bg-scrollbar-track-color;
+  @apply rounded-l-lg bg-scrollbar-track-color;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    @apply rounded-l-lg bg-scrollbar-thumb-color;
-    &:hover {
-        @apply bg-scrollbar-thumb-color;
-    }
+  @apply rounded-l-lg bg-scrollbar-thumb-color;
+  &:hover {
+    @apply bg-scrollbar-thumb-color;
+  }
 }
